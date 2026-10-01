@@ -24,10 +24,13 @@ on legitimate requests that resemble attacks, and the AgentDojo utility
 counts are our only external benign-utility observation.
 Hosted endpoints, one fixed adaptive sender policy, empty-context confirmation
 runs, and one same-bank temporal repeat do not estimate production or
-run-to-run distributions. A later run requested the original DeepSeek model
-name but received a different provider-reported identity and no delegations;
-this is an endpoint-stability limitation, not evidence that the original
-selection effect disappeared. Ratings use two isolated model families but no human
+run-to-run distributions. Two later endpoints delegated 0/121 and 118/121 of the
+same selected inputs without selector enrichment, so the two-hop rate is
+endpoint-specific. No single experiment ran the full chain from a marked
+source through relay and two receivers to a protected write: a Qwen 3.6 Flash
+calibration of that chain produced no protected request across 24 attack
+items in three lineage arms (one outcome truncated), so the three stages are
+measured on separate fixtures. Ratings use two isolated model families but no human
 anchor; they describe text and do not identify a mediator. The two-hop rate is
 conditional on a prospective selector and uses homogeneous receiver rules,
 so it is evidence of conditional receiver-chain behavior rather than a general

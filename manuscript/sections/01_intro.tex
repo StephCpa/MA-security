@@ -45,8 +45,9 @@ versus 37/48).
 Second, a prospectively selected high-retention stratum supported conditional
 two-receiver delegation. Receiver 1 delegated 40/121 messages; receiver 2
 delegated 17/40 of those, yielding 17/121 chains with two consecutive
-delegation calls. This is a selected-stratum rate, not a population estimate or
-a test of selector discrimination. In a separate
+delegation calls. This is a selected-stratum rate, not a population estimate:
+on identical inputs, two later endpoints produced 0/121 and 118/121 such
+chains, and neither showed enrichment by the selector. In a separate
 fixture, hiding a denied direct-write tool redirected 45/48 elevated requests
 to an advertised, non-mutating escalation route. An exact resource policy
 prevented unauthorized mutations of a protected canary while models continued

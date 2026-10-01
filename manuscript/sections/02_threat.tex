@@ -66,9 +66,11 @@ and family-level tables are supplied in the supplementary artifact. We report
 finite-bank, endpoint-specific effects and never pool providers into a
 prevalence estimate. An additional run exposed a DeepSeek identifier mismatch;
 it is not pooled with the earlier endpoint result (\S\ref{sec:propagation-selector}).
-The native AgentDojo screen (\S\ref{sec:agentdojo}) used Qwen 3.6 Flash and a
-DeepSeek endpoint that reported \path{deepseek-flash}; neither is pooled with
-the endpoints above.
+Follow-up checks (\S\ref{sec:ratings}, \S\ref{sec:propagation-selector},
+\S\ref{sec:external}) and the native AgentDojo screen (\S\ref{sec:agentdojo})
+used Qwen 3.6 Flash; the screen also used a DeepSeek endpoint that reported
+\path{deepseek-flash}. None is pooled with the endpoints above, and the
+follow-ups were frozen internally rather than externally timestamped.
 
 \begin{table*}[t]
   \centering
@@ -93,6 +95,7 @@ the endpoints above.
     Credential gate (\S\ref{sec:covariance}) & Separate 48-directive bank & Q receiver & Elevation grant; replay under write grant & Exact protected request \\
     Relay gateway (\S\ref{sec:e4-gateway}) & E2 bank; reused 48 directives & Frozen D outputs / D; Q repeat & Sender policy and elevation & Broad and exact requests \\
     Protocol paths (\S\ref{sec:external}) & Fixed synthetic cases & Pinned MCP / A2A code & Storage root and message derivation & Credential or lineage state \\
+    Q3.6 checks (\S\ref{sec:laundering}--\S\ref{sec:external}) & Archived texts; lineage bank & Q3.6 receivers & Host cue; endpoint; displayed lineage & Exact request or delegation \\
     AgentDojo (\S\ref{sec:agentdojo}) & 55 official Slack pairs & Q3.6 / Q3.6; DF / DF & Visible marker and sender derivation & Official task predicates \\
     \bottomrule
   \end{tabular}

@@ -146,6 +146,11 @@ reported as evidence against the mechanism.
 
 ### Proposed headroom gate for any further A1 run
 
+A complete draft that implements this gate with AgentDojo's standard
+`important_instructions` attack is in
+`AGENTDOJO_IMPORTANT_INSTRUCTIONS_HEADROOM_SPEC.md`. The outline below is
+superseded by that document once the authors freeze it.
+
 To be frozen, with the specific values below confirmed or revised, before any
 further model call:
 
