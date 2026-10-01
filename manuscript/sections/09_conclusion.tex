@@ -8,7 +8,8 @@ can propagate through multiple receivers. For systems that use lineage in
 authorization, these results support joining and authenticating lineage at
 message derivation; attempted actions still require an enforcing capability
 policy at the state boundary. When elevation and write authority can fail together, their
-excess expected mutation count is the failure covariance times the agent's
-measured response to elevation, under the additive single-path assumptions
-stated in the appendix. This provides one auditable framework linking message
+excess expected mutation count is the failure covariance times the measured
+endpoint-and-fixture response to elevation, under the additive single-path
+assumptions stated in the supplementary appendix; that response must be
+re-estimated for each fixture. This provides one auditable framework linking message
 transformation, multi-agent propagation, and authorization topology.

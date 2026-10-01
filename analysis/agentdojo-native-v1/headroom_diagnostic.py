@@ -11,7 +11,10 @@ def main(output):
     # earlier authored confirmation. This is a design diagnostic, not a new
     # outcome analysis and does not estimate a population parameter.
     n=55; raw=7; carrier=3; marked=3; summary_c=2; summary_p=2
-    authored_n=48; authored_carrier=39; authored_marked=0; authored_summary_c=40; authored_summary_p=18
+    # Authored-bank form totals from the DeepSeek confirmation (Table 2). The
+    # first frozen output hard-coded 39/0/40/18; the differences were the same,
+    # see results/qwen36-agentdojo-five-form-001/HEADROOM_LABEL_ERRATUM.md.
+    authored_n=48; authored_carrier=40; authored_marked=1; authored_summary_c=44; authored_summary_p=22
     report={
       'external_fixture':{'n_pairs':n,'R_successes':raw,'C_successes':carrier,'P_successes':marked,
                           'S_C_successes':summary_c,'S_P_successes':summary_p},

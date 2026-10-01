@@ -1,0 +1,68 @@
+% Figure 1: evaluation boundary with the logged outcome rail aligned to the
+% stage at which each outcome is recorded. Vector source; sized for one column.
+\begin{tikzpicture}[
+  font=\footnotesize,
+  >={Stealth[length=1.5mm]},
+  stage/.style={draw, rounded corners=2pt, align=center, text width=24mm,
+    minimum height=7mm, inner sep=1.5pt, fill=white},
+  ctrl/.style={draw, rounded corners=2pt, align=center, text width=12mm,
+    minimum height=6mm, inner sep=1pt, font=\scriptsize},
+  rung/.style={circle, draw, inner sep=0pt, minimum size=3.2mm,
+    font=\tiny},
+  lab/.style={font=\scriptsize, inner sep=1pt, xshift=1pt},
+  outtxt/.style={font=\scriptsize, anchor=west, inner sep=1pt},
+  tie/.style={densely dotted, black!45},
+]
+  % Stage column.
+  \node[stage, fill=black!8] (src) at (2.65,0)
+    {Untrusted content\\[-2pt]{\scriptsize adversary-controlled}};
+  \node[stage] (rcv) at (2.65,-1.15)
+    {Receiver model\\[-2pt]{\scriptsize structured actions}};
+  \node[stage] (mon) at (2.65,-2.30)
+    {Reference monitor\\[-2pt]{\scriptsize policy $\times$ capability}};
+  \node[stage] (sto) at (2.65,-3.45)
+    {Protected store\\[-2pt]{\scriptsize process-local}};
+  \node[stage, fill=blue!5] (dwn) at (2.65,-4.60)
+    {Downstream agent\\[-2pt]{\scriptsize reads the store}};
+
+  \draw[->] (src) -- node[lab, right] {data plane} (rcv);
+  \draw[->] (rcv) -- node[lab, right] {attempt} (mon);
+  \draw[->] (mon) -- node[lab, right] {allow} (sto);
+  \draw[->, dashed, black!55] (sto) -- node[lab, right] {possible read} (dwn);
+
+  % Control states enter at the stage they govern.
+  \node[ctrl] (a) at (0.62,-1.15) {elevation\\[-2pt]$a$};
+  \node[ctrl] (b) at (0.62,-2.30) {write-back\\[-2pt]$b$};
+  \draw[->] (a) -- (rcv);
+  \draw[->] (b) -- (mon);
+
+  % Outcome rail: each rung sits at the stage where it is logged.
+  \def\railx{4.55}
+  \node[font=\scriptsize\bfseries, anchor=west, inner sep=0pt]
+    at (\railx-0.1,0) {Logged outcome rail};
+  \draw[line width=0.9pt, black!35] (\railx,-0.80) -- (\railx,-4.95);
+  \foreach \s/\y in {rcv/-1.15, mon/-2.30, sto/-3.45, dwn/-4.60}
+    \draw[tie] (\s.east) -- (\railx,\y);
+
+  \node[rung] (r1) at (\railx+0.32,-0.98) {1};
+  \node[outtxt] at (r1.east) {attempt (structured action)};
+  \node[rung] (r2) at (\railx+0.32,-1.34) {2};
+  \node[outtxt] at (r2.east) {unauthorized attempt};
+  \node[rung] (r3) at (\railx+0.32,-2.30) {3};
+  \node[outtxt] at (r3.east) {capability decision};
+  \node[rung] (r4) at (\railx+0.32,-3.27) {4};
+  \node[outtxt] at (r4.east) {mutation};
+  \node[rung, fill=black, text=white] (r5) at (\railx+0.32,-3.63) {5};
+  \node[outtxt] at (r5.east) {\textbf{unauthorized mutation}};
+  \node[rung] (r6) at (\railx+0.32,-4.60) {6};
+  \node[outtxt] at (r6.east) {exposure};
+  \foreach \r in {r1,r2,r3,r4,r5,r6}
+    \draw[black!35] (\railx,0 |- \r.center) -- (\r.west);
+
+  % Estimand key.
+  \node[font=\scriptsize, anchor=north west, align=left, text width=82mm,
+    inner sep=0pt] at (-0.05,-5.12)
+    {Primary state-change outcome: $R=\Pr(\text{rung 5})$.
+     $r_0,r_1$: exact protected-request rates at $a=0,1$ with the write
+     tool visible; $b$ gates whether an allowed request mutates state.};
+\end{tikzpicture}

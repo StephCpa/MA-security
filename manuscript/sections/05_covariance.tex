@@ -2,8 +2,9 @@
 \label{sec:covariance}
 
 Zero-floor enforcement experiments do not reveal how controls fail. We
-therefore separate two factors: the receiver's response to instruction
-elevation and the topology that couples elevation to write authority.
+therefore separate two factors: the endpoint-and-fixture response to
+instruction elevation and the topology that couples elevation to write
+authority.
 
 \subsection{Risk identity}
 
@@ -35,14 +36,26 @@ When $\rone\approx\rzero$, channel typing does not change behavior and
 capability enforcement remains necessary. The identity concerns response in
 the tool-visible state; hidden-tool behavior is a different estimand.
 
-The response is specific to the action schema and fixture. It was .875 for
-DeepSeek semantic placement and .396 for Qwen on the same task, .313 for Qwen
-credential gating, and .167 for a frozen-relay exact request. Tool hiding
-changes the available action schema, so its response cannot be inserted into
-Equation~\eqref{eq:identity}. We estimate the factor anew for each endpoint
-and tool-visible fixture.
+The response is not a property of the endpoint alone. Measured on different
+tool-visible fixtures, it was .875 for DeepSeek semantic placement, .396 for
+Qwen on the same task (supplement, App.~D), .313 for Qwen credential gating
+(\S\ref{sec:credential-gated}), .167 for Qwen exact requests over frozen relay
+outputs (\S\ref{sec:e4-gateway}), and .063 in the tool-visible arm of the
+capability-hidden fixture (42/48 to 45/48, \S\ref{sec:defense}). The spread
+within Qwen is 6.3-fold (.396/.063), whereas the cross-endpoint contrast on a
+shared fixture is 2.2-fold (.875/.396); on frozen DeepSeek relay outputs,
+relay policy and marking alone moved it from .125 to .771
+(Table~\ref{tab:e4-gateway}). Fixture variation therefore exceeds the endpoint
+variation we observe, and the design cannot attribute $\rone-\rzero$ to the
+model. Figure~\ref{fig:covariance-risk} shows the consequence: under one
+declared topology, excess risk scales with whichever fixture supplied the
+response. Tool hiding changes the available action schema, so the hidden-tool
+route cannot be inserted into Equation~\eqref{eq:identity}. We estimate the
+factor anew for each endpoint and tool-visible fixture and never transport it
+across fixtures.
 
 \subsection{Credential-gated measurement}
+\label{sec:credential-gated}
 
 For 48 new Qwen directives, a gateway derived $a$ from authenticated inherited
 lineage and a scoped elevation grant; a separate grant controlled $b$. We
@@ -81,9 +94,20 @@ sensitivity parameter, not an estimated compromise frequency.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\columnwidth]{figures/aamas-fig4-v03-ppt.png}
-  \caption{Measured Qwen response and topology-weighted excess risk. The three points use a declared $q=.05$ fault model; only the response rates are measured model outputs.}
-  \Description{A plot of excess risk in percentage points against covariance between elevation and write authority, alongside measured Qwen response rates and the declared-topology caveat.}
+  \input{figures/fig4-covariance}
+  \caption{Excess risk $\Cov(a,b)(\rone-\rzero)$ for the five tool-visible
+  responses compared in \S\ref{sec:covariance}. Only the slopes are model measurements;
+  covariances are declared topologies at $q=.05$, not estimated fault rates.
+  The bold line is the credential-gated fixture of Table~\ref{tab:measured};
+  the spread among Qwen lines is fixture variation on one endpoint.}
+  \Description{Five straight lines from the origin plot excess risk in
+  percentage points against the declared covariance between elevation and
+  write authority, at the independent, common-root, and shared-state
+  topologies. Slopes are the measured responses .875 (DeepSeek, semantic
+  placement), .396 (Qwen, semantic placement), .313 (Qwen, credential gate),
+  .167 (Qwen, frozen relay), and .063 (Qwen, tool-visible arm of the
+  capability-hidden fixture). At the shared-state covariance the excess
+  ranges from 0.30 to 4.16 percentage points.}
   \label{fig:covariance-risk}
 \end{figure}
 

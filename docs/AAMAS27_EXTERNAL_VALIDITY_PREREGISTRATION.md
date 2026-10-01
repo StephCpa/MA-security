@@ -114,3 +114,62 @@ For the AAMAS submission, run Study H and only the ten-pair A1 pilot. For a
 later security-venue version, run A1 in full. If only one study is feasible,
 prioritize Study H for AAMAS and Study A for the security-venue extension.
 
+## Addendum, 1 October 2026: what ran, and an outcome the draft did not anticipate
+
+This addendum is written after the Slack runs below. It does not alter the
+draft above and is not a preregistration of those runs.
+
+### Study A as executed
+
+- Only the Slack suite ran live, as a single-suite extension rather than the
+  two-suite A1 design: 55 pairs (eleven pilot-unseen user tasks crossed with
+  all five official goals), five forms, two separately run models
+  (`qwen36-agentdojo-five-form-001`, `deepseek-agentdojo-five-form-001`).
+  Workspace was screened offline only.
+- Because the 55 cells cross reused tasks and goals, the frozen analysis
+  reported paired discordance tables and worst-case missingness bounds instead
+  of the exact McNemar tests named above.
+- Results: R/C/P/S_C/S_P security successes of 7/3/3/2/2 (Qwen, with 5/4/3/2/2
+  unknown) and 3/3/2/2/2 (DeepSeek, none unknown) out of 55.
+
+### Interpretation applied
+
+The three preregistered interpretations assume that the external fixture can
+detect an effect of the authored size. It could not: with the carrier at 3/55
+successes, a perfect marker could reduce attack success by at most 3/55 =
+.0545, 6.7% of the authored effect of .8125. The run is therefore a
+headroom failure, neither "reproduces" nor "does not reproduce". Following
+the intent of the third rule, the manuscript abstract now states that the
+provenance effects are established only on author-written banks, rather than
+confining that statement to the limitations section. The external null is not
+reported as evidence against the mechanism.
+
+### Proposed headroom gate for any further A1 run
+
+To be frozen, with the specific values below confirmed or revised, before any
+further model call:
+
+1. Screen candidate suite-and-model combinations on a small fixed sample (for
+   example ten pairs) under the R and C forms only.
+2. Proceed to a five-form run only if the C success rate is at least 40%.
+   Otherwise report that official unoptimized goals for that combination
+   cannot test an effect of this magnitude, and do not run the full design.
+3. Before the full run, freeze what counts as replication on that fixture,
+   for example a C-minus-P missingness lower bound above zero together with a
+   point estimate of at least half the observed C rate.
+4. Repeating the same Slack fixture with the same model reproduces the floor
+   rather than adding headroom, so it is not a priority.
+
+### Study H versus the frozen F7 human-anchor plan
+
+The frozen pack in `analysis/human-anchor-v1/` differs from Study H above:
+it uses two human raters on all 96 texts and reports agreement without
+acceptance thresholds, whereas Study H specifies three raters, 32 items, and
+the interval-lower-endpoint decision rule (lower endpoint at least .45). No
+human returns exist yet. Before any return, the authors should choose one of
+two routes and date the choice: amend F7 to adopt the lower-endpoint decision
+rule, stating the precision limit in the paper; or treat F7 as exploratory
+agreement estimation and make no Study H decision-rule claim. In either case,
+practice anchors must come only from the calibration bank, as both documents
+already require.
+

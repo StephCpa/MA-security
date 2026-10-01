@@ -37,9 +37,15 @@ estimate and not a semantic-equivalence test.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\columnwidth]{figures/aamas-fig3-v03-ppt.png}
-  \caption{Outcome-blind selection and two-receiver delegation in the disjoint confirmation bank. The selector admitted 121 of 192 source directives; receiver 1 delegated 40, and receiver 2 delegated 17 of those.}
-  \Description{A flow diagram from 192 bank items through 121 selected, 40 first relays, and 17 second relays, with the conditional and complete relay rates.}
+  \input{figures/fig3-propagation}
+  \caption{Outcome-blind selection and two-receiver delegation in the
+  disjoint confirmation bank. The frozen selector admitted 121 of 192 source
+  directives; receiver 1 delegated 40, and receiver 2 delegated 17 of those.
+  The 71 excluded directives were not run.}
+  \Description{A flow diagram from 192 bank items through 121 selected, 40
+  first-receiver delegations, and 17 second-receiver delegations, with the
+  conditional rates .331 and .425 and the complete selected-stratum rate
+  17/121 = .140, exact 95 percent interval .084 to .215.}
   \label{fig:propagation}
 \end{figure}
 

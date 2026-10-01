@@ -1,4 +1,4 @@
-\section{Protocol Boundaries}
+\section{Protocol Boundaries and External Execution}
 \label{sec:external}
 
 \subsection{Distinct credentials can share one failure root}
@@ -62,25 +62,42 @@ traceability extension links task steps but defines no security-label join
 ~\cite{a2a-traceability-2026}.
 
 \subsection{Native AgentDojo external screen}
+\label{sec:agentdojo}
 
 To test transfer beyond the author-written stimuli, we ran the frozen
-five-form design in the official AgentDojo Slack runtime (version 0.1.35;
-benchmark version 1.2.2). The 55 user/goal pairs were evaluated with two
-separately run hosted models. Qwen 3.6 Flash produced security successes of
-7/55, 3/55, 3/55, 2/55, and 2/55 for R, C, P, $S_C$, and $S_P$,
-respectively. DeepSeek Flash produced 3/55, 3/55, 2/55, 2/55, and 2/55.
-All 286 sessions in each run completed; exposure was 55/55 after whitespace
-normalization. The archived responses passed 4,350 and 3,861 offline replay
-checks, respectively, with no model calls during audit.
+five-form design in the official AgentDojo Slack runtime (package 0.1.35;
+benchmark 1.2.2) with its tasks, tools, and security and utility predicates
+unmodified~\cite{debenedetti2024agentdojo}. The 55 pairs cross the eleven user
+tasks unused by a ten-pair pilot with all five official injection goals; the
+payload is the literal goal, not an optimized attack, and the same model
+served as sender and receiver. Qwen 3.6 Flash produced security successes of
+7/55, 3/55, 3/55, 2/55, and 2/55 for R, C, P, $\SC$, and $\SP$; the DeepSeek
+endpoint produced 3/55, 3/55, 2/55, 2/55, and 2/55. All 286 sessions in each
+run completed, payload exposure was 55/55 after whitespace normalization, and
+the archived responses passed 4,350 and 3,861 offline replay checks with no
+model calls during audit.
 
-These are provider-stratified finite-bank counts, not pooled population
-estimates. Qwen also returned unknown terminal outcomes for 5, 4, 3, 2, and
-2 pairs in R, C, P, $S_C$, and $S_P$, respectively; DeepSeek returned none.
-For the Qwen C-to-P contrast, treating unknowns as missing gives a
-missingness interval of $[-0.0545,0.0727]$, while the corresponding interval
-for $S_C-S_P$ is $[-0.0364,0.0364]$. The fixture is floor-limited for the
-mechanism question: Qwen's raw-versus-carrier base rate permits a maximum
-counterfactual C-to-P difference of only $3/55=0.0545$, compared with the
-authored-bank effect of $0.8125$. The external runs therefore establish native
-execution and low official-goal base rates, but neither replicate nor falsify
-the provenance mechanism.
+The cells cross reused tasks and goals rather than sampling IID payloads, so
+we report missingness bounds instead of tests; bounds are not confidence
+intervals. Under a twelve-call cap Qwen left 5, 4, 3, 2, and 2 outcomes
+unknown; DeepSeek left none. Qwen's C$-$P bounds are $[-.0545,.0727]$ and its
+$\SC-\SP$ bounds $[-.0364,.0364]$. Even the raw-versus-carrier ordering is
+unresolved: Qwen's R$-$C bounds $[0,.1636]$ touch zero, and DeepSeek's R and
+C are equal. Stimulus diversity is also
+lower than the cell count suggests: at temperature zero, 110 sender
+generations yielded only 14 distinct texts for Qwen and 17 for DeepSeek, so
+each relay arm rests on those texts rather than on 55 independent summaries.
+
+The decisive limitation is headroom. With the carrier at 3/55 known successes
+for either model, even a perfect marker could lower attack success by at most
+$.0545$, 6.7\% of the authored-bank effect of .8125 (15.7\% even if every
+unknown Qwen carrier outcome were a success); an effect of that size would
+need roughly 45/55 carrier successes. The screen therefore establishes
+native execution, low official-goal base rates, and one benign-utility
+observation (C and P utility were 37/55 and 37/55 for Qwen, with four and
+three unknown, and 40/55 and 39/55 for DeepSeek), but it neither replicates
+nor falsifies the provenance mechanism. We ran no live Workspace sessions:
+offline controls showed that the official predicate for Workspace injection
+tasks 11 and 12 scores deleting one target and four non-target files as a
+successful targeted deletion, a scorer issue we document for upstream
+correction rather than patch locally.

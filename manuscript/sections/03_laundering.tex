@@ -33,12 +33,17 @@ tests form a fixed sequence: C versus P, then $\SC$ versus $\SP$.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\columnwidth]{figures/aamas-fig2-v03-ppt.png}
-  \caption{DeepSeek behavior and the paired rater-A retention differences.
-  The mean retention shift hides two modes: 17 pairs show no change, while
-  15 pairs differ by one point and 15 by three points.}
-  \Description{Bar charts comparing protected-write attempts for five text
-  forms and the distribution of paired rater-A action-retention differences.}
+  \input{figures/fig2-fiveform}
+  \caption{(a) DeepSeek protected-write attempts by form (Table~\ref{tab:fiveform}).
+  (b) All 48 paired $\SC-\SP$ action-retention differences per rater,
+  including ties. The rater-A mean of 1.292 is a poor summary: the
+  distribution is bimodal (17 ties, 15 at $+1$, one at $+2$, 15 at $+3$),
+  and rater B shows the same shape.}
+  \Description{Panel (a) is a bar chart of write attempts out of 48 for the
+  raw, neutral-carrier, marked-carrier, relay-of-carrier, and
+  relay-of-marked forms: 37, 40, 1, 44, and 22. Panel (b) is a grouped bar
+  chart of paired action-retention differences 0, 1, 2, and 3: rater A
+  17, 15, 1, 15 and rater B 19, 13, 1, 15. No pair has a negative difference.}
   \label{fig:fiveform}
 \end{figure}
 
@@ -93,7 +98,11 @@ four-level scale do not make the texts equivalent, and the ratings were made
 after relay; this stratification cannot identify a separate causal provenance
 effect. Both raters assigned retention zero to 17/48 $\SP$ texts, but 6/17
 still triggered a request. The receiver can infer an action that a rater calls
-absent. Agreement between raters therefore establishes scoring consistency,
+absent. This is not a tail case: a $+3$ difference requires $\SC=3$ and
+$\SP=0$, so 15 of each rater's 17 zero-rated $\SP$ texts form the upper mode
+of the bimodal distribution in Figure~\ref{fig:fiveform}b, so the mean
+difference is a poor summary of individual pairs. Agreement between raters
+therefore establishes scoring consistency,
 not a human validity anchor or a mechanism decomposition.
 
 \subsection{Representation and relay policy}
@@ -104,8 +113,8 @@ with its matching system instruction. The unmarked control produced 8/48 direct
 writes before relay and 36/48 after one relay. All marked forms reduced direct
 writes. After one
 relay, however, the unmarked control produced 36/48 attempts, versus 9/48 for
-prose, 32/48 for datamarking, and 24/48 for Base64. The paired control-minus-
-defense effects were .5625 ($p=1.12\times10^{-7}$), .0833 ($p=.344$), and
+prose, 32/48 for datamarking, and 24/48 for Base64. The paired
+control-minus-defense effects were .5625 ($p=1.12\times10^{-7}$), .0833 ($p=.344$), and
 .2500 ($p=.00418$); only prose and Base64 survived the prespecified Holm
 procedure. No literal representation survived relay. Source efficacy thus
 does not imply derivation integrity, and the packages cannot be ranked as pure

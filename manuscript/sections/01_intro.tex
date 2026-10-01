@@ -52,14 +52,26 @@ to an advertised, non-mutating escalation route. An exact resource policy
 prevented unauthorized mutations of a protected canary while models continued
 to request writes.
 
-Third, we measure the receiver's response to instruction elevation and weight
-it under declared models of elevation and write-authority failure. A covariance
-identity isolates coupled failures. These are sensitivity calculations, not
-measurements of deployment fault frequency.
+Third, we measure the response to instruction elevation and weight it under
+declared models of elevation and write-authority failure. A covariance
+identity isolates coupled failures. The measured response varied 6.3-fold
+across fixtures on one endpoint, more than the 2.2-fold difference between
+endpoints on a shared fixture, so we treat it as an endpoint-and-fixture
+quantity; the weighted risks are sensitivity
+calculations, not measurements of deployment fault frequency.
 
-Our contributions are paired measurements of how provenance marking changes
-relay outputs and receiver actions; an outcome-blind measurement of conditional
+The unit of analysis is therefore the inter-agent edge rather than a single
+model. Provenance acts as an institutional label that the agents themselves
+regenerate; propagation is observed across consecutive receivers that act only
+on their local view; and the reference monitor is the institutional layer
+that decides whether a pursued action becomes a state transition. Our
+contributions are paired measurements of how provenance marking changes relay
+outputs and receiver actions; an outcome-blind measurement of conditional
 two-receiver delegation and action-route migration; and version-pinned
-evidence that A2A message derivation can drop supplied lineage. A separate
-risk reconstruction relates measured elevation sensitivity to declared
-authorization failure topology.
+evidence that A2A message derivation can drop supplied lineage, together with
+a least-trusted derivation-time join that restored both the trusted and the
+untrusted two-hop authorization decision where fail-open and fail-closed
+defaults each erred on one. A separate risk reconstruction relates the
+measured elevation response to declared authorization failure topology, and a
+native AgentDojo screen shows that official Slack goals leave both tested
+models too little headroom to test the marker effect on external stimuli.

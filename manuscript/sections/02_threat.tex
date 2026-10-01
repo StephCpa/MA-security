@@ -3,17 +3,18 @@
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\columnwidth]{figures/aamas-fig1-v03-ppt.png}
-  \caption{An untrusted input is transformed and may induce a structured
-  action. Instruction elevation $a$ changes eligibility; capability $b$ is
-  enforced by the reference monitor. Attempts, mutations, and downstream
-  exposure are distinct outcomes.}
-  \Description{Left-to-right flow from adversary-controlled content to a
+  \input{figures/fig1-system}
+  \caption{Evaluation boundary. Elevation $a$ changes whether content may
+  direct the receiver; capability $b$ is enforced by the reference monitor.
+  Each logged outcome is aligned with the stage that records it, so attempts,
+  mutations, and downstream exposure remain distinct.}
+  \Description{Top-to-bottom flow from adversary-controlled content to a
   receiver model, reference monitor, protected process-local store, and
-  downstream reader. An elevation state a controls whether content may direct
-  the receiver; a separate write-back capability b is checked by the monitor.
-  A six-rung ladder distinguishes attempts, authorization decisions, state
-  mutations, unauthorized mutations, and downstream exposure.}
+  downstream agent. An elevation state a enters at the receiver and a
+  write-back capability b enters at the monitor. A rail to the right aligns
+  six logged outcomes with their stages: attempt and unauthorized attempt at
+  the receiver, capability decision at the monitor, mutation and
+  unauthorized mutation at the store, and exposure at the downstream agent.}
   \label{fig:system}
 \end{figure}
 
@@ -65,13 +66,17 @@ and family-level tables are supplied in the supplementary artifact. We report
 finite-bank, endpoint-specific effects and never pool providers into a
 prevalence estimate. An additional run exposed a DeepSeek identifier mismatch;
 it is not pooled with the earlier endpoint result (\S\ref{sec:propagation-selector}).
+The native AgentDojo screen (\S\ref{sec:agentdojo}) used Qwen 3.6 Flash and a
+DeepSeek endpoint that reported \path{deepseek-flash}; neither is pooled with
+the endpoints above.
 
 \begin{table*}[t]
   \centering
   \footnotesize
   \caption{Map of claim-bearing evaluations. The 48-directive banks are
   separate unless a row explicitly says that texts were reused. D denotes
-  DeepSeek V4 Flash and Q denotes Qwen 3.7 Flash. The supplement lists the
+  DeepSeek V4 Flash and Q denotes Qwen 3.7 Flash; Q3.6 is Qwen 3.6 Flash and DF
+  the endpoint reporting \texttt{deepseek-flash}. The supplement lists the
   individual run directories and frozen prompts.}
   \label{tab:experiment-map}
   \setlength{\tabcolsep}{3pt}
@@ -88,6 +93,7 @@ it is not pooled with the earlier endpoint result (\S\ref{sec:propagation-select
     Credential gate (\S\ref{sec:covariance}) & Separate 48-directive bank & Q receiver & Elevation grant; replay under write grant & Exact protected request \\
     Relay gateway (\S\ref{sec:e4-gateway}) & E2 bank; reused 48 directives & Frozen D outputs / D; Q repeat & Sender policy and elevation & Broad and exact requests \\
     Protocol paths (\S\ref{sec:external}) & Fixed synthetic cases & Pinned MCP / A2A code & Storage root and message derivation & Credential or lineage state \\
+    AgentDojo (\S\ref{sec:agentdojo}) & 55 official Slack pairs & Q3.6 / Q3.6; DF / DF & Visible marker and sender derivation & Official task predicates \\
     \bottomrule
   \end{tabular}
 \end{table*}

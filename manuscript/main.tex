@@ -11,6 +11,9 @@
 
 \usepackage{balance}
 \usepackage{amsmath}
+% The class loads newtxmath, which already defines \Bbbk; without this guard
+% current TeX Live stops with "Command \Bbbk already defined".
+\let\Bbbk\relax
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{bm}
@@ -64,9 +67,12 @@ selected high-retention stratum, 17/121 messages induced two consecutive
 delegation calls; this is a conditional selected-stratum rate rather than a
 population estimate. Hiding a write tool redirected elevated requests to an
 advertised escalation route, and pinned A2A tests located lineage loss at
-message derivation rather than transport. Together, these results locate where
-agent cooperation changes the meaning of untrusted content and where
-authorization must be enforced.
+message derivation rather than transport. A native AgentDojo screen with two
+models executed the same design on official tasks, but raw-goal attack success
+was at most 7/55 known successes, too low to test the marker contrast; the provenance effects
+are therefore established only on author-written banks. Together, these
+results locate where agent cooperation changes the meaning of untrusted
+content and where authorization must be enforced.
 \end{abstract}
 
 \keywords{generative agents, multi-agent systems, prompt injection, provenance,
