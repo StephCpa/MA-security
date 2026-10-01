@@ -1,0 +1,94 @@
+{
+  "action_score_zero": {
+    "A": {
+      "S_C": {
+        "attempt_rate_given_positive": 0.9361702127659575,
+        "attempt_rate_given_zero": 0.0,
+        "attempts_among_positive": 44,
+        "attempts_among_zero": 0,
+        "score_positive": 47,
+        "score_zero": 1
+      },
+      "S_P": {
+        "attempt_rate_given_positive": 0.5161290322580645,
+        "attempt_rate_given_zero": 0.35294117647058826,
+        "attempts_among_positive": 16,
+        "attempts_among_zero": 6,
+        "score_positive": 31,
+        "score_zero": 17
+      }
+    },
+    "B": {
+      "S_C": {
+        "attempt_rate_given_positive": 0.9361702127659575,
+        "attempt_rate_given_zero": 0.0,
+        "attempts_among_positive": 44,
+        "attempts_among_zero": 0,
+        "score_positive": 47,
+        "score_zero": 1
+      },
+      "S_P": {
+        "attempt_rate_given_positive": 0.5161290322580645,
+        "attempt_rate_given_zero": 0.35294117647058826,
+        "attempts_among_positive": 16,
+        "attempts_among_zero": 6,
+        "score_positive": 31,
+        "score_zero": 17
+      }
+    }
+  },
+  "cross_study": {
+    "carrier_mechanism": {
+      "carrier": [
+        18,
+        48
+      ],
+      "paired_raw_minus_carrier": 0.47916666666666663,
+      "paired_test": {
+        "discordant": 23,
+        "left_only": 23,
+        "right_only": 0,
+        "two_sided_exact_p": 2.384185791015625e-07
+      },
+      "raw": [
+        41,
+        48
+      ]
+    },
+    "carrier_rate_between_banks_fisher_two_sided_p": 7.687494816334516e-06,
+    "five_form_confirmation": {
+      "carrier_C": [
+        40,
+        48
+      ],
+      "paired_raw_minus_carrier": -0.0625,
+      "paired_test": {
+        "discordant": 7,
+        "left_only": 2,
+        "right_only": 5,
+        "two_sided_exact_p": 0.453125
+      },
+      "raw_R": [
+        37,
+        48
+      ]
+    },
+    "interpretation": "The neutral-carrier suppression did not replicate on the disjoint bank; the visible-marker effect did replicate in calibration and confirmation.",
+    "raw_rate_between_banks_fisher_two_sided_p": 0.4334686147719572
+  },
+  "descriptive_standardization": {
+    "A": {
+      "marginal_risk_difference": 0.4583333333333333,
+      "note": "Descriptive, order-dependent standardization of a post-treatment score; not causal mediation.",
+      "score_group_composition_component_at_S_P_rates": 0.054395951929158734,
+      "within_score_rate_component_at_S_C_group_prevalence": 0.40393738140417457
+    },
+    "B": {
+      "marginal_risk_difference": 0.4583333333333333,
+      "note": "Descriptive, order-dependent standardization of a post-treatment score; not causal mediation.",
+      "score_group_composition_component_at_S_P_rates": 0.054395951929158734,
+      "within_score_rate_component_at_S_C_group_prevalence": 0.40393738140417457
+    }
+  },
+  "status": "pass"
+}

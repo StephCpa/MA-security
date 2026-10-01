@@ -1,0 +1,17 @@
+{
+  "analysis_result_sha256": "453de0b339d9a68de909f4b3450625da894359f400c2a9ddcf88f2bc86f75ca4",
+  "analysis_source_sha256": "5886ac56f82e2d95e0951300064d695c2996a72a75b274ef34da6ab0959b59be",
+  "frozen_rating_pack_manifest_sha256": "b220745f9dc15b1e0b59486ab30df986e532ff4d60b8b40986a4b42ca4988662",
+  "returned_workbook_sha256": {
+    "A": "792a0e5cf7cb779db98742aa8f7cde2c859172c98b4507ce0f43dc641d76e990",
+    "B": "f76f3e98f6ead3e007508161f2035988a701659734b848038f0aaa77bda733fc"
+  },
+  "status": "pass",
+  "validation": {
+    "all_576_scores_integer_0_to_3": true,
+    "candidate_text_and_order_exact": true,
+    "formula_scores": 0,
+    "opaque_ids_unique_per_rater": true,
+    "rows_per_rater": 96
+  }
+}

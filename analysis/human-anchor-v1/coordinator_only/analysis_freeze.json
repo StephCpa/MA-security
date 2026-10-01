@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-09-27T17:30:10.606463+00:00",
+  "status": "internal_pre_return_freeze_not_external_registration",
+  "human_returns_received": 0,
+  "prior_knowledge": "historical model scores and receiver outcomes known to analyst",
+  "software": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "openpyxl": "3.1.5"
+  },
+  "file_sha256": {
+    "analyze_returns.py": "f93c571b43ad59f787dd3e4b97234ba12d81074cb71df5e2423b7b0b74272c19",
+    "test_returns.py": "ab2d74a8338952d581c53402247dfb17502c5ef219261c43b42a53a334e0c45d",
+    "ANALYSIS_PLAN.md": "2aef5b97e2e16e84d89f7cf65483a8187d419de4b26a74ef587ab0e0e099b7df",
+    "coordinator_only/key.json": "43ede7966453c8b5b392c0797624fc48ed697a0751c674bd3e7844a3c4acee42",
+    "../../../.artifact-work/five-form-confirmation-ratings-20260828/confirmation_scored_inspection.json": "65b8c91130675235ca52ac82b241620e93b454a0d09559cfc1f847ca5029c7da"
+  }
+}

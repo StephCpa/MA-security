@@ -1,0 +1,65 @@
+\section{Introduction}
+\label{sec:intro}
+
+Safety controls that work for one agent need not compose when agents relay
+content. An untrusted record can be marked at ingestion, rewritten by an
+otherwise honest sender, delivered as a fluent task to a receiver, and acted
+on through authority held only by that receiver. The security boundary is
+therefore a property of the \emph{agent chain}: what survives transformation,
+how it propagates, and which capability can realize the resulting action.
+Protocols such as the Model Context Protocol (MCP) and Agent2Agent (A2A) make
+such chains easier to build~\cite{mcp-spec-2025,a2a-spec-2025}, but transport
+interoperability does not by itself preserve security meaning across derived
+messages.
+
+Indirect prompt injection shows that data can steer tool-using
+models~\cite{greshake2023not,liu2024formalizing}. Marking, control/data
+separation, and capability monitors address different parts of this problem
+~\cite{hines2024spotlighting,debenedetti2025camel}. A generative relay sits
+between them: it can discard bytes and alter pragmatic emphasis while
+preserving the requested action. Evaluating only the first receiver can thus
+mistake attenuation for containment; evaluating only executed tool calls can
+mistake enforcement for model refusal.
+
+We separate the chain into three observable stages. \emph{Transformation}
+records how provenance and action content change during relay.
+\emph{Propagation} records whether derived content induces an onward agent
+action. \emph{Realization} records whether an attempted action changes
+protected state. This decomposition yields three results.
+
+First, literal provenance loss is not equivalent to behavioral invariance.
+Across 48 paired
+directives, a visible untrusted marker reduced protected-write attempts from
+40/48 to 1/48. A normal relay removed the marker from every regenerated text,
+yet marked-derived texts produced 22/48 attempts versus 44/48 for
+unmarked-derived texts. The paired differences replicated on a byte-identical
+Qwen evaluation. Two isolated model raters found that marked-derived texts
+contained less actionable content, lower instruction centrality, and stronger
+residual provenance cues. The contrast is primarily sender-mediated, and the
+post-relay ratings do not identify an independent effect of the missing marker.
+An adaptive relay instruction raised broad attempts
+from 11/48 to 43/48, showing that the residual is policy-dependent; its exact
+protected requests remained descriptively below the unmarked relay (32/48
+versus 37/48).
+
+Second, a prospectively selected high-retention stratum supported conditional
+two-receiver delegation. Receiver 1 delegated 40/121 messages; receiver 2
+delegated 17/40 of those, yielding 17/121 chains with two consecutive
+delegation calls. This is a selected-stratum rate, not a population estimate or
+a test of selector discrimination. In a separate
+fixture, hiding a denied direct-write tool redirected 45/48 elevated requests
+to an advertised, non-mutating escalation route. An exact resource policy
+prevented unauthorized mutations of a protected canary while models continued
+to request writes.
+
+Third, we measure the receiver's response to instruction elevation and weight
+it under declared models of elevation and write-authority failure. A covariance
+identity isolates coupled failures. These are sensitivity calculations, not
+measurements of deployment fault frequency.
+
+Our contributions are paired measurements of how provenance marking changes
+relay outputs and receiver actions; an outcome-blind measurement of conditional
+two-receiver delegation and action-route migration; and version-pinned
+evidence that A2A message derivation can drop supplied lineage. A separate
+risk reconstruction relates measured elevation sensitivity to declared
+authorization failure topology.

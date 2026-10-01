@@ -1,0 +1,72 @@
+\section{Theoretical Extensions}
+\label{app:theory}
+
+This appendix develops the theory beyond the scalar identity used in the main
+text. None of the main-text claims depend on this material; it is included to
+state precisely when the scalar result generalizes, and what each
+generalization requires.
+
+\subsection{Derivation of the scalar identity}
+
+Write the mutation indicator for one protected action as $M=Y\,b$, where $Y$
+indicates that the model requested the exact protected resource and value in
+the live, tool-visible fixture, and $b$ is the reference monitor's write-back
+capability. State $a$ is an authenticated semantic control rather than an
+execution capability. The experiment generates $Y$ once at each $a$ state
+(rate $\rzero$ at $a{=}0$, $\rone$ at $a{=}1$) and replays the archived action
+under both values of $b$. Thus $b$ cannot alter the already observed response.
+Then
+
+\begin{align*}
+R &= \E\big[\E[Y \mid a] \cdot b\big]
+   = \E\big[(\rzero + (\rone-\rzero)a)\, b\big]  \\
+  &= \rzero\,\E[b] + (\rone-\rzero)\,\E[ab]  \\
+  &= q\,\rzero + (\rone-\rzero)\,(q^2 + \Cov(a,b)) \\
+  &= q[(1-q)\rzero + q\,\rone] + \Cov(a,b)\,(\rone-\rzero),
+\end{align*}
+
+using $\E[a]=\E[b]=q$ and $\E[ab] = q^2 + \Cov(a,b)$. Subtracting the
+independent-lifecycles value ($\Cov=0$) yields
+Equation~\eqref{eq:excess}. For a single shared persistent state, $a=b$
+a.s., so $\Cov(a,b)=q(1-q)$ and $R = q\,\rone$; the shared-to-independent
+ratio $R_{\text{shared}}/R_{\text{indep}} = \rone / [(1-q)\rzero + q\rone]$
+equals $1/q$ only at $\rzero=0$. The $1/q$ law is thus a behavioral limiting
+case, not a topology-only statement.
+
+\subsection{Non-uniform fault probabilities and general joints}
+
+The scalar form assumes exchangeable marginals $\E[a]=\E[b]=q$. With
+node-indexed fault probabilities $q_i$ and a general joint distribution over
+compromise sets, an additive expansion holds when each path's response
+depends only on its own elevation indicator and path contributions add at the
+expected-mutation-count level. It does not directly apply to a probability of
+at least one mutation, or to response functions with cross-path interactions.
+Under these assumptions, the same expansion holds with $a$ and $b$ replaced
+by their indicator collections: the excess of a topology over its
+independent-counterpart is a sum over failure-domain overlaps,
+\[
+\Delta R \;=\; \sum_{i,j} \Cov(a_i, b_j)\,
+               \big(\text{behavioral response of path } (i,j)\big),
+\]
+and the single-action experiment measures exactly the one-path kernel of this
+sum. Nothing in the derivation requires independence across payloads;
+the experimental unit is the directive, and paired analyses preserve
+within-payload dependence.
+
+\subsection{Persistent compromise and the order of single-node round trips}
+\label{app:persistent}
+
+If one persistent node compromise enables both bridge directions
+simultaneously, single-node round trips contribute at order $O(q)$ in the
+compromise probability, whereas independent mean-field substitution
+represents them at $O(q^2)$. The relative error of the mean-field analysis
+can therefore \emph{diverge} as $q \to 0$ even though its absolute error
+vanishes. This is an ordering of the joint bridge term, not automatically an
+ordering of total mutation risk. When $\rzero>0$, independent-lifecycle risk
+contains the $q(1-q)\rzero$ term, so both shared and independent total risks
+are $O(q)$ and their ratio tends to $\rone/\rzero$, not $1/q$. The primary
+E3 fixture ($\rzero=33/48$) and the earlier Qwen semantic-placement fixture
+($\rzero=28/48$) lie in this regime; the divergent ratio applies to the
+DeepSeek limiting case with $\rzero=0$. The $q$-versus-$q^2$ statement is
+therefore about common-cause bridge activation, while dominance in total risk
+also requires behavioral suppression in the non-elevated state.

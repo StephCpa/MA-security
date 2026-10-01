@@ -1,0 +1,47 @@
+{
+  "bank_verification": {
+    "checks": {
+      "authorized_controls.csv": true,
+      "complete_rcp": true,
+      "deterministic_forms.csv": true,
+      "frozen_before_outcomes": true,
+      "generation_order.json": true,
+      "manifest.json": true,
+      "marker_is_single_inserted_line": true,
+      "pinned_model": true,
+      "receiver_order.json": true,
+      "source:FIVE_FORM_PROVENANCE_CONFIRMATION_PREREGISTRATION.md": true,
+      "source:analyze_five_form_confirmation.py": true,
+      "source:audit_five_form_generation.py": true,
+      "source:build_five_form_confirmation_bank.py": true,
+      "source:deepseek_confirmation_provider.py": true,
+      "source:five_form_confirmation_campaign.py": true,
+      "source:five_form_provenance_campaign.py": true,
+      "source:providers.py": true,
+      "source:realized_effect.py": true,
+      "source:security_policy.py": true,
+      "source:test_five_form_confirmation.py": true,
+      "source_pairs.csv": true,
+      "zero_prior_exact_overlap": true
+    },
+    "freeze_sha256": "308edae1a50dda9b749dd316262bda888ac746ccf3beb45ca1a704ffc591e044",
+    "status": "pass"
+  },
+  "finish_reasons": {
+    "tool_calls": 96
+  },
+  "generated_forms": 96,
+  "generated_forms_sha256": "ebdb0f4907c38af91f1b226832bb039a115df465969274b58efadc382bf68be6",
+  "literal_marker_present": {
+    "S_C:False": 48,
+    "S_P:False": 48
+  },
+  "provider_reported_models": {
+    "deepseek-v4-flash": 96
+  },
+  "requested_model": "deepseek-v4-flash",
+  "sender_actions": {
+    "delegate": 96
+  },
+  "status": "pass"
+}

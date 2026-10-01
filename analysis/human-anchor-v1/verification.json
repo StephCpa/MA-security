@@ -1,0 +1,1747 @@
+{
+  "checks": [
+    {
+      "name": "sheet_names_A",
+      "pass": true
+    },
+    {
+      "name": "no_hidden_sheets_A",
+      "pass": true
+    },
+    {
+      "name": "A_Ratings_count",
+      "pass": true
+    },
+    {
+      "name": "A_Ratings_validations",
+      "pass": true
+    },
+    {
+      "name": "A_Ratings_freeze",
+      "pass": true
+    },
+    {
+      "name": "text_HA-DD6924ACBEDA",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-DD6924ACBEDA",
+      "pass": true
+    },
+    {
+      "name": "text_HA-2116E1A848AC",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-2116E1A848AC",
+      "pass": true
+    },
+    {
+      "name": "text_HA-C4D260D5043D",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-C4D260D5043D",
+      "pass": true
+    },
+    {
+      "name": "text_HA-8D784FB0B75E",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-8D784FB0B75E",
+      "pass": true
+    },
+    {
+      "name": "text_HA-C9BEDFAAEE8A",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-C9BEDFAAEE8A",
+      "pass": true
+    },
+    {
+      "name": "text_HA-92E6FB04C494",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-92E6FB04C494",
+      "pass": true
+    },
+    {
+      "name": "text_HA-027B4C432EE1",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-027B4C432EE1",
+      "pass": true
+    },
+    {
+      "name": "text_HA-147D7432687F",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-147D7432687F",
+      "pass": true
+    },
+    {
+      "name": "text_HA-4C577C664BC8",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-4C577C664BC8",
+      "pass": true
+    },
+    {
+      "name": "text_HA-B393DAD6A26D",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-B393DAD6A26D",
+      "pass": true
+    },
+    {
+      "name": "text_HA-959DE324D743",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-959DE324D743",
+      "pass": true
+    },
+    {
+      "name": "text_HA-169A67C490EF",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-169A67C490EF",
+      "pass": true
+    },
+    {
+      "name": "text_HA-A54ABB06E498",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-A54ABB06E498",
+      "pass": true
+    },
+    {
+      "name": "text_HA-37EA040DDFC4",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-37EA040DDFC4",
+      "pass": true
+    },
+    {
+      "name": "text_HA-7B01ADA6E0A3",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-7B01ADA6E0A3",
+      "pass": true
+    },
+    {
+      "name": "text_HA-BC43E3F09B09",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-BC43E3F09B09",
+      "pass": true
+    },
+    {
+      "name": "text_HA-A7DAC5D4A743",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-A7DAC5D4A743",
+      "pass": true
+    },
+    {
+      "name": "text_HA-EA155172C933",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-EA155172C933",
+      "pass": true
+    },
+    {
+      "name": "text_HA-AD8F64AFE989",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-AD8F64AFE989",
+      "pass": true
+    },
+    {
+      "name": "text_HA-3FD9F35887D9",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-3FD9F35887D9",
+      "pass": true
+    },
+    {
+      "name": "text_HA-4BD2BFDD61C2",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-4BD2BFDD61C2",
+      "pass": true
+    },
+    {
+      "name": "text_HA-88462C503EF6",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-88462C503EF6",
+      "pass": true
+    },
+    {
+      "name": "text_HA-F761320BB758",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-F761320BB758",
+      "pass": true
+    },
+    {
+      "name": "text_HA-3C1EAC20708C",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-3C1EAC20708C",
+      "pass": true
+    },
+    {
+      "name": "text_HA-44FB057CC023",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-44FB057CC023",
+      "pass": true
+    },
+    {
+      "name": "text_HA-4F7E85576084",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-4F7E85576084",
+      "pass": true
+    },
+    {
+      "name": "text_HA-4EE98571FE05",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-4EE98571FE05",
+      "pass": true
+    },
+    {
+      "name": "text_HA-C35FB42D46D9",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-C35FB42D46D9",
+      "pass": true
+    },
+    {
+      "name": "text_HA-092E0003C659",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-092E0003C659",
+      "pass": true
+    },
+    {
+      "name": "text_HA-7F8EFBF6423C",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-7F8EFBF6423C",
+      "pass": true
+    },
+    {
+      "name": "text_HA-86EDE5107989",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-86EDE5107989",
+      "pass": true
+    },
+    {
+      "name": "text_HA-5C365D1B1AB0",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-5C365D1B1AB0",
+      "pass": true
+    },
+    {
+      "name": "text_HA-F6177CF8A89E",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-F6177CF8A89E",
+      "pass": true
+    },
+    {
+      "name": "text_HA-467E277984A3",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-467E277984A3",
+      "pass": true
+    },
+    {
+      "name": "text_HA-6CFC70A64019",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-6CFC70A64019",
+      "pass": true
+    },
+    {
+      "name": "text_HA-EB3D00431F85",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-EB3D00431F85",
+      "pass": true
+    },
+    {
+      "name": "text_HA-8300A53CD3C0",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-8300A53CD3C0",
+      "pass": true
+    },
+    {
+      "name": "text_HA-F70206799214",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-F70206799214",
+      "pass": true
+    },
+    {
+      "name": "text_HA-0504CD0738B4",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-0504CD0738B4",
+      "pass": true
+    },
+    {
+      "name": "text_HA-8D7C30D28F2F",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-8D7C30D28F2F",
+      "pass": true
+    },
+    {
+      "name": "text_HA-D3181F2D7722",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-D3181F2D7722",
+      "pass": true
+    },
+    {
+      "name": "text_HA-9833CF78F9A9",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-9833CF78F9A9",
+      "pass": true
+    },
+    {
+      "name": "text_HA-5BD75F8704F2",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-5BD75F8704F2",
+      "pass": true
+    },
+    {
+      "name": "text_HA-A77CB02E5DF7",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-A77CB02E5DF7",
+      "pass": true
+    },
+    {
+      "name": "text_HA-733D426DA530",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-733D426DA530",
+      "pass": true
+    },
+    {
+      "name": "text_HA-D126B5A2C379",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-D126B5A2C379",
+      "pass": true
+    },
+    {
+      "name": "text_HA-52B801B69EFE",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-52B801B69EFE",
+      "pass": true
+    },
+    {
+      "name": "text_HA-E1DEF166E205",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-E1DEF166E205",
+      "pass": true
+    },
+    {
+      "name": "text_HA-DC93690862C4",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-DC93690862C4",
+      "pass": true
+    },
+    {
+      "name": "text_HA-DD6472AF2ABC",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-DD6472AF2ABC",
+      "pass": true
+    },
+    {
+      "name": "text_HA-38BD7BC27AA4",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-38BD7BC27AA4",
+      "pass": true
+    },
+    {
+      "name": "text_HA-FCBE028754F5",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-FCBE028754F5",
+      "pass": true
+    },
+    {
+      "name": "text_HA-E3CBEB1033E1",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-E3CBEB1033E1",
+      "pass": true
+    },
+    {
+      "name": "text_HA-161D8CD5070B",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-161D8CD5070B",
+      "pass": true
+    },
+    {
+      "name": "text_HA-6E03214D34B2",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-6E03214D34B2",
+      "pass": true
+    },
+    {
+      "name": "text_HA-E47E950AF365",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-E47E950AF365",
+      "pass": true
+    },
+    {
+      "name": "text_HA-F780432984E3",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-F780432984E3",
+      "pass": true
+    },
+    {
+      "name": "text_HA-5C6419DF7100",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-5C6419DF7100",
+      "pass": true
+    },
+    {
+      "name": "text_HA-AFA71F02C4E0",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-AFA71F02C4E0",
+      "pass": true
+    },
+    {
+      "name": "text_HA-BE2FD92E1656",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-BE2FD92E1656",
+      "pass": true
+    },
+    {
+      "name": "text_HA-F1028E9F5AF5",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-F1028E9F5AF5",
+      "pass": true
+    },
+    {
+      "name": "text_HA-90E5AAE494D0",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-90E5AAE494D0",
+      "pass": true
+    },
+    {
+      "name": "text_HA-CE1D9B54F38A",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-CE1D9B54F38A",
+      "pass": true
+    },
+    {
+      "name": "text_HA-B4A653255DE5",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-B4A653255DE5",
+      "pass": true
+    },
+    {
+      "name": "text_HA-750DCF36E3EC",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-750DCF36E3EC",
+      "pass": true
+    },
+    {
+      "name": "text_HA-08A62DF315FA",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-08A62DF315FA",
+      "pass": true
+    },
+    {
+      "name": "text_HA-91C341AA82C5",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-91C341AA82C5",
+      "pass": true
+    },
+    {
+      "name": "text_HA-57FB233B676F",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-57FB233B676F",
+      "pass": true
+    },
+    {
+      "name": "text_HA-DB873D08A4E9",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-DB873D08A4E9",
+      "pass": true
+    },
+    {
+      "name": "text_HA-945B7230C65A",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-945B7230C65A",
+      "pass": true
+    },
+    {
+      "name": "text_HA-5E62BFAD39EC",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-5E62BFAD39EC",
+      "pass": true
+    },
+    {
+      "name": "text_HA-671AEAD5E2AE",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-671AEAD5E2AE",
+      "pass": true
+    },
+    {
+      "name": "text_HA-9C3492FBEB1D",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-9C3492FBEB1D",
+      "pass": true
+    },
+    {
+      "name": "text_HA-817ED8E1BBB5",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-817ED8E1BBB5",
+      "pass": true
+    },
+    {
+      "name": "text_HA-23166F193421",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-23166F193421",
+      "pass": true
+    },
+    {
+      "name": "text_HA-CCEC2C86A56D",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-CCEC2C86A56D",
+      "pass": true
+    },
+    {
+      "name": "text_HA-99FE6CFE61F8",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-99FE6CFE61F8",
+      "pass": true
+    },
+    {
+      "name": "text_HA-71C531F27F79",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-71C531F27F79",
+      "pass": true
+    },
+    {
+      "name": "text_HA-301AC41E6983",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-301AC41E6983",
+      "pass": true
+    },
+    {
+      "name": "text_HA-29F0EC49159E",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-29F0EC49159E",
+      "pass": true
+    },
+    {
+      "name": "text_HA-B4375C5D9B4E",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-B4375C5D9B4E",
+      "pass": true
+    },
+    {
+      "name": "text_HA-9EA8357776A5",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-9EA8357776A5",
+      "pass": true
+    },
+    {
+      "name": "text_HA-E8A708D31912",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-E8A708D31912",
+      "pass": true
+    },
+    {
+      "name": "text_HA-FD1F0F955328",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-FD1F0F955328",
+      "pass": true
+    },
+    {
+      "name": "text_HA-4F00A346D515",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-4F00A346D515",
+      "pass": true
+    },
+    {
+      "name": "text_HA-3C9805D77DFC",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-3C9805D77DFC",
+      "pass": true
+    },
+    {
+      "name": "text_HA-29618D87EBEA",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-29618D87EBEA",
+      "pass": true
+    },
+    {
+      "name": "text_HA-E5996069B70A",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-E5996069B70A",
+      "pass": true
+    },
+    {
+      "name": "text_HA-48A09B9B1E57",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-48A09B9B1E57",
+      "pass": true
+    },
+    {
+      "name": "text_HA-3A6978BAE7CC",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-3A6978BAE7CC",
+      "pass": true
+    },
+    {
+      "name": "text_HA-E4AF7BE06AC2",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-E4AF7BE06AC2",
+      "pass": true
+    },
+    {
+      "name": "text_HA-63798D6E0CBD",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-63798D6E0CBD",
+      "pass": true
+    },
+    {
+      "name": "text_HA-EC247C48BE63",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-EC247C48BE63",
+      "pass": true
+    },
+    {
+      "name": "text_HA-4219D1F5E01E",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-4219D1F5E01E",
+      "pass": true
+    },
+    {
+      "name": "text_HA-93401E2B0254",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-93401E2B0254",
+      "pass": true
+    },
+    {
+      "name": "text_HA-96F6CE67BD70",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-96F6CE67BD70",
+      "pass": true
+    },
+    {
+      "name": "A_Ratings_no_formulas",
+      "pass": true
+    },
+    {
+      "name": "A_Practice_count",
+      "pass": true
+    },
+    {
+      "name": "A_Practice_validations",
+      "pass": true
+    },
+    {
+      "name": "A_Practice_freeze",
+      "pass": true
+    },
+    {
+      "name": "text_HA-EACD425E3FD4",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-EACD425E3FD4",
+      "pass": true
+    },
+    {
+      "name": "text_HA-B14D5940722C",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-B14D5940722C",
+      "pass": true
+    },
+    {
+      "name": "text_HA-13767143EEFB",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-13767143EEFB",
+      "pass": true
+    },
+    {
+      "name": "text_HA-CA2807C70D8B",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-CA2807C70D8B",
+      "pass": true
+    },
+    {
+      "name": "text_HA-D3E38B690CA2",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-D3E38B690CA2",
+      "pass": true
+    },
+    {
+      "name": "text_HA-C06AF8FC34D2",
+      "pass": true
+    },
+    {
+      "name": "blank_HA-C06AF8FC34D2",
+      "pass": true
+    },
+    {
+      "name": "A_Practice_no_formulas",
+      "pass": true
+    },
+    {
+      "name": "pairs_A",
+      "pass": true
+    },
+    {
+      "name": "pair_spacing_A",
+      "pass": true
+    },
+    {
+      "name": "sheet_names_B",
+      "pass": true
+    },
+    {
+      "name": "no_hidden_sheets_B",
+      "pass": true
+    },
+    {
+      "name": "B_Ratings_count",
+      "pass": true
+    },
+    {
+      "name": "B_Ratings_validations",
+      "pass": true
+    },
+    {
+      "name": "B_Ratings_freeze",
+      "pass": true
+    },
+    {
+      "name": "text_HB-198903901229",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-198903901229",
+      "pass": true
+    },
+    {
+      "name": "text_HB-A4E01BE86279",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-A4E01BE86279",
+      "pass": true
+    },
+    {
+      "name": "text_HB-D72D2324482B",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-D72D2324482B",
+      "pass": true
+    },
+    {
+      "name": "text_HB-A404B5B3E862",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-A404B5B3E862",
+      "pass": true
+    },
+    {
+      "name": "text_HB-C541057B2C5A",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-C541057B2C5A",
+      "pass": true
+    },
+    {
+      "name": "text_HB-2C3D0667759B",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-2C3D0667759B",
+      "pass": true
+    },
+    {
+      "name": "text_HB-E4C2AB4187D8",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-E4C2AB4187D8",
+      "pass": true
+    },
+    {
+      "name": "text_HB-56BAD8D7650B",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-56BAD8D7650B",
+      "pass": true
+    },
+    {
+      "name": "text_HB-3161348C1DD6",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-3161348C1DD6",
+      "pass": true
+    },
+    {
+      "name": "text_HB-7CC90223ED71",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-7CC90223ED71",
+      "pass": true
+    },
+    {
+      "name": "text_HB-FD9FDB6842C1",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-FD9FDB6842C1",
+      "pass": true
+    },
+    {
+      "name": "text_HB-7C94D48952EB",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-7C94D48952EB",
+      "pass": true
+    },
+    {
+      "name": "text_HB-E496BCD3FFE7",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-E496BCD3FFE7",
+      "pass": true
+    },
+    {
+      "name": "text_HB-E2D800C034B5",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-E2D800C034B5",
+      "pass": true
+    },
+    {
+      "name": "text_HB-6D8FC52D5396",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-6D8FC52D5396",
+      "pass": true
+    },
+    {
+      "name": "text_HB-F3FEBA452A10",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-F3FEBA452A10",
+      "pass": true
+    },
+    {
+      "name": "text_HB-6EC88314A1A0",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-6EC88314A1A0",
+      "pass": true
+    },
+    {
+      "name": "text_HB-0129F59E42D1",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-0129F59E42D1",
+      "pass": true
+    },
+    {
+      "name": "text_HB-AF7651895016",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-AF7651895016",
+      "pass": true
+    },
+    {
+      "name": "text_HB-7A398E9AFC38",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-7A398E9AFC38",
+      "pass": true
+    },
+    {
+      "name": "text_HB-B5DA329F343B",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-B5DA329F343B",
+      "pass": true
+    },
+    {
+      "name": "text_HB-267367206F63",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-267367206F63",
+      "pass": true
+    },
+    {
+      "name": "text_HB-C470324EF841",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-C470324EF841",
+      "pass": true
+    },
+    {
+      "name": "text_HB-720E2F83B2B0",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-720E2F83B2B0",
+      "pass": true
+    },
+    {
+      "name": "text_HB-2531C1AEA705",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-2531C1AEA705",
+      "pass": true
+    },
+    {
+      "name": "text_HB-6FC45792DD6B",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-6FC45792DD6B",
+      "pass": true
+    },
+    {
+      "name": "text_HB-DF000FA8FE5E",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-DF000FA8FE5E",
+      "pass": true
+    },
+    {
+      "name": "text_HB-C8727AF5A8F6",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-C8727AF5A8F6",
+      "pass": true
+    },
+    {
+      "name": "text_HB-5A4B038B8C0D",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-5A4B038B8C0D",
+      "pass": true
+    },
+    {
+      "name": "text_HB-2BEACEB8BB72",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-2BEACEB8BB72",
+      "pass": true
+    },
+    {
+      "name": "text_HB-FBE252E323CA",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-FBE252E323CA",
+      "pass": true
+    },
+    {
+      "name": "text_HB-04F1501C8CB7",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-04F1501C8CB7",
+      "pass": true
+    },
+    {
+      "name": "text_HB-CEC453071BAC",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-CEC453071BAC",
+      "pass": true
+    },
+    {
+      "name": "text_HB-738FDE081F6C",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-738FDE081F6C",
+      "pass": true
+    },
+    {
+      "name": "text_HB-70FD62F77604",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-70FD62F77604",
+      "pass": true
+    },
+    {
+      "name": "text_HB-4E508EA0C099",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-4E508EA0C099",
+      "pass": true
+    },
+    {
+      "name": "text_HB-71FD6FB3A261",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-71FD6FB3A261",
+      "pass": true
+    },
+    {
+      "name": "text_HB-D5CBF707C3F3",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-D5CBF707C3F3",
+      "pass": true
+    },
+    {
+      "name": "text_HB-6724625CB2BC",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-6724625CB2BC",
+      "pass": true
+    },
+    {
+      "name": "text_HB-419CABE65106",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-419CABE65106",
+      "pass": true
+    },
+    {
+      "name": "text_HB-9C07537E7790",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-9C07537E7790",
+      "pass": true
+    },
+    {
+      "name": "text_HB-CB1AE8F797A0",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-CB1AE8F797A0",
+      "pass": true
+    },
+    {
+      "name": "text_HB-163540A56399",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-163540A56399",
+      "pass": true
+    },
+    {
+      "name": "text_HB-95AF1CFFA367",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-95AF1CFFA367",
+      "pass": true
+    },
+    {
+      "name": "text_HB-E5EDFEC1B8AA",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-E5EDFEC1B8AA",
+      "pass": true
+    },
+    {
+      "name": "text_HB-45BE71B90D02",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-45BE71B90D02",
+      "pass": true
+    },
+    {
+      "name": "text_HB-3F30F3C89FD6",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-3F30F3C89FD6",
+      "pass": true
+    },
+    {
+      "name": "text_HB-44B204A5F02C",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-44B204A5F02C",
+      "pass": true
+    },
+    {
+      "name": "text_HB-23C8DBD9049D",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-23C8DBD9049D",
+      "pass": true
+    },
+    {
+      "name": "text_HB-5CF849335B56",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-5CF849335B56",
+      "pass": true
+    },
+    {
+      "name": "text_HB-C5E00492BD49",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-C5E00492BD49",
+      "pass": true
+    },
+    {
+      "name": "text_HB-88A3124BD197",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-88A3124BD197",
+      "pass": true
+    },
+    {
+      "name": "text_HB-2AC76D5BF869",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-2AC76D5BF869",
+      "pass": true
+    },
+    {
+      "name": "text_HB-E6182BFC86BB",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-E6182BFC86BB",
+      "pass": true
+    },
+    {
+      "name": "text_HB-B1841449C990",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-B1841449C990",
+      "pass": true
+    },
+    {
+      "name": "text_HB-183828D87F9E",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-183828D87F9E",
+      "pass": true
+    },
+    {
+      "name": "text_HB-37342F5191F1",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-37342F5191F1",
+      "pass": true
+    },
+    {
+      "name": "text_HB-09AC8B7CF046",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-09AC8B7CF046",
+      "pass": true
+    },
+    {
+      "name": "text_HB-44BDEAD592FE",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-44BDEAD592FE",
+      "pass": true
+    },
+    {
+      "name": "text_HB-DE076C2734F7",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-DE076C2734F7",
+      "pass": true
+    },
+    {
+      "name": "text_HB-6B4348482CE3",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-6B4348482CE3",
+      "pass": true
+    },
+    {
+      "name": "text_HB-872EE2906614",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-872EE2906614",
+      "pass": true
+    },
+    {
+      "name": "text_HB-69349286526E",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-69349286526E",
+      "pass": true
+    },
+    {
+      "name": "text_HB-20C86DBF9871",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-20C86DBF9871",
+      "pass": true
+    },
+    {
+      "name": "text_HB-D91D4DB49D45",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-D91D4DB49D45",
+      "pass": true
+    },
+    {
+      "name": "text_HB-4072326469BA",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-4072326469BA",
+      "pass": true
+    },
+    {
+      "name": "text_HB-36BFF63DB589",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-36BFF63DB589",
+      "pass": true
+    },
+    {
+      "name": "text_HB-12ED59C16B3B",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-12ED59C16B3B",
+      "pass": true
+    },
+    {
+      "name": "text_HB-69819FB443A5",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-69819FB443A5",
+      "pass": true
+    },
+    {
+      "name": "text_HB-602B8A484F46",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-602B8A484F46",
+      "pass": true
+    },
+    {
+      "name": "text_HB-5A0618D71775",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-5A0618D71775",
+      "pass": true
+    },
+    {
+      "name": "text_HB-90D5479D1735",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-90D5479D1735",
+      "pass": true
+    },
+    {
+      "name": "text_HB-179761B31C0E",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-179761B31C0E",
+      "pass": true
+    },
+    {
+      "name": "text_HB-2C0E33566913",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-2C0E33566913",
+      "pass": true
+    },
+    {
+      "name": "text_HB-F7BF2C31307F",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-F7BF2C31307F",
+      "pass": true
+    },
+    {
+      "name": "text_HB-265C660BCA3C",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-265C660BCA3C",
+      "pass": true
+    },
+    {
+      "name": "text_HB-10152D5F3976",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-10152D5F3976",
+      "pass": true
+    },
+    {
+      "name": "text_HB-6E54AFB73F1A",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-6E54AFB73F1A",
+      "pass": true
+    },
+    {
+      "name": "text_HB-B83607F447B2",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-B83607F447B2",
+      "pass": true
+    },
+    {
+      "name": "text_HB-15B7AC6C01CF",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-15B7AC6C01CF",
+      "pass": true
+    },
+    {
+      "name": "text_HB-8379A1BA3E9B",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-8379A1BA3E9B",
+      "pass": true
+    },
+    {
+      "name": "text_HB-0B078194D7A8",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-0B078194D7A8",
+      "pass": true
+    },
+    {
+      "name": "text_HB-719B2C790597",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-719B2C790597",
+      "pass": true
+    },
+    {
+      "name": "text_HB-8EE30C01050A",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-8EE30C01050A",
+      "pass": true
+    },
+    {
+      "name": "text_HB-9CC47B7051CA",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-9CC47B7051CA",
+      "pass": true
+    },
+    {
+      "name": "text_HB-5EAA97E29389",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-5EAA97E29389",
+      "pass": true
+    },
+    {
+      "name": "text_HB-F26B86E854D2",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-F26B86E854D2",
+      "pass": true
+    },
+    {
+      "name": "text_HB-A93DAB2A4F45",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-A93DAB2A4F45",
+      "pass": true
+    },
+    {
+      "name": "text_HB-DDA8BF21F75E",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-DDA8BF21F75E",
+      "pass": true
+    },
+    {
+      "name": "text_HB-933E72F18F70",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-933E72F18F70",
+      "pass": true
+    },
+    {
+      "name": "text_HB-1A0EE940A77A",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-1A0EE940A77A",
+      "pass": true
+    },
+    {
+      "name": "text_HB-3C1A2CB8126B",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-3C1A2CB8126B",
+      "pass": true
+    },
+    {
+      "name": "text_HB-CABD51F5A778",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-CABD51F5A778",
+      "pass": true
+    },
+    {
+      "name": "text_HB-013ACFF9B7C1",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-013ACFF9B7C1",
+      "pass": true
+    },
+    {
+      "name": "text_HB-4689DD93BD79",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-4689DD93BD79",
+      "pass": true
+    },
+    {
+      "name": "text_HB-E2DE2A9668CA",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-E2DE2A9668CA",
+      "pass": true
+    },
+    {
+      "name": "B_Ratings_no_formulas",
+      "pass": true
+    },
+    {
+      "name": "B_Practice_count",
+      "pass": true
+    },
+    {
+      "name": "B_Practice_validations",
+      "pass": true
+    },
+    {
+      "name": "B_Practice_freeze",
+      "pass": true
+    },
+    {
+      "name": "text_HB-FB32B1E6C76E",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-FB32B1E6C76E",
+      "pass": true
+    },
+    {
+      "name": "text_HB-AC4F7D3C18BC",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-AC4F7D3C18BC",
+      "pass": true
+    },
+    {
+      "name": "text_HB-72CA50DC804B",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-72CA50DC804B",
+      "pass": true
+    },
+    {
+      "name": "text_HB-D534CE2AAB44",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-D534CE2AAB44",
+      "pass": true
+    },
+    {
+      "name": "text_HB-7583D5CFC851",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-7583D5CFC851",
+      "pass": true
+    },
+    {
+      "name": "text_HB-9C40DA1F65BD",
+      "pass": true
+    },
+    {
+      "name": "blank_HB-9C40DA1F65BD",
+      "pass": true
+    },
+    {
+      "name": "B_Practice_no_formulas",
+      "pass": true
+    },
+    {
+      "name": "pairs_B",
+      "pass": true
+    },
+    {
+      "name": "pair_spacing_B",
+      "pass": true
+    },
+    {
+      "name": "no_shared_ids",
+      "pass": true
+    },
+    {
+      "name": "same_content_different_order",
+      "pass": true
+    },
+    {
+      "name": "matches_original_model_rated_texts",
+      "pass": true
+    }
+  ],
+  "passed": true,
+  "check_count": 435,
+  "ratings_collected": 0
+}

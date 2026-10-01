@@ -1,0 +1,447 @@
+{
+  "analysis_scope": "Secondary mechanism analysis for the disjoint confirmation. Raters are reported separately; no post-outcome adjudication or third rater is used.",
+  "bootstrap": {
+    "base_seed": 20260829,
+    "draws": 100000
+  },
+  "candidates_per_rater": 96,
+  "independent_unit": "source directive pair",
+  "rater_models": {
+    "A": "KIMI K3",
+    "B": "Grok 4.5"
+  },
+  "score_axes": [
+    "actionable_semantic_retention",
+    "pragmatic_instruction_centrality",
+    "provenance_signal_strength"
+  ],
+  "status": "pass",
+  "summary": {
+    "S_P_behavior_association": {
+      "A": {
+        "actionable_semantic_retention": {
+          "attempt_mean": 1.9090909090909092,
+          "attempt_minus_nonattempt": 0.6783216783216783,
+          "attempt_n": 22,
+          "auc_95": [
+            0.5244755244755245,
+            0.8199300699300699
+          ],
+          "auc_higher_score_predicts_attempt": 0.6783216783216783,
+          "mean_difference_95": [
+            0.0,
+            1.3286713286713285
+          ],
+          "nonattempt_mean": 1.2307692307692308,
+          "nonattempt_n": 26
+        },
+        "pragmatic_instruction_centrality": {
+          "attempt_mean": 1.7272727272727273,
+          "attempt_minus_nonattempt": 1.1503496503496504,
+          "attempt_n": 22,
+          "auc_95": [
+            0.5646853146853147,
+            0.8566433566433567
+          ],
+          "auc_higher_score_predicts_attempt": 0.7194055944055944,
+          "mean_difference_95": [
+            0.5594405594405596,
+            1.727272727272727
+          ],
+          "nonattempt_mean": 0.5769230769230769,
+          "nonattempt_n": 26
+        },
+        "provenance_signal_strength": {
+          "attempt_mean": 1.5,
+          "attempt_minus_nonattempt": -0.7692307692307692,
+          "attempt_n": 22,
+          "auc_95": [
+            0.13286713286713286,
+            0.3951048951048951
+          ],
+          "auc_higher_score_predicts_attempt": 0.2561188811188811,
+          "mean_difference_95": [
+            -1.167832167832168,
+            -0.3496503496503498
+          ],
+          "nonattempt_mean": 2.269230769230769,
+          "nonattempt_n": 26
+        }
+      },
+      "B": {
+        "actionable_semantic_retention": {
+          "attempt_mean": 2.090909090909091,
+          "attempt_minus_nonattempt": 0.8216783216783217,
+          "attempt_n": 22,
+          "auc_95": [
+            0.5620629370629371,
+            0.8583916083916084
+          ],
+          "auc_higher_score_predicts_attempt": 0.7167832167832168,
+          "mean_difference_95": [
+            0.10839160839160833,
+            1.5069930069930069
+          ],
+          "nonattempt_mean": 1.2692307692307692,
+          "nonattempt_n": 26
+        },
+        "pragmatic_instruction_centrality": {
+          "attempt_mean": 1.8636363636363635,
+          "attempt_minus_nonattempt": 1.2482517482517481,
+          "attempt_n": 22,
+          "auc_95": [
+            0.6092657342657343,
+            0.9055944055944056
+          ],
+          "auc_higher_score_predicts_attempt": 0.7666083916083916,
+          "mean_difference_95": [
+            0.6713286713286712,
+            1.804195804195804
+          ],
+          "nonattempt_mean": 0.6153846153846154,
+          "nonattempt_n": 26
+        },
+        "provenance_signal_strength": {
+          "attempt_mean": 1.2727272727272727,
+          "attempt_minus_nonattempt": -0.9195804195804198,
+          "attempt_n": 22,
+          "auc_95": [
+            0.125,
+            0.36538461538461536
+          ],
+          "auc_higher_score_predicts_attempt": 0.2403846153846154,
+          "mean_difference_95": [
+            -1.3251748251748252,
+            -0.4895104895104896
+          ],
+          "nonattempt_mean": 2.1923076923076925,
+          "nonattempt_n": 26
+        }
+      }
+    },
+    "agreement": {
+      "actionable_semantic_retention": {
+        "A_distribution_0_to_3": [
+          18,
+          0,
+          24,
+          54
+        ],
+        "B_distribution_0_to_3": [
+          18,
+          0,
+          16,
+          62
+        ],
+        "exact_agreement": 0.9166666666666666,
+        "n": 96,
+        "quadratic_weighted_kappa": 0.968031968031968,
+        "within_one": 1.0
+      },
+      "pragmatic_instruction_centrality": {
+        "A_distribution_0_to_3": [
+          18,
+          20,
+          0,
+          58
+        ],
+        "B_distribution_0_to_3": [
+          18,
+          15,
+          11,
+          52
+        ],
+        "exact_agreement": 0.8645833333333334,
+        "n": 96,
+        "quadratic_weighted_kappa": 0.9342465753424658,
+        "within_one": 0.9791666666666666
+      },
+      "provenance_signal_strength": {
+        "A_distribution_0_to_3": [
+          0,
+          63,
+          18,
+          15
+        ],
+        "B_distribution_0_to_3": [
+          0,
+          72,
+          9,
+          15
+        ],
+        "exact_agreement": 0.90625,
+        "n": 96,
+        "quadratic_weighted_kappa": 0.9166666666666666,
+        "within_one": 1.0
+      }
+    },
+    "form": {
+      "A": {
+        "S_C": {
+          "actionable_semantic_retention": {
+            "distribution_0_to_3": [
+              1,
+              0,
+              5,
+              42
+            ],
+            "mean": 2.8333333333333335,
+            "n": 48
+          },
+          "pragmatic_instruction_centrality": {
+            "distribution_0_to_3": [
+              1,
+              0,
+              0,
+              47
+            ],
+            "mean": 2.9375,
+            "n": 48
+          },
+          "provenance_signal_strength": {
+            "distribution_0_to_3": [
+              0,
+              44,
+              4,
+              0
+            ],
+            "mean": 1.0833333333333333,
+            "n": 48
+          }
+        },
+        "S_P": {
+          "actionable_semantic_retention": {
+            "distribution_0_to_3": [
+              17,
+              0,
+              19,
+              12
+            ],
+            "mean": 1.5416666666666667,
+            "n": 48
+          },
+          "pragmatic_instruction_centrality": {
+            "distribution_0_to_3": [
+              17,
+              20,
+              0,
+              11
+            ],
+            "mean": 1.1041666666666667,
+            "n": 48
+          },
+          "provenance_signal_strength": {
+            "distribution_0_to_3": [
+              0,
+              19,
+              14,
+              15
+            ],
+            "mean": 1.9166666666666667,
+            "n": 48
+          }
+        }
+      },
+      "B": {
+        "S_C": {
+          "actionable_semantic_retention": {
+            "distribution_0_to_3": [
+              1,
+              0,
+              2,
+              45
+            ],
+            "mean": 2.8958333333333335,
+            "n": 48
+          },
+          "pragmatic_instruction_centrality": {
+            "distribution_0_to_3": [
+              1,
+              0,
+              5,
+              42
+            ],
+            "mean": 2.8333333333333335,
+            "n": 48
+          },
+          "provenance_signal_strength": {
+            "distribution_0_to_3": [
+              0,
+              46,
+              2,
+              0
+            ],
+            "mean": 1.0416666666666667,
+            "n": 48
+          }
+        },
+        "S_P": {
+          "actionable_semantic_retention": {
+            "distribution_0_to_3": [
+              17,
+              0,
+              14,
+              17
+            ],
+            "mean": 1.6458333333333333,
+            "n": 48
+          },
+          "pragmatic_instruction_centrality": {
+            "distribution_0_to_3": [
+              17,
+              15,
+              6,
+              10
+            ],
+            "mean": 1.1875,
+            "n": 48
+          },
+          "provenance_signal_strength": {
+            "distribution_0_to_3": [
+              0,
+              26,
+              7,
+              15
+            ],
+            "mean": 1.7708333333333333,
+            "n": 48
+          }
+        }
+      }
+    },
+    "paired_SC_minus_SP": {
+      "A": {
+        "actionable_semantic_retention": {
+          "difference_support": {
+            "0": 17,
+            "1": 15,
+            "2": 1,
+            "3": 15
+          },
+          "exact_sign_test": {
+            "negative": 0,
+            "positive": 31,
+            "ties": 17,
+            "two_sided_exact_p": 9.313225746154785e-10
+          },
+          "mean_difference": 1.2916666666666667,
+          "n_pairs": 48,
+          "paired_bootstrap_95": [
+            0.9375,
+            1.6458333333333333
+          ]
+        },
+        "pragmatic_instruction_centrality": {
+          "difference_support": {
+            "0": 12,
+            "2": 20,
+            "3": 16
+          },
+          "exact_sign_test": {
+            "negative": 0,
+            "positive": 36,
+            "ties": 12,
+            "two_sided_exact_p": 2.9103830456733704e-11
+          },
+          "mean_difference": 1.8333333333333333,
+          "n_pairs": 48,
+          "paired_bootstrap_95": [
+            1.5,
+            2.1458333333333335
+          ]
+        },
+        "provenance_signal_strength": {
+          "difference_support": {
+            "-1": 12,
+            "-2": 14,
+            "0": 22
+          },
+          "exact_sign_test": {
+            "negative": 26,
+            "positive": 0,
+            "ties": 22,
+            "two_sided_exact_p": 2.9802322387695312e-08
+          },
+          "mean_difference": -0.8333333333333334,
+          "n_pairs": 48,
+          "paired_bootstrap_95": [
+            -1.0833333333333333,
+            -0.6041666666666666
+          ]
+        }
+      },
+      "B": {
+        "actionable_semantic_retention": {
+          "difference_support": {
+            "0": 19,
+            "1": 13,
+            "2": 1,
+            "3": 15
+          },
+          "exact_sign_test": {
+            "negative": 0,
+            "positive": 29,
+            "ties": 19,
+            "two_sided_exact_p": 3.725290298461914e-09
+          },
+          "mean_difference": 1.25,
+          "n_pairs": 48,
+          "paired_bootstrap_95": [
+            0.8958333333333334,
+            1.6041666666666667
+          ]
+        },
+        "pragmatic_instruction_centrality": {
+          "difference_support": {
+            "0": 12,
+            "1": 7,
+            "2": 15,
+            "3": 14
+          },
+          "exact_sign_test": {
+            "negative": 0,
+            "positive": 36,
+            "ties": 12,
+            "two_sided_exact_p": 2.9103830456733704e-11
+          },
+          "mean_difference": 1.6458333333333333,
+          "n_pairs": 48,
+          "paired_bootstrap_95": [
+            1.3125,
+            1.9583333333333333
+          ]
+        },
+        "provenance_signal_strength": {
+          "difference_support": {
+            "-1": 6,
+            "-2": 15,
+            "0": 26,
+            "1": 1
+          },
+          "exact_sign_test": {
+            "negative": 21,
+            "positive": 1,
+            "ties": 26,
+            "two_sided_exact_p": 1.0967254638671875e-05
+          },
+          "mean_difference": -0.7291666666666666,
+          "n_pairs": 48,
+          "paired_bootstrap_95": [
+            -1.0,
+            -0.4791666666666667
+          ]
+        }
+      }
+    }
+  },
+  "validation": {
+    "duplicate_candidate_hash_groups": 1,
+    "mapping": "frozen rater, row position, opaque ID, row identity, and output hash all matched",
+    "post_outcome_adjudication": false,
+    "third_rater": false,
+    "unique_ids_per_rater": {
+      "A": 96,
+      "B": 96
+    }
+  }
+}

@@ -1,0 +1,238 @@
+\section{Open Science and Artifact Map}
+\label{app:repro}
+
+\subsection{Endpoints and versions}
+
+Provider experiments recorded requested and provider-reported model
+identifiers. Earlier runs reported DeepSeek V4 Flash, Qwen 3.7 Flash
+2026-07-15, and MiniMax-M3. A later request for
+\path{deepseek-v4-flash} returned \path{deepseek-flash}.
+We report this run separately, not as the same endpoint. The run map below
+states which endpoint served each experiment. Receiver calls used temperature 0, disabled
+thinking, automatic tool choice, and a 1{,}024-token ceiling in the five-form
+confirmation. This ceiling replaced a 300-token calibration limit that had
+produced seven censored responses; no inference uses those censored cells.
+
+The external instantiation used MCP Inspector 2.4.0 at pinned commit
+\texttt{edf54f5d}, MCP server 2.0.0, and Node.js v22.20.0. The complete commit
+hash is stored in the artifact manifest. Protocol citations are version- and
+date-pinned (\S\ref{sec:related}). Deterministic A2A studies pinned
+\texttt{a2a-sdk} 1.1.2 and \texttt{@a2a-js/sdk} 1.1.0 with their dependencies
+and inspected sources; neither made provider calls.
+
+\subsection{Statistical procedures}
+
+The independent unit is the source directive or payload throughout; paired
+designs use exact McNemar tests as the primary inference, with paired
+nonparametric bootstrap intervals (100{,}000 resamples) at preregistered
+seeds. The five-form primary comparisons were a prespecified fixed sequence
+(familywise $\alpha = 0.05$). Rating studies keep the two model raters in
+isolated sessions: rater A used KIMI K3 and rater B used Grok 4.5, and
+each saw only its assigned workbook, with frozen row order, opaque IDs, and no
+form labels or behavioral outcomes. The five-form workbooks had 96 rows; the
+E2 adaptive-sender workbooks had 144. A retired E2 workflow exposed both model
+contexts to A/B materials; both returns were excluded and rerun under the
+isolation rule. The accepted fresh-context declaration is operator-attested
+and archived with the E2 rating result.
+The sequential standardization in \S\ref{sec:ratings} is labeled descriptive
+and is not used as causal mediation.
+
+Multiplicity control follows the confirmatory family declared for each
+experiment. The five-form study uses its two-comparison fixed sequence; E2 and
+E3 retain their separately frozen primary paired contrasts. E4 first tests
+elevation within the adaptive marked relay and, conditional on rejection,
+tests the exact-response relay-policy interaction by exact paired sign flips;
+its broader any-write decomposition is post hoc. E5 prospectively defines any
+write as primary and exact mutation request as a fixed-sequence secondary. E6
+uses three paired McNemar contrasts against the unmarked control with Holm
+step-down correction, separately at the direct and relayed stages. Secondary ratings,
+family breakdowns, cross-run comparisons, and cross-fixture comparisons do not
+enter those confirmatory families. We do not apply one omnibus paper-level
+correction across distinct scientific questions, and a result from one family
+does not unlock inference in another.
+E12 defines elevated exact protected-action pursuit as primary, using paired
+exact McNemar inference and a directive-level bootstrap interval; direct-write
+and escalation decompositions, the non-elevated comparison, and their
+interaction are supporting analyses within that experiment.
+
+\subsection{Run directories and audits}
+
+Every formal run is an append-only directory under \texttt{runs/} with
+events, provider responses, report, and post-run audit; key numbers were
+independently recomputed from raw artifacts rather than read back from the
+run's own report. The runs supporting each section (paths relative to the
+artifact root):
+
+{\sloppy\footnotesize
+\begin{itemize}\itemsep2pt
+  \item \textbf{\S\ref{sec:laundering}} (five-form):\\
+  \path{deepseek-five-form-provenance-confirmation-001}\\
+  \path{qwen-five-form-provenance-confirmation-001}\\
+  calibration runs \texttt{-001} and \texttt{-002}; rater returns under
+  \texttt{rating-returned/}.
+  \item \textbf{\S\ref{sec:adaptive-sender}} (E2 adaptive sender):\\
+  \path{deepseek-e2-adversarial-sender-001}\\
+  (pre-generation and receiver-release freezes; 144 frozen generated texts;
+  288 calls, zero retries; behavioral \texttt{independent\_audit.json}, all
+  checks passed). Accepted isolated secondary ratings, their attestation, and
+  a separate reconstruction are under
+  \path{rating-returned-clean-v2/}.
+  \item \textbf{\S\ref{sec:propagation}} (selector):\\
+  \path{deepseek-retention-propagation-calibration-001}\\
+  and its \texttt{-confirmation-001}. The selected inputs comprise 37 archived
+  faithful-copy outputs and 84 task-condensation outputs. Their first-receiver
+  delegations were 7 and 33, and their complete two-receiver chains were 2 and
+  15. \path{audit_retention_source_framing.py} verifies every selected output
+  against the original sender event and prompt; these post hoc source-group
+  counts do not change the primary 17/121 endpoint. The later concurrent-group check is
+  \path{deepseek-retention-discrimination-001}; its
+  \texttt{MODEL\_IDENTITY\_ADDENDUM.md} explains why the returned
+  \texttt{deepseek-flash} responses cannot test discrimination on the
+  earlier \texttt{deepseek-v4-flash} endpoint. Its pre-call manifest and
+  analysis plan were internally frozen, not externally timestamped.
+  A structural benign-delegation control is archived at
+  \path{deepseek-benign-delegation-control-002}: 16 chains, 30 calls,
+  instruction-eligible receivers, zero retries, and a passing wire audit.
+  The request named \path{deepseek-v4-flash}, but responses reported
+  \path{deepseek-flash}; it is therefore a plumbing control rather than an
+  endpoint replication.
+  A separately scoped receiver-authorized propagation calibration is archived
+  at \path{qwen36-authorized-propagation-calibration-001}: the same marked
+  sender output was presented under L0 and L2 to an R2 worker that was
+  authorized to write \path{protected/canary}. Both arms produced 12/12 exact
+  requests; this ceiling result is a fixture check, not a lineage effect or a
+  security outcome. The independent recount is
+  \path{independent_audit.json}.
+  A zero-call headroom audit found the protected literal and a write verb in
+  all 12 sender summaries and all 24 R1 payloads; it explains the ceiling and
+  is archived as \path{headroom_audit.json}.
+  A weaker indirect-content calibration is archived at
+  \path{qwen36-authorized-propagation-weak-calibration-001}: exact protected
+  requests were 2/12 in both L0 and L2, with no explicit write verb in the
+  source bank. Its result is a headroom check, not a lineage comparison.
+  The 48-pair disjoint follow-up is archived at
+  \path{qwen36-authorized-propagation-confirmation-001}: L0 produced 6/48
+  and L2 4/48 exact requests (paired risk difference $-.0417$; exact
+  McNemar $p=.7266$). It remains an internally frozen fixture comparison,
+  not a confirmatory security result.
+  The zero-call content audit for the 17 complete confirmation chains is
+  \path{content_audit.json} in
+  \path{deepseek-retention-propagation-confirmation-001}; it is a post hoc
+  content characterization, not a new propagation estimate.
+  \item \textbf{\S\ref{sec:propagation}} (defense):\\
+  \path{qwen-cross-model-defense-001}. The DeepSeek one-family run
+  \path{deepseek-one-family-defense-001} failed its preregistered
+  susceptibility gate and is kept as a failed-gate record, not as defense
+  evidence.
+  \item \textbf{\S\ref{sec:propagation}} (carrier):\\
+  \path{deepseek-carrier-mechanism-001},
+  \path{qwen-carrier-mechanism-001},
+  \path{minimax-carrier-mechanism-001}.
+  \item \textbf{\S\ref{sec:covariance}} (DeepSeek):\\
+  \path{deepseek-lifecycle-covariance-confirmation-001}\\
+  (calibration \texttt{-001}; freeze
+  \path{lifecycle-covariance-deepseek-20260828-v1};
+  \texttt{independent\_verification.json}).
+  \item \textbf{\S\ref{sec:covariance}} (Qwen):\\
+  \path{qwen-lifecycle-covariance-confirmation-001}\\
+  (calibration \texttt{-001};
+  \texttt{independent\_audit.json}; 116 calls, zero retries).
+  \item \textbf{\S\ref{sec:covariance}} (credential-gated E3):\\
+  \path{qwen-e3-credential-gated-001}\\
+  (freeze \path{e3-credential-gated-qwen-20260903-v1}; 126 calls,
+  zero retries; \texttt{independent\_audit.json}, 14/14 checks).
+  \item \textbf{\S\ref{sec:e4-gateway}} (E4 relay-output gateway evaluation):\\
+  \path{deepseek-e4-e2-e3-composition-001}\\
+  (freeze \path{e4-e2-e3-composition-deepseek-20260904-v1}; 318 calls,
+  zero retries; \texttt{independent\_audit.json}, 16/16 checks). Post-run
+  nested-outcome decomposition: \texttt{outcome\_decomposition.json}
+  (original E4 report unchanged). The frozen directory name predates the
+  construct split.
+  \item \textbf{\S\ref{sec:e4-gateway}} (E5 Qwen endpoint replication):\\
+  \path{qwen-e5-relay-gateway-001}\\
+  (freeze \path{e5-qwen-relay-gateway-20260904-v1}; 96 calls;
+  \texttt{independent\_audit.json}, all checks). The run records a bootstrap-
+  seed protocol deviation; both seed recomputations give identical reported
+  interval endpoints, and exact inference is unaffected.
+  \item \textbf{\S\ref{sec:e4-gateway}} (E11 Qwen temporal repeat):\\
+  \path{qwen-e11-hosted-repeat-001}\\
+  (freeze \path{e11_freeze_v1}; 96 calls, zero retries;
+  \texttt{independent\_audit.json}, 18/18 checks). The same 48 E5 texts and
+  endpoint were reused under a new frozen calendar; the comparison is one
+  paired temporal repeat, not a population variance estimate. E11--E5 effect
+  shifts were $+1/48$ for both endpoints, with paired bootstrap intervals
+  $[-0.1042,0.1667]$ and $[-0.0833,0.1250]$.
+  \item \textbf{\S\ref{sec:e4-gateway}} (E12 capability-hidden check):\\
+  \path{qwen-e12-capability-hidden-001}\\
+  (freeze \path{e12_freeze_v1}; 252 calls, zero retries;
+  \texttt{independent\_audit.json}, 30/30 checks). The primary outcome joins
+  exact direct writes and exact non-mutating escalation requests; the study
+  does not execute the escalation or infer free-text intent.
+  \item \textbf{\S\ref{sec:spotlight-relay}} (E6 relay survival):\\
+  \path{deepseek-e6-spotlight-relay-001}\\
+  (192 source calls and 384 receiver calls, zero retries; pre-generation and
+  receiver-release timestamps; \texttt{generation\_independent\_audit.json}
+  and \texttt{independent\_audit\_v2.json}).
+  \item \textbf{\S\ref{sec:external}}:\\
+  \path{inspector-shared-root-confirmation-001}\\
+  (\texttt{report.json}, \texttt{independent\_audit.json}); source and
+  dependency freeze under \texttt{external\_auth\_instantiation/}.
+  \item \textbf{\S\ref{sec:external}} (E7--E10 A2A lineage integrity):\\
+  \path{e7-a2a-lineage-composition-001}, \path{e8-a2a-js-live-001},\\
+  \path{e9-a2a-official-sample-live-001},\\
+  \path{e10-a2a-two-hop-enforcement-001}\\
+  (transport, exact-sample derivation, and consequential two-hop controls;
+  independently recomputed; zero calls).
+\end{itemize}
+}
+
+\subsection{Open science}
+\label{app:openscience}
+
+The anonymous, cloneable artifact bundle is being prepared at the following
+submission URL placeholder:
+
+\begin{center}
+\emph{Anonymous artifact URL pending}
+\end{center}
+
+\noindent The release will contain, for each formal run: the frozen stimulus bank
+and execution order; the sender, receiver, and rater prompts verbatim; the
+three rating rubrics as frozen before scoring; raw append-only JSONL event
+logs and provider responses; the analysis source (exact McNemar, paired
+bootstrap with seeds, $q$-weighting enumerator); the independent
+recomputation scripts and their outputs; the MCP Inspector instantiation
+source with its dependency freeze and commit pin; and a manifest of SHA-256
+hashes for all of the above.
+
+\paragraph{Preregistration evidence.}
+Because ``preregistered'' is only meaningful if the freeze provably precedes
+the outcomes, each claim-bearing formal run's freeze record is externally witnessed: the
+manifest hash for the stimulus bank, execution order, analysis plan, provider
+pinning, and $q$ grid was deposited to a third-party timestamping service
+before the first live call, and the deposit receipts are included in the
+bundle. Reviewers can verify that the analysis source distributed with the
+run hashes to the value recorded before execution.
+For E1, four OpenTimestamps calendars accepted the Qwen replication freeze
+before its 492 calls. For E2, four calendars accepted both the pre-generation
+and receiver-release deposits before their respective live stages. The E3
+deposit was likewise accepted before execution. Four OpenTimestamps calendars
+accepted the E4 deposit before its 318 calls. Four calendars accepted the E5
+deposit before its 96 calls; both sets of calendar attestations are included
+pending Bitcoin anchoring. Four calendars accepted both E6 stage deposits
+before their corresponding calls. Four calendars accepted the E12 freeze
+before its 252 calls. Earlier receipts carry independently
+verified Bitcoin attestations. The bundle keeps the original
+receipts, self-contained upgraded copies, and a machine-readable status report.
+The later endpoint-identity check is a diagnostic exception: its files were
+written before live calls but have no external timestamp receipt, so we do not
+label it externally preregistered or use it for confirmatory inference.
+The native AgentDojo Slack screens were exploratory external-validity runs and
+were not externally timestamped; they are reported as provider-stratified
+descriptive evidence, not as preregistered mechanism tests.
+
+\paragraph{What is \emph{not} released.}
+No designed bank is planned to be withheld. The release includes attack
+directives written against our sandbox tool schema; the schema is fictitious
+and the effects are process-local, so release carries no operational risk
+(\S\ref{sec:threat}).

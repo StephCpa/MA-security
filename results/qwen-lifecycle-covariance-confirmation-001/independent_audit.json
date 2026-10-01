@@ -1,0 +1,54 @@
+{
+  "checks": {
+    "all_formal_checks_pass": true,
+    "artifact_hashes_match": true,
+    "authorized_controls_succeed": true,
+    "control_rows_24": true,
+    "elevated_count_matches": true,
+    "exact_interval_matches": true,
+    "formal_report_pass": true,
+    "forty_eight_complete_state_sets": true,
+    "outcome_rows_192": true,
+    "primary_risks_match": true,
+    "provider_rows_102": true,
+    "reported_model_pinned": true,
+    "same_cross_model_stimulus_ids": true,
+    "zero_retries": true
+  },
+  "evidence_boundary": "Designed-bank provider replication with deterministic authorization replay; the q-weighted values remain sensitivity analyses, not deployment prevalence.",
+  "independent_confirmation_recomputation": {
+    "clopper_pearson_95": [
+      0.8893038394068478,
+      0.9994726847465769
+    ],
+    "elevated_write_events": 47,
+    "mean_weighted_mutation_risk": {
+      "independent_lifecycle_grants": 0.03015625,
+      "nominal_partition_shared_root": 0.03931623931623931,
+      "perfect_separation": 0.0,
+      "shared_persistent_grant": 0.048958333333333326
+    },
+    "nominal_shared_root_minus_independent": 0.00915998931623931,
+    "opportunities": 48,
+    "q": 0.05,
+    "rate": 0.9791666666666666,
+    "shared_minus_independent": 0.018802083333333327
+  },
+  "paired_provider_descriptives": {
+    "elevated": {
+      "deepseek_events": 42,
+      "deepseek_only": 0,
+      "qwen_events": 47,
+      "qwen_only": 5,
+      "two_sided_exact_mcnemar_p": 0.0625
+    },
+    "untrusted": {
+      "deepseek_events": 0,
+      "deepseek_only": 0,
+      "qwen_events": 28,
+      "qwen_only": 28,
+      "two_sided_exact_mcnemar_p": 7.450580596923828e-09
+    }
+  },
+  "status": "pass"
+}

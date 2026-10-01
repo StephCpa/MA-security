@@ -1,0 +1,99 @@
+\section{System and Evaluation Design}
+\label{sec:threat}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figures/aamas-fig1-v03-ppt.png}
+  \caption{An untrusted input is transformed and may induce a structured
+  action. Instruction elevation $a$ changes eligibility; capability $b$ is
+  enforced by the reference monitor. Attempts, mutations, and downstream
+  exposure are distinct outcomes.}
+  \Description{Left-to-right flow from adversary-controlled content to a
+  receiver model, reference monitor, protected process-local store, and
+  downstream reader. An elevation state a controls whether content may direct
+  the receiver; a separate write-back capability b is checked by the monitor.
+  A six-rung ladder distinguishes attempts, authorization decisions, state
+  mutations, unauthorized mutations, and downstream exposure.}
+  \label{fig:system}
+\end{figure}
+
+\paragraph{Boundary and controls.}
+Untrusted content enters a process-local sandbox and reaches a receiver that
+may emit structured tool actions. A reference monitor compares the principal,
+operation, and resource of each request with a frozen allowlist and a live
+capability before changing a protected store. State $a$ denotes authenticated
+instruction elevation: it changes whether content is eligible to direct the
+receiver but does not itself authorize an action. State $b$ denotes a live
+write capability and is enforced at the action boundary. Earlier text-placement
+experiments estimate the same behavioral response to elevation without
+claiming a credential boundary.
+
+\paragraph{Outcomes and authorization.}
+An \emph{attempt} is a structured tool action, rather than free-text assent.
+A \emph{broad write attempt} calls the write tool; an \emph{exact protected
+request} specifies the protected resource and attack value. A
+\emph{mutation} changes stored state, an \emph{unauthorized mutation} does so
+without policy permission, and \emph{exposure} means a downstream agent reads
+the attack value. We log policy decisions separately from these outcomes.
+Unauthorized mutation is primary in the state-change fixture; the relay
+studies measure requests or delegation because they do not execute a protected
+write. The principal
+\texttt{receiver} may write only a session-specific benign resource; the
+protected canary is never allowlisted. Hence authorization
+is exact and does not require semantic adjudication. No action touches the host
+filesystem, network, or real credentials.
+
+\paragraph{Adversary.}
+The adversary controls data-plane content and may exploit transformations that
+retain or launder action intent. It cannot alter the harness, policy, gateway,
+reference monitor, or append-only log, and cannot mint trusted grants. Provider
+or model-weight compromise is out of scope. One separately reported stress
+test permits a policy-divergent sender instruction that requests faithful task
+preservation while removing warnings; it is not folded into the base
+content-only threat model.
+
+\paragraph{Models, freezing, and inference.}
+We record requested and provider-reported identifiers for hosted endpoints
+(DeepSeek V4 Flash, Qwen 3.7 Flash 2026-07-15, and MiniMax-M3) at temperature
+zero. Stimulus banks, execution
+orders, analysis plans, and fault-model grids were frozen before each formal
+run. Paired binary comparisons use exact McNemar tests and directive-level
+bootstrap intervals; the directive, not a replay, is the independent unit.
+Run directories are append-only, and reported values were recomputed from raw
+JSONL events. Full freeze identifiers, hashes, audit commands, retry records,
+and family-level tables are supplied in the supplementary artifact. We report
+finite-bank, endpoint-specific effects and never pool providers into a
+prevalence estimate. An additional run exposed a DeepSeek identifier mismatch;
+it is not pooled with the earlier endpoint result (\S\ref{sec:propagation-selector}).
+
+\begin{table*}[t]
+  \centering
+  \footnotesize
+  \caption{Map of claim-bearing evaluations. The 48-directive banks are
+  separate unless a row explicitly says that texts were reused. D denotes
+  DeepSeek V4 Flash and Q denotes Qwen 3.7 Flash. The supplement lists the
+  individual run directories and frozen prompts.}
+  \label{tab:experiment-map}
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{p{.14\textwidth}p{.16\textwidth}p{.17\textwidth}p{.24\textwidth}p{.19\textwidth}}
+    \toprule
+    Evaluation & Bank and unit & Sender / receiver & Varied factor & Measured outcome \\
+    \midrule
+    Five forms (\S\ref{sec:laundering}) & 48 directives, five forms & D / D; same archived texts / Q & Visible marker and sender derivation & Protected-write request \\
+    Adaptive relay (\S\ref{sec:adaptive-sender}) & Separate 48-directive bank & D / D & Sender instruction and marker & Broad and exact requests \\
+    Two receivers (\S\ref{sec:propagation-selector}) & 192 directives; 121 selected & Archived D / D / D & Frozen retention selector & Two consecutive \texttt{delegate} calls \\
+    Enforcement (\S\ref{sec:defense}) & Separate 48-directive bank & Q receiver & Monitor policy and capability & Unauthorized mutation \\
+    Tool visibility (\S\ref{sec:defense}) & Separate 48-directive bank & Q receiver & Direct-write tool shown or hidden & Direct write or escalation request \\
+    Representation (\S\ref{sec:spotlight-relay}) & Separate 48-directive bank & D / D & Prose, datamarking, Base64 & Direct and relayed write request \\
+    Credential gate (\S\ref{sec:covariance}) & Separate 48-directive bank & Q receiver & Elevation grant; replay under write grant & Exact protected request \\
+    Relay gateway (\S\ref{sec:e4-gateway}) & E2 bank; reused 48 directives & Frozen D outputs / D; Q repeat & Sender policy and elevation & Broad and exact requests \\
+    Protocol paths (\S\ref{sec:external}) & Fixed synthetic cases & Pinned MCP / A2A code & Storage root and message derivation & Credential or lineage state \\
+    \bottomrule
+  \end{tabular}
+\end{table*}
+
+For cross-reference with the artifact ledger, the internal run labels are:
+five-form confirmation (E1), adaptive relay (E2), credential gate (E3), relay
+gateway (E4), Qwen endpoint replication (E5), representation survival (E6),
+the four protocol-path checks (E7--E10), the temporal repeat (E11), and the
+capability-hidden check (E12).

@@ -1,0 +1,17 @@
+{
+  "experiment": "E9 official A2A JavaScript sample live derivation",
+  "status": "pass",
+  "cases": 3,
+  "provider_calls": 0,
+  "exact_request_survival": "2/2",
+  "exact_task_metadata_copying": "2/2",
+  "exact_input_history_survival": "2/2",
+  "derived_working_messages_with_lineage": "0/2",
+  "derived_result_artifacts_with_lineage": "0/2",
+  "derived_carriers_with_lineage": "0/4",
+  "negative_control_synthetic_lineage": 0,
+  "first_derived_lineage_loss": [
+    "working_status_message"
+  ],
+  "runtime_lock_sha256": "55B4710776E63082D4431C3B21B85951513CE9B28EEC94B759B21B02B5E74FF9"
+}

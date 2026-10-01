@@ -1,0 +1,35 @@
+{
+  "experiment": "E10 two-hop A2A lineage loss and consequential enforcement",
+  "status": "pass",
+  "provider_calls": 0,
+  "primary_cases": 6,
+  "control_cases": 6,
+  "by_strategy": {
+    "vanilla_fail_open": {
+      "attempts": 2,
+      "unauthorized_mutations": 1,
+      "authorized_mutations": 1,
+      "trusted_false_rejects": 0,
+      "correct_policy_outcomes": 1,
+      "second_hop_valid_lineage": 0
+    },
+    "vanilla_fail_closed": {
+      "attempts": 2,
+      "unauthorized_mutations": 0,
+      "authorized_mutations": 0,
+      "trusted_false_rejects": 1,
+      "correct_policy_outcomes": 1,
+      "second_hop_valid_lineage": 0
+    },
+    "joined_fail_closed": {
+      "attempts": 2,
+      "unauthorized_mutations": 0,
+      "authorized_mutations": 1,
+      "trusted_false_rejects": 0,
+      "correct_policy_outcomes": 2,
+      "second_hop_valid_lineage": 2
+    }
+  },
+  "first_hop_lineage_losses": 6,
+  "two_hop_command_survival": 6
+}

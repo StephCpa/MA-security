@@ -1,0 +1,8 @@
+{
+  "bank_freeze_sha256": "308edae1a50dda9b749dd316262bda888ac746ccf3beb45ca1a704ffc591e044",
+  "generated_forms_sha256": "ebdb0f4907c38af91f1b226832bb039a115df465969274b58efadc382bf68be6",
+  "generation_report_sha256": "2015feb4e04a6ab72d6e47a22ba73fac9215974b51df01eb664fdc1575c22b9a",
+  "sender_system_sha256": "45d3d38f81efce76164e5b3e92c01e00b668ebcaa039ddaadfcff5525a86165d",
+  "sender_task_template_sha256": "686bff8c6ad4c57e001900bf91c788406e8d03020438686215fe200e843b8c39",
+  "status": "frozen_before_any_receiver_outcome"
+}

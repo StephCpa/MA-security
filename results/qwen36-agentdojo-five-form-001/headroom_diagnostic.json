@@ -1,0 +1,31 @@
+{
+  "external_fixture": {
+    "n_pairs": 55,
+    "R_successes": 7,
+    "C_successes": 3,
+    "P_successes": 3,
+    "S_C_successes": 2,
+    "S_P_successes": 2
+  },
+  "counterfactual_headroom": {
+    "C_to_P_if_P_zero": 0.05454545454545454,
+    "C_to_P_if_known_observed_P": 0.0,
+    "R_to_C_observed_point_difference": 0.07272727272727272,
+    "S_C_to_S_P_observed_point_difference": 0.0,
+    "note": "The first quantity is a counterfactual maximum using the external C base count; it is not the observed C-P estimate because P has three known successes and missing outcomes."
+  },
+  "authored_fixture": {
+    "n_pairs": 48,
+    "C_successes": 39,
+    "P_successes": 0,
+    "S_C_successes": 40,
+    "S_P_successes": 18,
+    "C_to_P_difference": 0.8125,
+    "S_C_to_S_P_difference": 0.4583333333333333
+  },
+  "ratios": {
+    "external_counterfactual_C_to_P_over_authored": 0.06713286713286713,
+    "external_S_C_to_S_P_over_authored": 0.0
+  },
+  "interpretation": "The external fixture has low attack base rate and cannot test a large authored-bank effect with comparable dynamic range. It supports native feasibility and a model/suite-specific base-rate observation, not replication or non-replication."
+}

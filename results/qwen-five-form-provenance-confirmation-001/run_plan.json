@@ -1,0 +1,90 @@
+{
+  "attack_cells": 240,
+  "authorized_control_cells": 6,
+  "campaign_id": "e1-qwen-five-form-confirmation-20260904-v1",
+  "external_side_effects": false,
+  "freeze_verification": {
+    "checks": {
+      "files_match": true,
+      "freeze_id": true,
+      "manifest_digest": true,
+      "metadata_freeze_id": true,
+      "receipt_exists": true,
+      "receipt_hash": true,
+      "service": true,
+      "submitted_at": true,
+      "verification": true
+    },
+    "freeze_id": "e1-qwen-five-form-confirmation-20260904-v1",
+    "manifest_sha256": "d41dd2aaf56e114c46a312d56666d8398685f402bf3c416a1c8ac3d83dbda637",
+    "submitted_at_utc": "2026-09-03T19:14:32Z"
+  },
+  "independent_unit": "source directive",
+  "inputs": {
+    "bank": {
+      "checks": {
+        "authorized_controls.csv": true,
+        "complete_rcp": true,
+        "deterministic_forms.csv": true,
+        "frozen_before_outcomes": true,
+        "generation_order.json": true,
+        "manifest.json": true,
+        "marker_is_single_inserted_line": true,
+        "pinned_model": true,
+        "receiver_order.json": true,
+        "source:FIVE_FORM_PROVENANCE_CONFIRMATION_PREREGISTRATION.md": true,
+        "source:analyze_five_form_confirmation.py": true,
+        "source:audit_five_form_generation.py": true,
+        "source:build_five_form_confirmation_bank.py": true,
+        "source:deepseek_confirmation_provider.py": true,
+        "source:five_form_confirmation_campaign.py": true,
+        "source:five_form_provenance_campaign.py": true,
+        "source:providers.py": true,
+        "source:realized_effect.py": true,
+        "source:security_policy.py": true,
+        "source:test_five_form_confirmation.py": true,
+        "source_pairs.csv": true,
+        "zero_prior_exact_overlap": true
+      },
+      "freeze_sha256": "308edae1a50dda9b749dd316262bda888ac746ccf3beb45ca1a704ffc591e044",
+      "status": "pass"
+    },
+    "generated": {
+      "checks": {
+        "bank_freeze": true,
+        "frozen_before_receiver": true,
+        "generated_forms": true,
+        "generation_report": true
+      },
+      "status": "pass"
+    },
+    "generated_forms_sha256": "ebdb0f4907c38af91f1b226832bb039a115df465969274b58efadc382bf68be6",
+    "generated_freeze_sha256": "e1c6a82f8153449c68c138bb053e0537439c3ece50a3e164ae08bb8412a953f1",
+    "generation_audit": {
+      "checks": {
+        "audit": true,
+        "audit_source": true,
+        "generated_forms": true,
+        "generated_freeze": true,
+        "status": true
+      },
+      "status": "pass"
+    },
+    "pre_receiver_audit_freeze_sha256": "698008ef596a4b65f84b0c6a2b74cb2f2162572edda6e13ce5453ff3335075e7",
+    "source_run": "runs\\deepseek-five-form-provenance-confirmation-001"
+  },
+  "logical_model_calls": 492,
+  "max_tokens": 1024,
+  "model_calls_per_cell": 2,
+  "new_sender_calls": 0,
+  "primary_fixed_sequence": [
+    "C minus P",
+    "S_C minus S_P conditional on first"
+  ],
+  "receiver_cells": 246,
+  "requested_model": "qwen3.7-flash-2026-07-15",
+  "run_id": "qwen-five-form-provenance-confirmation-001",
+  "source_texts_reused_byte_identically": 96,
+  "temperature": 0,
+  "thinking": "disabled via enable_thinking=false"
+}

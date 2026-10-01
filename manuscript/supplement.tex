@@ -1,0 +1,32 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Anonymous supplementary material for the AAMAS 2027 submission.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,hyperref}
+\hypersetup{hidelinks}
+\usepackage{xr}
+\externaldocument{main}
+
+\title{Supplementary Material: Provenance after Generative-Agent Relay}
+\author{Anonymous Author(s)}
+\date{}
+
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\rzero}{r_0}
+\newcommand{\rone}{r_1}
+\newcommand{\SC}{S_C}
+\newcommand{\SP}{S_P}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newtheorem{proposition}{Proposition}
+
+\begin{document}
+\maketitle
+\appendix
+\input{sections/A_theory}
+\input{sections/B_repro}
+\input{sections/C_examples}
+\input{sections/D_secondary_covariance}
+\end{document}

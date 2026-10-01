@@ -1,0 +1,64 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Indirect injection and agent evaluation.}
+Indirect prompt injection turns retrieved or tool-supplied data into control
+over an agent's actions~\cite{greshake2023not,liu2024formalizing}.
+AgentDojo measures attack success and benign-task utility in a dynamic tool
+environment~\cite{debenedetti2024agentdojo}. Retrieval studies and adaptive
+attacks locate context-specific injection surfaces
+~\cite{chang2026retrieval,syros2026muzzle,nasr2026attacker}; a lifecycle
+survey identifies delegated authority and persistent state as recurring gaps
+~\cite{ling2026secure}. We isolate how ordinary sender transformation changes
+provenance before downstream action.
+
+\paragraph{Message-level defenses and inter-agent propagation.}
+Spotlighting marks untrusted text; instruction hierarchies prioritize
+privileged instructions~\cite{hines2024spotlighting,wallace2024hierarchy}.
+Near-benign adversarial messages can weaken embedding-based detection
+~\cite{zhang2026embedding}. Prompt Infection measures model-to-model
+injection~\cite{lee2024infection}; Morris II uses a self-replicating prompt
+across applications~\cite{cohen2024morris}; Agent Smith studies infectious
+multimodal jailbreaks in simulated networks~\cite{gu2024agentsmith}.
+Adversarial co-evolution trains task agents, while ARGUS and AttriGuard
+attribute proposed actions to evidence
+~\cite{pan2025advevo,weng2026argus,he2026attriguard}. Our receiver-chain test
+starts from archived sender outputs and measures structured delegation by
+receivers without a faithful-copy instruction.
+
+\paragraph{Capability and policy enforcement.}
+CaMeL extracts trusted control flow, IsolateGPT separates execution contexts,
+and Progent enforces symbolic least-privilege policies
+~\cite{debenedetti2025camel,wu2025isolategpt,shi2025progent}. FORGE treats
+policy as a reference-monitor concern~\cite{palumbo2026formal}; AuthGraph
+aligns execution provenance with authorization~\cite{wang2026authgraph}.
+Our monitor follows the confused-deputy distinction between holding authority
+and being entitled to exercise it~\cite{hardy1988confused}, then quantifies
+how coupled elevation and write authority affect residual risk.
+
+\paragraph{Trust, norms, and institutions in MAS.}
+Computational trust and reputation aggregate evidence about agents and their
+social relations~\cite{sabater2005trust}; lineage instead describes one
+message's origin and derivation. Norm-governed societies and electronic
+institutions externalize rules for agents and mediated interaction
+~\cite{artikis2009norms,esteva2004ameli}. Logic-based MAS and MOISE+ likewise
+make organizational layers programmable
+~\cite{calegari2021logic,hubner2007moise}. Our monitor is institutional: an
+agent may pursue an impermissible action, but the environment decides whether
+it changes state. The compositional challenge is that agents regenerate the
+message carrying institutional context. Epidemic models and NetSafe connect
+network topology to spread~\cite{pastor2001epidemic,yu2025netsafe}; our
+fixed-chain study does not estimate a topology effect or a provider-wide
+transmission rate.
+
+\paragraph{Protocols and failure dependence.}
+MCP and A2A standardize transport and object roles
+~\cite{mcp-spec-2025,a2a-spec-2025}; MCP ecosystem studies show how malicious
+servers enlarge the agent attack surface~\cite{song2025beyond}. A2A's
+traceability extension carries supplied lineage~\cite{a2a-traceability-2026},
+but not derivation-time security-label joins or independent credential
+lifecycles. Framework control-flow hijacking can invoke unsafe tools even
+when agents resist direct injection~\cite{triedman2025malicious}. Common-cause
+models quantify coupled failures~\cite{fleming1975reliability}; our identity
+adds a measured behavioral response and separates attempted from realized
+state changes.

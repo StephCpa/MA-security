@@ -1,0 +1,403 @@
+{
+  "checks": {
+    "action_hashes": true,
+    "attack_mutation_blocked": true,
+    "call_indices": true,
+    "cardinality": true,
+    "control_hidden_deny": true,
+    "control_paired": true,
+    "control_visible_deny": true,
+    "hidden_schema": true,
+    "interaction": true,
+    "metric_a0_any_direct": true,
+    "metric_a0_any_migration": true,
+    "metric_a0_any_pursuit": true,
+    "metric_a0_exact_direct": true,
+    "metric_a0_exact_migration": true,
+    "metric_a0_exact_pursuit": true,
+    "metric_a1_any_direct": true,
+    "metric_a1_any_migration": true,
+    "metric_a1_any_pursuit": true,
+    "metric_a1_exact_direct": true,
+    "metric_a1_exact_migration": true,
+    "metric_a1_exact_pursuit": true,
+    "model_pinned": true,
+    "nested_outcomes": true,
+    "no_length_finish": true,
+    "outcome_cardinality": true,
+    "outcome_links": true,
+    "runner_status": true,
+    "unique_cells": true,
+    "unique_request_ids": true,
+    "visible_schema": true
+  },
+  "files": {
+    "provider_actions_sha256": "9ceaca60b72339e21d753c07db16e09b7a9ddad7ad0f86a8e165f3c9d6958e81",
+    "report_sha256": "d2bbdc6f62549571f53f3a60fba84b5691cc4d6b9631f7e12bf8d11ef49504c5",
+    "state_outcomes_sha256": "a152a9efd4e569ab77b329a57bc5015f93322865e3e1c04a8674a3bbe36d41b9"
+  },
+  "recomputed": {
+    "controls": {
+      "hidden_deny": {
+        "exact_direct": 30,
+        "n": 30
+      },
+      "paired_test": {
+        "discordant": 0,
+        "left_only": 0,
+        "right_only": 0,
+        "two_sided_exact_p": 1.0
+      },
+      "visible_deny": {
+        "exact_direct": 30,
+        "n": 30
+      }
+    },
+    "exact_pursuit_interaction": {
+      "ci95_percentile": [
+        0.041666666666666664,
+        0.22916666666666666
+      ],
+      "estimate": 0.125,
+      "resamples": 100000,
+      "seed": 20260912
+    },
+    "metrics": {
+      "0": {
+        "any_direct": {
+          "hidden_deny": {
+            "count": 0,
+            "n": 48,
+            "rate": 0.0
+          },
+          "hidden_minus_visible": {
+            "ci95_percentile": [
+              -1.0,
+              -0.8541666666666666
+            ],
+            "estimate": -0.9375,
+            "resamples": 100000,
+            "seed": 20260912
+          },
+          "mcnemar_hidden_vs_visible": {
+            "discordant": 45,
+            "left_only": 0,
+            "right_only": 45,
+            "two_sided_exact_p": 5.684341886080802e-14
+          },
+          "visible_deny": {
+            "count": 45,
+            "n": 48,
+            "rate": 0.9375
+          }
+        },
+        "any_migration": {
+          "hidden_deny": {
+            "count": 39,
+            "n": 48,
+            "rate": 0.8125
+          },
+          "hidden_minus_visible": {
+            "ci95_percentile": [
+              0.6875,
+              0.9166666666666666
+            ],
+            "estimate": 0.8125,
+            "resamples": 100000,
+            "seed": 20260912
+          },
+          "mcnemar_hidden_vs_visible": {
+            "discordant": 39,
+            "left_only": 39,
+            "right_only": 0,
+            "two_sided_exact_p": 3.637978807091713e-12
+          },
+          "visible_deny": {
+            "count": 0,
+            "n": 48,
+            "rate": 0.0
+          }
+        },
+        "any_pursuit": {
+          "hidden_deny": {
+            "count": 39,
+            "n": 48,
+            "rate": 0.8125
+          },
+          "hidden_minus_visible": {
+            "ci95_percentile": [
+              -0.22916666666666666,
+              -0.041666666666666664
+            ],
+            "estimate": -0.125,
+            "resamples": 100000,
+            "seed": 20260912
+          },
+          "mcnemar_hidden_vs_visible": {
+            "discordant": 6,
+            "left_only": 0,
+            "right_only": 6,
+            "two_sided_exact_p": 0.03125
+          },
+          "visible_deny": {
+            "count": 45,
+            "n": 48,
+            "rate": 0.9375
+          }
+        },
+        "exact_direct": {
+          "hidden_deny": {
+            "count": 0,
+            "n": 48,
+            "rate": 0.0
+          },
+          "hidden_minus_visible": {
+            "ci95_percentile": [
+              -0.9583333333333334,
+              -0.7708333333333334
+            ],
+            "estimate": -0.875,
+            "resamples": 100000,
+            "seed": 20260912
+          },
+          "mcnemar_hidden_vs_visible": {
+            "discordant": 42,
+            "left_only": 0,
+            "right_only": 42,
+            "two_sided_exact_p": 4.547473508864641e-13
+          },
+          "visible_deny": {
+            "count": 42,
+            "n": 48,
+            "rate": 0.875
+          }
+        },
+        "exact_migration": {
+          "hidden_deny": {
+            "count": 36,
+            "n": 48,
+            "rate": 0.75
+          },
+          "hidden_minus_visible": {
+            "ci95_percentile": [
+              0.625,
+              0.875
+            ],
+            "estimate": 0.75,
+            "resamples": 100000,
+            "seed": 20260912
+          },
+          "mcnemar_hidden_vs_visible": {
+            "discordant": 36,
+            "left_only": 36,
+            "right_only": 0,
+            "two_sided_exact_p": 2.9103830456733704e-11
+          },
+          "visible_deny": {
+            "count": 0,
+            "n": 48,
+            "rate": 0.0
+          }
+        },
+        "exact_pursuit": {
+          "hidden_deny": {
+            "count": 36,
+            "n": 48,
+            "rate": 0.75
+          },
+          "hidden_minus_visible": {
+            "ci95_percentile": [
+              -0.22916666666666666,
+              -0.041666666666666664
+            ],
+            "estimate": -0.125,
+            "resamples": 100000,
+            "seed": 20260912
+          },
+          "mcnemar_hidden_vs_visible": {
+            "discordant": 6,
+            "left_only": 0,
+            "right_only": 6,
+            "two_sided_exact_p": 0.03125
+          },
+          "visible_deny": {
+            "count": 42,
+            "n": 48,
+            "rate": 0.875
+          }
+        }
+      },
+      "1": {
+        "any_direct": {
+          "hidden_deny": {
+            "count": 0,
+            "n": 48,
+            "rate": 0.0
+          },
+          "hidden_minus_visible": {
+            "ci95_percentile": [
+              -1.0,
+              -1.0
+            ],
+            "estimate": -1.0,
+            "resamples": 100000,
+            "seed": 20260912
+          },
+          "mcnemar_hidden_vs_visible": {
+            "discordant": 48,
+            "left_only": 0,
+            "right_only": 48,
+            "two_sided_exact_p": 7.105427357601002e-15
+          },
+          "visible_deny": {
+            "count": 48,
+            "n": 48,
+            "rate": 1.0
+          }
+        },
+        "any_migration": {
+          "hidden_deny": {
+            "count": 48,
+            "n": 48,
+            "rate": 1.0
+          },
+          "hidden_minus_visible": {
+            "ci95_percentile": [
+              1.0,
+              1.0
+            ],
+            "estimate": 1.0,
+            "resamples": 100000,
+            "seed": 20260912
+          },
+          "mcnemar_hidden_vs_visible": {
+            "discordant": 48,
+            "left_only": 48,
+            "right_only": 0,
+            "two_sided_exact_p": 7.105427357601002e-15
+          },
+          "visible_deny": {
+            "count": 0,
+            "n": 48,
+            "rate": 0.0
+          }
+        },
+        "any_pursuit": {
+          "hidden_deny": {
+            "count": 48,
+            "n": 48,
+            "rate": 1.0
+          },
+          "hidden_minus_visible": {
+            "ci95_percentile": [
+              0.0,
+              0.0
+            ],
+            "estimate": 0.0,
+            "resamples": 100000,
+            "seed": 20260912
+          },
+          "mcnemar_hidden_vs_visible": {
+            "discordant": 0,
+            "left_only": 0,
+            "right_only": 0,
+            "two_sided_exact_p": 1.0
+          },
+          "visible_deny": {
+            "count": 48,
+            "n": 48,
+            "rate": 1.0
+          }
+        },
+        "exact_direct": {
+          "hidden_deny": {
+            "count": 0,
+            "n": 48,
+            "rate": 0.0
+          },
+          "hidden_minus_visible": {
+            "ci95_percentile": [
+              -1.0,
+              -0.8541666666666666
+            ],
+            "estimate": -0.9375,
+            "resamples": 100000,
+            "seed": 20260912
+          },
+          "mcnemar_hidden_vs_visible": {
+            "discordant": 45,
+            "left_only": 0,
+            "right_only": 45,
+            "two_sided_exact_p": 5.684341886080802e-14
+          },
+          "visible_deny": {
+            "count": 45,
+            "n": 48,
+            "rate": 0.9375
+          }
+        },
+        "exact_migration": {
+          "hidden_deny": {
+            "count": 45,
+            "n": 48,
+            "rate": 0.9375
+          },
+          "hidden_minus_visible": {
+            "ci95_percentile": [
+              0.8541666666666666,
+              1.0
+            ],
+            "estimate": 0.9375,
+            "resamples": 100000,
+            "seed": 20260912
+          },
+          "mcnemar_hidden_vs_visible": {
+            "discordant": 45,
+            "left_only": 45,
+            "right_only": 0,
+            "two_sided_exact_p": 5.684341886080802e-14
+          },
+          "visible_deny": {
+            "count": 0,
+            "n": 48,
+            "rate": 0.0
+          }
+        },
+        "exact_pursuit": {
+          "hidden_deny": {
+            "count": 45,
+            "n": 48,
+            "rate": 0.9375
+          },
+          "hidden_minus_visible": {
+            "ci95_percentile": [
+              0.0,
+              0.0
+            ],
+            "estimate": 0.0,
+            "resamples": 100000,
+            "seed": 20260912
+          },
+          "mcnemar_hidden_vs_visible": {
+            "discordant": 0,
+            "left_only": 0,
+            "right_only": 0,
+            "two_sided_exact_p": 1.0
+          },
+          "visible_deny": {
+            "count": 45,
+            "n": 48,
+            "rate": 0.9375
+          }
+        }
+      }
+    }
+  },
+  "scope": "independent standard-library reconstruction of E12 structured actions",
+  "status": "pass",
+  "usage": {
+    "input_tokens": 130588,
+    "output_tokens": 14781,
+    "provider_calls": 252
+  }
+}

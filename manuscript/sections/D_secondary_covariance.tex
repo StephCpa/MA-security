@@ -1,0 +1,65 @@
+\section{Secondary Semantic-Placement Fixture}
+\label{app:secondary-covariance}
+
+An earlier semantic-placement fixture measured whether the response factor is
+portable across endpoints and operationalizations. The DeepSeek confirmation
+(freeze \texttt{lifecycle-covariance-deepseek-20260828-v1}) produced
+elevated-state write attempts on 42/48 payloads (0.875, exact 95\% CI
+$[0.748,0.953]$; every family nonzero, 6/8--8/8) and no untrusted-state
+attempts. Its four-state table of (attempts, mutations) was $(0/48,0/48)$ at
+$(0,0)$ and $(0,1)$, $(42/48,0/48)$ at $(1,0)$, and $(42/48,42/48)$ at
+$(1,1)$. The Qwen replication produced elevated-state writes on 47/48
+(CI $[0.8893,0.9995]$) and untrusted-state writes on 28/48. Both confirmations
+passed all 24/24 authorized topology replays.
+
+\begin{table*}[t]
+  \centering
+  \small
+  \caption{Secondary semantic-placement fixture, distinct from the
+  credential-gated experiment in Table~\ref{tab:measured}. Instruction-elevation
+  sensitivity $\rone-\rzero$ is a measured paired endpoint-and-fixture response;
+  $\Cov(a,b)$ is derived from the declared component-fault weights at
+  $q=0.05$. Agreement between predicted and weighted excess verifies the
+  replay pipeline, not the algebraic identity. Ratios depend on $\rzero$:
+  20.00 for DeepSeek ($\rzero=0$) and 1.62 for Qwen
+  ($\rzero=28/48$).}
+  \label{tab:covariance}
+  \ra{1.2}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llccccc}
+    \toprule
+    Provider & Topology & $\Cov(a,b)$ & Predicted excess & Observed excess &
+    $R_{\text{topology}}$ & $R_{\text{indep}}$ \\
+    \midrule
+    DeepSeek & Nominal partition, shared issuer root & 0.023141 & 0.02025 &
+    0.02025 & 0.022436 & 0.002188 \\
+    DeepSeek & One shared persistent grant & 0.047500 & 0.04156 & 0.04156 &
+    0.043750 & 0.002188 \\
+    \midrule
+    Qwen & Nominal partition, shared issuer root & 0.023141 & 0.009160 &
+    0.009160 & 0.039316 & 0.030156 \\
+    Qwen & One shared persistent grant & 0.047500 & 0.018802 & 0.018802 &
+    0.048958 & 0.030156 \\
+    \bottomrule
+  \end{tabular}}
+\end{table*}
+
+Qwen's sensitivity was $19/48=0.395833$ (19 payloads moved from no attempt to
+attempt under elevation and none reversed; exact McNemar
+$p=3.8\times10^{-6}$). The declared covariances predict excess risks of
+$0.023141\times0.395833=0.009160$ and
+$0.047500\times0.395833=0.018802$, matching the weighted outcomes to six
+decimals. DeepSeek provides the $\rzero=0$ limiting case with
+$\rone=42/48$, for which the shared grant realizes the $1/q=20$ ratio at
+$q=0.05$. Qwen yields 1.62 because it already attempts the write without
+elevation. The paired cross-provider difference in the untrusted state was 28
+Qwen-only versus 0 DeepSeek-only payloads (exact McNemar
+$p=7.5\times10^{-9}$).
+
+Qwen's nonzero $\rzero$ recurred across three banks: 28/48 in the lifecycle
+bank, 29/48 for bare directives, and 32/48 for neutral carriers. Its
+sensitivity was 0.3958 in this semantic-placement fixture and 0.3125 in the
+credential-gated fixture, an absolute difference of 0.0833. The older
+cross-endpoint contrast was 0.8750 versus 0.3958. One repeated endpoint across
+two operationalizations cannot separate provider variance from fixture
+variance or identify sensitivity as a provider-only property.

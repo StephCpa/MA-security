@@ -1,0 +1,7 @@
+{
+  "audit_source_sha256": "28eafd09d8a111d26e321796153e2da9be172d8bd64b768e4eb057798d6bd952",
+  "generated_forms_sha256": "ebdb0f4907c38af91f1b226832bb039a115df465969274b58efadc382bf68be6",
+  "generated_freeze_sha256": "e1c6a82f8153449c68c138bb053e0537439c3ece50a3e164ae08bb8412a953f1",
+  "pre_receiver_audit_sha256": "6dca73a36df320bcd17b8c0784ee6e892b2ccf5ea7f85af60e27b29531bb2974",
+  "status": "frozen_before_any_receiver_outcome"
+}

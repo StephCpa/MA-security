@@ -1,0 +1,76 @@
+{
+  "default_helper": {
+    "derived_cases": 16,
+    "false_positive_taint": 0,
+    "lineage_present": 0,
+    "trusted_controls": 8,
+    "untrusted_cases": 8,
+    "untrusted_lineage_loss": 8
+  },
+  "experiment": "E7 A2A structured-lineage composition integrity",
+  "explicit_reference": {
+    "derived_cases": 16,
+    "false_positive_taint": 0,
+    "lineage_present": 16,
+    "trusted_controls": 8,
+    "untrusted_cases": 8,
+    "untrusted_lineage_loss": 0
+  },
+  "failure_injection": {
+    "cases": 7,
+    "correct_decisions": 7
+  },
+  "multihop": {
+    "default_end_to_end_valid": 0,
+    "default_paths": 6,
+    "explicit_end_to_end_valid": 6,
+    "explicit_paths": 6,
+    "first_loss_counts": {
+      "derive-after-cache": 2,
+      "handoff-agent-1": 2,
+      "summary-1": 2
+    },
+    "paths": 12
+  },
+  "pins_all_pass": true,
+  "provider_calls": 0,
+  "static_external_audit": {
+    "documents_integrity_protection": false,
+    "documents_message_or_artifact_metadata": true,
+    "documents_parent_step_id": true,
+    "documents_trust_label": false,
+    "documents_trust_lattice_join": false,
+    "documents_untrusted_label": false,
+    "helper_parameters": {
+      "new_data_message": [
+        "data",
+        "media_type",
+        "context_id",
+        "task_id",
+        "role"
+      ],
+      "new_text_artifact": [
+        "name",
+        "text",
+        "media_type",
+        "description",
+        "artifact_id"
+      ],
+      "new_text_message": [
+        "text",
+        "media_type",
+        "context_id",
+        "task_id",
+        "role"
+      ]
+    },
+    "helpers_accept_metadata_argument": false,
+    "suite": "static_external_audit",
+    "traceability_spec_commit": "6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3"
+  },
+  "status": "complete",
+  "transport": {
+    "cases": 8,
+    "exact_survival": 8
+  }
+}

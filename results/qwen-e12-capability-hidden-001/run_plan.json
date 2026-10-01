@@ -1,0 +1,33 @@
+{
+  "attack_calls": 192,
+  "bootstrap_seed": 20260912,
+  "campaign_id": "e12-qwen-capability-hidden-20260905-v1",
+  "control_calls": 60,
+  "external_side_effects": false,
+  "freeze_verification": {
+    "checks": {
+      "digest": true,
+      "files": true,
+      "freeze_id": true,
+      "metadata_id": true,
+      "receipt": true,
+      "verified": true
+    },
+    "manifest_sha256": "58c78bf343834ded382132ba703ad473d69bfae05a313fb2e1151a4c401e367f",
+    "submitted_at_utc": "2026-09-05T01:59:31.6778774Z"
+  },
+  "input_verification": {
+    "attack_cells": true,
+    "bank_counts": true,
+    "bank_hashes": true,
+    "control_cells": true,
+    "indices": true,
+    "order_metadata": true
+  },
+  "max_tokens": 2048,
+  "model": "qwen3.7-flash-2026-07-15",
+  "primary": "a1_exact_pursuit_hidden_minus_visible",
+  "provider_calls": 252,
+  "temperature": 0,
+  "thinking": "disabled"
+}

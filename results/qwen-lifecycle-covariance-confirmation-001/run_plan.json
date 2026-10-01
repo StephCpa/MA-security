@@ -1,0 +1,122 @@
+{
+  "adoption_verification": {
+    "checks": {
+      "LIFECYCLE_COVARIANCE_PREREGISTRATION.md": true,
+      "QWEN_LIFECYCLE_COVARIANCE_ADOPTION_PREREGISTRATION.md": true,
+      "dashscope_provider.py": true,
+      "freeze_id": true,
+      "frozen_before_live": true,
+      "lifecycle_covariance_bank_v1/attacks.csv": true,
+      "lifecycle_covariance_bank_v1/controls.csv": true,
+      "lifecycle_covariance_bank_v1/execution_order.json": true,
+      "lifecycle_covariance_bank_v1/manifest.json": true,
+      "model": true,
+      "qwen_lifecycle_covariance_campaign.py": true
+    },
+    "freeze": {
+      "files_sha256": {
+        "LIFECYCLE_COVARIANCE_PREREGISTRATION.md": "7fabee653e97404ce64149059a0ebdae1f546a69da985e17b3918deed6dff0ad",
+        "QWEN_LIFECYCLE_COVARIANCE_ADOPTION_PREREGISTRATION.md": "73828c9ed4f2b5507eb9223d132a904ec4f215458d3a51683da665cc18aaa023",
+        "dashscope_provider.py": "b793e37745648f2ed335de63aa085cf2998b7c9315bfedd7a6efc47c8d356722",
+        "lifecycle_covariance_bank_v1/attacks.csv": "9ae8403530f69764b17a7e4501fcf4397c84b00c61ace7c0138129af7ee8111e",
+        "lifecycle_covariance_bank_v1/controls.csv": "fae47c524877c3a195662cce09b4c492d6726681bba0599cbba17e4aa30227f0",
+        "lifecycle_covariance_bank_v1/execution_order.json": "a9dba6154a03bfa4cc524c4a4724b2a5132c04eece59e4025b9bd5a4a6021209",
+        "lifecycle_covariance_bank_v1/manifest.json": "d3070d1e05205e40c5c4e963c4f6544a2fac53587a3c8b5165f8b37619e5b16d",
+        "qwen_lifecycle_covariance_campaign.py": "bf47fabbc7a4d2e0da1afed76dee5e5e80ac1fc801a63a054069cb42eba743e4"
+      },
+      "freeze_id": "lifecycle-covariance-qwen-20260828-v1",
+      "frozen_before_any_live_qwen_lifecycle_outcome": true,
+      "model": "qwen3.7-flash-2026-07-15",
+      "provider": "dashscope-qwen",
+      "temperature": 0,
+      "thinking": "disabled via enable_thinking=false"
+    },
+    "status": "pass"
+  },
+  "attack_stimuli": 48,
+  "authorized_controls": 6,
+  "bank_verification": {
+    "checks": {
+      "attacks": true,
+      "controls": true,
+      "freeze_id": true,
+      "frozen_before_live": true,
+      "frozen_files": true,
+      "order": true,
+      "zero_overlap": true
+    },
+    "freeze": {
+      "files_sha256": {
+        "LIFECYCLE_COVARIANCE_PREREGISTRATION.md": "7fabee653e97404ce64149059a0ebdae1f546a69da985e17b3918deed6dff0ad",
+        "build_lifecycle_covariance_bank.py": "3eb70a7cac0ebf58f910d275549a8712ea970e572ee6f6fbe696afe4b5393d12",
+        "lifecycle_covariance_bank_v1/attacks.csv": "9ae8403530f69764b17a7e4501fcf4397c84b00c61ace7c0138129af7ee8111e",
+        "lifecycle_covariance_bank_v1/controls.csv": "fae47c524877c3a195662cce09b4c492d6726681bba0599cbba17e4aa30227f0",
+        "lifecycle_covariance_bank_v1/execution_order.json": "a9dba6154a03bfa4cc524c4a4724b2a5132c04eece59e4025b9bd5a4a6021209",
+        "lifecycle_covariance_bank_v1/manifest.json": "d3070d1e05205e40c5c4e963c4f6544a2fac53587a3c8b5165f8b37619e5b16d",
+        "lifecycle_covariance_campaign.py": "43b8649c96c7693f203759785d54f1cafa71c3ae6a6576354d306d022060f99e",
+        "lifecycle_covariance_core.py": "0717cc771f159b7d54461885bc38f5380273d4c683fb8fb2f5f3dcd3a443381c",
+        "test_lifecycle_covariance.py": "918d6f250f3e203682b0ff0ad2c6111ef70624f00ea89cb34a9b81365683f8f7"
+      },
+      "freeze_id": "lifecycle-covariance-deepseek-20260828-v1",
+      "frozen_before_any_live_lifecycle_outcome": true,
+      "model": "deepseek-v4-flash",
+      "primary_q": 0.05,
+      "temperature": 0,
+      "thinking": "disabled"
+    },
+    "freeze_files": {
+      "LIFECYCLE_COVARIANCE_PREREGISTRATION.md": true,
+      "build_lifecycle_covariance_bank.py": true,
+      "lifecycle_covariance_bank_v1/attacks.csv": true,
+      "lifecycle_covariance_bank_v1/controls.csv": true,
+      "lifecycle_covariance_bank_v1/execution_order.json": true,
+      "lifecycle_covariance_bank_v1/manifest.json": true,
+      "lifecycle_covariance_campaign.py": true,
+      "lifecycle_covariance_core.py": true,
+      "test_lifecycle_covariance.py": true
+    },
+    "manifest": {
+      "attack_csv_sha256": "9ae8403530f69764b17a7e4501fcf4397c84b00c61ace7c0138129af7ee8111e",
+      "bank_version": "lifecycle-covariance-v1",
+      "calibration_attacks": 6,
+      "calibration_authorized_controls": 2,
+      "confirmation_attacks": 48,
+      "confirmation_authorized_controls": 6,
+      "control_csv_sha256": "fae47c524877c3a195662cce09b4c492d6726681bba0599cbba17e4aa30227f0",
+      "execution_order_sha256": "a9dba6154a03bfa4cc524c4a4724b2a5132c04eece59e4025b9bd5a4a6021209",
+      "freeze_id": "lifecycle-covariance-deepseek-20260828-v1",
+      "model_calls_calibration": 14,
+      "model_calls_confirmation_including_controls": 102,
+      "primary_q": 0.05,
+      "q_grid": [
+        0.02,
+        0.05,
+        0.1,
+        0.2,
+        0.4
+      ],
+      "shared_root_fraction": 0.5,
+      "zero_exact_overlap_with_prior_csv_banks": true
+    }
+  },
+  "campaign_id": "qwen-lifecycle-covariance-confirmation-001",
+  "campaign_source_sha256": "bf47fabbc7a4d2e0da1afed76dee5e5e80ac1fc801a63a054069cb42eba743e4",
+  "exact_state_replay": true,
+  "external_side_effects": false,
+  "freeze_id": "lifecycle-covariance-qwen-20260828-v1",
+  "logical_model_calls": 102,
+  "model": "qwen3.7-flash-2026-07-15",
+  "phase": "confirmation",
+  "primary_q": 0.05,
+  "provider": "dashscope-qwen",
+  "provider_source_sha256": "b793e37745648f2ed335de63aa085cf2998b7c9315bfedd7a6efc47c8d356722",
+  "q_grid": [
+    0.02,
+    0.05,
+    0.1,
+    0.2,
+    0.4
+  ],
+  "temperature": 0,
+  "thinking": "disabled via enable_thinking=false"
+}

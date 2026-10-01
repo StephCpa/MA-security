@@ -1,0 +1,587 @@
+{
+  "a2a_helper_default-trusted-cache_then_derivation-2": {
+    "ancestors": [
+      "multihop-trusted-root"
+    ],
+    "content": "fixed cache_then_derivation step 2",
+    "object_id": "a2a_helper_default-trusted-cache_then_derivation-2",
+    "operation": "derive-after-cache",
+    "parents": [
+      "multihop-trusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "a2a_helper_default-trusted-summary_of_summary-1": {
+    "ancestors": [
+      "multihop-trusted-root"
+    ],
+    "content": "fixed summary_of_summary step 1",
+    "object_id": "a2a_helper_default-trusted-summary_of_summary-1",
+    "operation": "summary-1",
+    "parents": [
+      "multihop-trusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "a2a_helper_default-trusted-summary_of_summary-2": {
+    "ancestors": [
+      "a2a_helper_default-trusted-summary_of_summary-1",
+      "multihop-trusted-root"
+    ],
+    "content": "fixed summary_of_summary step 2",
+    "object_id": "a2a_helper_default-trusted-summary_of_summary-2",
+    "operation": "summary-2",
+    "parents": [
+      "a2a_helper_default-trusted-summary_of_summary-1"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "a2a_helper_default-trusted-two_intermediary_handoff-1": {
+    "ancestors": [
+      "multihop-trusted-root"
+    ],
+    "content": "fixed two_intermediary_handoff step 1",
+    "object_id": "a2a_helper_default-trusted-two_intermediary_handoff-1",
+    "operation": "handoff-agent-1",
+    "parents": [
+      "multihop-trusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "a2a_helper_default-trusted-two_intermediary_handoff-2": {
+    "ancestors": [
+      "a2a_helper_default-trusted-two_intermediary_handoff-1",
+      "multihop-trusted-root"
+    ],
+    "content": "fixed two_intermediary_handoff step 2",
+    "object_id": "a2a_helper_default-trusted-two_intermediary_handoff-2",
+    "operation": "handoff-agent-2",
+    "parents": [
+      "a2a_helper_default-trusted-two_intermediary_handoff-1"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "a2a_helper_default-untrusted-cache_then_derivation-2": {
+    "ancestors": [
+      "multihop-untrusted-root"
+    ],
+    "content": "fixed cache_then_derivation step 2",
+    "object_id": "a2a_helper_default-untrusted-cache_then_derivation-2",
+    "operation": "derive-after-cache",
+    "parents": [
+      "multihop-untrusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "a2a_helper_default-untrusted-summary_of_summary-1": {
+    "ancestors": [
+      "multihop-untrusted-root"
+    ],
+    "content": "fixed summary_of_summary step 1",
+    "object_id": "a2a_helper_default-untrusted-summary_of_summary-1",
+    "operation": "summary-1",
+    "parents": [
+      "multihop-untrusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "a2a_helper_default-untrusted-summary_of_summary-2": {
+    "ancestors": [
+      "a2a_helper_default-untrusted-summary_of_summary-1",
+      "multihop-untrusted-root"
+    ],
+    "content": "fixed summary_of_summary step 2",
+    "object_id": "a2a_helper_default-untrusted-summary_of_summary-2",
+    "operation": "summary-2",
+    "parents": [
+      "a2a_helper_default-untrusted-summary_of_summary-1"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "a2a_helper_default-untrusted-two_intermediary_handoff-1": {
+    "ancestors": [
+      "multihop-untrusted-root"
+    ],
+    "content": "fixed two_intermediary_handoff step 1",
+    "object_id": "a2a_helper_default-untrusted-two_intermediary_handoff-1",
+    "operation": "handoff-agent-1",
+    "parents": [
+      "multihop-untrusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "a2a_helper_default-untrusted-two_intermediary_handoff-2": {
+    "ancestors": [
+      "a2a_helper_default-untrusted-two_intermediary_handoff-1",
+      "multihop-untrusted-root"
+    ],
+    "content": "fixed two_intermediary_handoff step 2",
+    "object_id": "a2a_helper_default-untrusted-two_intermediary_handoff-2",
+    "operation": "handoff-agent-2",
+    "parents": [
+      "a2a_helper_default-untrusted-two_intermediary_handoff-1"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "explicit_reference_adapter-trusted-cache_then_derivation-2": {
+    "ancestors": [
+      "multihop-trusted-root"
+    ],
+    "content": "fixed cache_then_derivation step 2",
+    "object_id": "explicit_reference_adapter-trusted-cache_then_derivation-2",
+    "operation": "derive-after-cache",
+    "parents": [
+      "multihop-trusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "explicit_reference_adapter-trusted-summary_of_summary-1": {
+    "ancestors": [
+      "multihop-trusted-root"
+    ],
+    "content": "fixed summary_of_summary step 1",
+    "object_id": "explicit_reference_adapter-trusted-summary_of_summary-1",
+    "operation": "summary-1",
+    "parents": [
+      "multihop-trusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "explicit_reference_adapter-trusted-summary_of_summary-2": {
+    "ancestors": [
+      "explicit_reference_adapter-trusted-summary_of_summary-1",
+      "multihop-trusted-root"
+    ],
+    "content": "fixed summary_of_summary step 2",
+    "object_id": "explicit_reference_adapter-trusted-summary_of_summary-2",
+    "operation": "summary-2",
+    "parents": [
+      "explicit_reference_adapter-trusted-summary_of_summary-1"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "explicit_reference_adapter-trusted-two_intermediary_handoff-1": {
+    "ancestors": [
+      "multihop-trusted-root"
+    ],
+    "content": "fixed two_intermediary_handoff step 1",
+    "object_id": "explicit_reference_adapter-trusted-two_intermediary_handoff-1",
+    "operation": "handoff-agent-1",
+    "parents": [
+      "multihop-trusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "explicit_reference_adapter-trusted-two_intermediary_handoff-2": {
+    "ancestors": [
+      "explicit_reference_adapter-trusted-two_intermediary_handoff-1",
+      "multihop-trusted-root"
+    ],
+    "content": "fixed two_intermediary_handoff step 2",
+    "object_id": "explicit_reference_adapter-trusted-two_intermediary_handoff-2",
+    "operation": "handoff-agent-2",
+    "parents": [
+      "explicit_reference_adapter-trusted-two_intermediary_handoff-1"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "explicit_reference_adapter-untrusted-cache_then_derivation-2": {
+    "ancestors": [
+      "multihop-untrusted-root"
+    ],
+    "content": "fixed cache_then_derivation step 2",
+    "object_id": "explicit_reference_adapter-untrusted-cache_then_derivation-2",
+    "operation": "derive-after-cache",
+    "parents": [
+      "multihop-untrusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "explicit_reference_adapter-untrusted-summary_of_summary-1": {
+    "ancestors": [
+      "multihop-untrusted-root"
+    ],
+    "content": "fixed summary_of_summary step 1",
+    "object_id": "explicit_reference_adapter-untrusted-summary_of_summary-1",
+    "operation": "summary-1",
+    "parents": [
+      "multihop-untrusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "explicit_reference_adapter-untrusted-summary_of_summary-2": {
+    "ancestors": [
+      "explicit_reference_adapter-untrusted-summary_of_summary-1",
+      "multihop-untrusted-root"
+    ],
+    "content": "fixed summary_of_summary step 2",
+    "object_id": "explicit_reference_adapter-untrusted-summary_of_summary-2",
+    "operation": "summary-2",
+    "parents": [
+      "explicit_reference_adapter-untrusted-summary_of_summary-1"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "explicit_reference_adapter-untrusted-two_intermediary_handoff-1": {
+    "ancestors": [
+      "multihop-untrusted-root"
+    ],
+    "content": "fixed two_intermediary_handoff step 1",
+    "object_id": "explicit_reference_adapter-untrusted-two_intermediary_handoff-1",
+    "operation": "handoff-agent-1",
+    "parents": [
+      "multihop-untrusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "explicit_reference_adapter-untrusted-two_intermediary_handoff-2": {
+    "ancestors": [
+      "explicit_reference_adapter-untrusted-two_intermediary_handoff-1",
+      "multihop-untrusted-root"
+    ],
+    "content": "fixed two_intermediary_handoff step 2",
+    "object_id": "explicit_reference_adapter-untrusted-two_intermediary_handoff-2",
+    "operation": "handoff-agent-2",
+    "parents": [
+      "explicit_reference_adapter-untrusted-two_intermediary_handoff-1"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "failure-merged": {
+    "ancestors": [
+      "failure-trusted",
+      "failure-untrusted"
+    ],
+    "content": "merged output",
+    "object_id": "failure-merged",
+    "operation": "merge",
+    "parents": [
+      "failure-untrusted",
+      "failure-trusted"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "failure-trusted": {
+    "ancestors": [],
+    "content": "trusted input",
+    "object_id": "failure-trusted",
+    "operation": "source",
+    "parents": [],
+    "source_principal": "trusted-system",
+    "trust": "trusted"
+  },
+  "failure-untrusted": {
+    "ancestors": [],
+    "content": "untrusted input",
+    "object_id": "failure-untrusted",
+    "operation": "source",
+    "parents": [],
+    "source_principal": "external-document",
+    "trust": "untrusted"
+  },
+  "multihop-trusted-root": {
+    "ancestors": [],
+    "content": "multihop trusted source",
+    "object_id": "multihop-trusted-root",
+    "operation": "source",
+    "parents": [],
+    "source_principal": "trusted-system",
+    "trust": "trusted"
+  },
+  "multihop-untrusted-root": {
+    "ancestors": [],
+    "content": "multihop untrusted source",
+    "object_id": "multihop-untrusted-root",
+    "operation": "source",
+    "parents": [],
+    "source_principal": "external-document",
+    "trust": "untrusted"
+  },
+  "transport-trusted": {
+    "ancestors": [],
+    "content": "fixed transport text",
+    "object_id": "transport-trusted",
+    "operation": "source",
+    "parents": [],
+    "source_principal": "trusted-system",
+    "trust": "trusted"
+  },
+  "transport-untrusted": {
+    "ancestors": [],
+    "content": "fixed transport text",
+    "object_id": "transport-untrusted",
+    "operation": "source",
+    "parents": [],
+    "source_principal": "external-document",
+    "trust": "untrusted"
+  },
+  "trusted-artifact_to_message-child": {
+    "ancestors": [
+      "trusted-root"
+    ],
+    "content": "fixed derived content for artifact_to_message",
+    "object_id": "trusted-artifact_to_message-child",
+    "operation": "artifact_to_message",
+    "parents": [
+      "trusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "trusted-cache_then_derivation-child": {
+    "ancestors": [
+      "trusted-root"
+    ],
+    "content": "fixed derived content for cache_then_derivation",
+    "object_id": "trusted-cache_then_derivation-child",
+    "operation": "cache_then_derivation",
+    "parents": [
+      "trusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "trusted-message_to_artifact-child": {
+    "ancestors": [
+      "trusted-root"
+    ],
+    "content": "fixed derived content for message_to_artifact",
+    "object_id": "trusted-message_to_artifact-child",
+    "operation": "message_to_artifact",
+    "parents": [
+      "trusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "trusted-message_to_message-child": {
+    "ancestors": [
+      "trusted-root"
+    ],
+    "content": "fixed derived content for message_to_message",
+    "object_id": "trusted-message_to_message-child",
+    "operation": "message_to_message",
+    "parents": [
+      "trusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "trusted-multi_source_aggregation-child": {
+    "ancestors": [
+      "trusted-root",
+      "trusted-trusted-peer"
+    ],
+    "content": "fixed derived content for multi_source_aggregation",
+    "object_id": "trusted-multi_source_aggregation-child",
+    "operation": "multi_source_aggregation",
+    "parents": [
+      "trusted-root",
+      "trusted-trusted-peer"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "trusted-root": {
+    "ancestors": [],
+    "content": "fixed trusted source",
+    "object_id": "trusted-root",
+    "operation": "source",
+    "parents": [],
+    "source_principal": "trusted-system",
+    "trust": "trusted"
+  },
+  "trusted-summary_of_summary-child": {
+    "ancestors": [
+      "trusted-root"
+    ],
+    "content": "fixed derived content for summary_of_summary",
+    "object_id": "trusted-summary_of_summary-child",
+    "operation": "summary_of_summary",
+    "parents": [
+      "trusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "trusted-tool_result-child": {
+    "ancestors": [
+      "trusted-root"
+    ],
+    "content": "fixed derived content for tool_result",
+    "object_id": "trusted-tool_result-child",
+    "operation": "tool_result",
+    "parents": [
+      "trusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "trusted-trusted-peer": {
+    "ancestors": [],
+    "content": "fixed trusted peer",
+    "object_id": "trusted-trusted-peer",
+    "operation": "source",
+    "parents": [],
+    "source_principal": "trusted-system",
+    "trust": "trusted"
+  },
+  "trusted-two_intermediary_handoff-child": {
+    "ancestors": [
+      "trusted-root"
+    ],
+    "content": "fixed derived content for two_intermediary_handoff",
+    "object_id": "trusted-two_intermediary_handoff-child",
+    "operation": "two_intermediary_handoff",
+    "parents": [
+      "trusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "trusted"
+  },
+  "untrusted-artifact_to_message-child": {
+    "ancestors": [
+      "untrusted-root"
+    ],
+    "content": "fixed derived content for artifact_to_message",
+    "object_id": "untrusted-artifact_to_message-child",
+    "operation": "artifact_to_message",
+    "parents": [
+      "untrusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "untrusted-cache_then_derivation-child": {
+    "ancestors": [
+      "untrusted-root"
+    ],
+    "content": "fixed derived content for cache_then_derivation",
+    "object_id": "untrusted-cache_then_derivation-child",
+    "operation": "cache_then_derivation",
+    "parents": [
+      "untrusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "untrusted-message_to_artifact-child": {
+    "ancestors": [
+      "untrusted-root"
+    ],
+    "content": "fixed derived content for message_to_artifact",
+    "object_id": "untrusted-message_to_artifact-child",
+    "operation": "message_to_artifact",
+    "parents": [
+      "untrusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "untrusted-message_to_message-child": {
+    "ancestors": [
+      "untrusted-root"
+    ],
+    "content": "fixed derived content for message_to_message",
+    "object_id": "untrusted-message_to_message-child",
+    "operation": "message_to_message",
+    "parents": [
+      "untrusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "untrusted-multi_source_aggregation-child": {
+    "ancestors": [
+      "untrusted-root",
+      "untrusted-trusted-peer"
+    ],
+    "content": "fixed derived content for multi_source_aggregation",
+    "object_id": "untrusted-multi_source_aggregation-child",
+    "operation": "multi_source_aggregation",
+    "parents": [
+      "untrusted-root",
+      "untrusted-trusted-peer"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "untrusted-root": {
+    "ancestors": [],
+    "content": "fixed untrusted source",
+    "object_id": "untrusted-root",
+    "operation": "source",
+    "parents": [],
+    "source_principal": "external-document",
+    "trust": "untrusted"
+  },
+  "untrusted-summary_of_summary-child": {
+    "ancestors": [
+      "untrusted-root"
+    ],
+    "content": "fixed derived content for summary_of_summary",
+    "object_id": "untrusted-summary_of_summary-child",
+    "operation": "summary_of_summary",
+    "parents": [
+      "untrusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "untrusted-tool_result-child": {
+    "ancestors": [
+      "untrusted-root"
+    ],
+    "content": "fixed derived content for tool_result",
+    "object_id": "untrusted-tool_result-child",
+    "operation": "tool_result",
+    "parents": [
+      "untrusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  },
+  "untrusted-trusted-peer": {
+    "ancestors": [],
+    "content": "fixed trusted peer",
+    "object_id": "untrusted-trusted-peer",
+    "operation": "source",
+    "parents": [],
+    "source_principal": "trusted-system",
+    "trust": "trusted"
+  },
+  "untrusted-two_intermediary_handoff-child": {
+    "ancestors": [
+      "untrusted-root"
+    ],
+    "content": "fixed derived content for two_intermediary_handoff",
+    "object_id": "untrusted-two_intermediary_handoff-child",
+    "operation": "two_intermediary_handoff",
+    "parents": [
+      "untrusted-root"
+    ],
+    "source_principal": "derived-agent",
+    "trust": "untrusted"
+  }
+}

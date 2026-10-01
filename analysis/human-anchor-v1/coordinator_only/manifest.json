@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-09-29T05:43:31.079Z",
+  "status": "prepared_not_human_rated",
+  "main_source_sha256": "ebdb0f4907c38af91f1b226832bb039a115df465969274b58efadc382bf68be6",
+  "rubric_sha256": "ac8567b9063006f12f2cea3fd51b06c791d0bb4a3ab61feda577f5f8dc4e5197",
+  "source_directives": 48,
+  "texts_per_rater": 96,
+  "practice_per_rater": 6,
+  "ordering": "Rater-specific hash shuffle with at least six positions between the two texts from one pair; no outcome-dependent ordering.",
+  "ratings_collected": 0,
+  "model_calls": 0,
+  "interpretation": "Human anchor of original text-local ordinal scales; no causal mediation or current two-hop semantic-continuity validation."
+}

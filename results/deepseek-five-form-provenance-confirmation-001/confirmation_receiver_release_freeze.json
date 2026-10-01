@@ -1,0 +1,79 @@
+{
+  "bank_verification": {
+    "checks": {
+      "authorized_controls.csv": true,
+      "complete_rcp": true,
+      "deterministic_forms.csv": true,
+      "frozen_before_outcomes": true,
+      "generation_order.json": true,
+      "manifest.json": true,
+      "marker_is_single_inserted_line": true,
+      "pinned_model": true,
+      "receiver_order.json": true,
+      "source:FIVE_FORM_PROVENANCE_CONFIRMATION_PREREGISTRATION.md": true,
+      "source:analyze_five_form_confirmation.py": true,
+      "source:audit_five_form_generation.py": true,
+      "source:build_five_form_confirmation_bank.py": true,
+      "source:deepseek_confirmation_provider.py": true,
+      "source:five_form_confirmation_campaign.py": true,
+      "source:five_form_provenance_campaign.py": true,
+      "source:providers.py": true,
+      "source:realized_effect.py": true,
+      "source:security_policy.py": true,
+      "source:test_five_form_confirmation.py": true,
+      "source_pairs.csv": true,
+      "zero_prior_exact_overlap": true
+    },
+    "freeze_sha256": "308edae1a50dda9b749dd316262bda888ac746ccf3beb45ca1a704ffc591e044",
+    "status": "pass"
+  },
+  "files_sha256": {
+    "bank/freeze_record.json": "308edae1a50dda9b749dd316262bda888ac746ccf3beb45ca1a704ffc591e044",
+    "preregistration/FIVE_FORM_PROVENANCE_CONFIRMATION_PREREGISTRATION.md": "4c168c6a19b4c0a517325825a59a980c6bfbd65cefa707ea2f061b8c36a0eb6a",
+    "rating/five_form_confirmation_rater_A.xlsx": "d01a1768fc27bcfa78b7a9825f86affa55a1d0da1aa1e1767d78b1a9c8c57ffa",
+    "rating/five_form_confirmation_rater_B.xlsx": "cd5c5415ea4da7611fb5715ad624b6fbe6139027800e614ad7e201f61f5cbb46",
+    "rating/five_form_confirmation_rating_audit_master.xlsx": "53caee9a6026bd1d2f6b94ece4bd9323065b2f602f50d0d707f4b69a1318b5b9",
+    "rating/manifest.json": "b220745f9dc15b1e0b59486ab30df986e532ff4d60b8b40986a4b42ca4988662",
+    "rubric/FIVE_FORM_RATER_INSTRUCTIONS.md": "ac8567b9063006f12f2cea3fd51b06c791d0bb4a3ab61feda577f5f8dc4e5197",
+    "run/generated_freeze.json": "e1c6a82f8153449c68c138bb053e0537439c3ece50a3e164ae08bb8412a953f1",
+    "run/pre_receiver_audit.json": "6dca73a36df320bcd17b8c0784ee6e892b2ccf5ea7f85af60e27b29531bb2974",
+    "run/pre_receiver_audit_freeze.json": "698008ef596a4b65f84b0c6a2b74cb2f2162572edda6e13ce5453ff3335075e7",
+    "source/analyze_five_form_confirmation.py": "234cddf40ba6c1f87be6fc643348fbcf8f062969cd3ecfc54c1fb1c8233715d6",
+    "source/confirmation_receiver_release.py": "fdf816cb211468864689b8d1c157ad4d5a079437e799503fc68d911b529063ea",
+    "source/deepseek_confirmation_provider.py": "599931d90cde79d9dbb6b2a7c3aaa04001f5f4d1f19f63d6cfd1851903e647b1",
+    "source/events.py": "8a33818c94fe0e4d19b57476b0abfaafe9e355364a7cd07f9c542f373bcd57f0",
+    "source/five_form_confirmation_campaign.py": "e71d3269111be8a1ea47b4a89ddcb1779cf56961033c0e15a2a9708402a9d849",
+    "source/five_form_provenance_campaign.py": "1e9e8d503a9dffb5ee362a9d77f11e025481062eb09c12f6b9c9774e60edd509",
+    "source/providers.py": "5ea45168389d809eb465b749ba0f8d4b0426ad3fb076db5fb8277c106d40eb81",
+    "source/realized_effect.py": "1e5f151f83f5bc2a250cd1127a2a3b14ae8b4b9420032d23ca414360d3f15dd3",
+    "source/sandbox.py": "16fcca4e163f5bf933ed6f37e989eb5b19d86ea35135e625aa1bdf0bd3a59439"
+  },
+  "generated_verification": {
+    "checks": {
+      "bank_freeze": true,
+      "frozen_before_receiver": true,
+      "generated_forms": true,
+      "generation_report": true
+    },
+    "status": "pass"
+  },
+  "pre_receiver_audit_verification": {
+    "checks": {
+      "audit": true,
+      "audit_source": true,
+      "generated_forms": true,
+      "generated_freeze": true,
+      "status": true
+    },
+    "status": "pass"
+  },
+  "rating_manifest_checks": {
+    "five_form_confirmation_rater_A.xlsx": true,
+    "five_form_confirmation_rater_B.xlsx": true,
+    "five_form_confirmation_rating_audit_master.xlsx": true
+  },
+  "rating_pack_generated_before_receiver_outcomes": true,
+  "receiver_artifacts_present": [],
+  "schema_version": "five-form-confirmation-receiver-release-v1",
+  "status": "frozen_before_any_receiver_outcome"
+}

@@ -1,0 +1,126 @@
+\section{Coupled Authorization Failures}
+\label{sec:covariance}
+
+Zero-floor enforcement experiments do not reveal how controls fail. We
+therefore separate two factors: the receiver's response to instruction
+elevation and the topology that couples elevation to write authority.
+
+\subsection{Risk identity}
+
+Let $a,b\in\{0,1\}$ denote authenticated instruction elevation and enforced
+write capability. In the behavioral experiment $a=1$ is a valid grant; in the
+fault calculation it denotes unauthorized acquisition of that same state.
+Let $Y$ be an exact protected-write request generated while the tool is
+visible, with $\rzero=\Pr(Y=1\mid a=0)$ and
+$\rone=\Pr(Y=1\mid a=1)$. The monitor mutates state exactly when $Y=b=1$.
+We generate and archive $Y$ at each $a$ state before replaying it under both
+$b$ states, so $Y$ cannot depend on $b$ conditional on $a$ in this fixture.
+For matched marginals $\E[a]=\E[b]=q$,
+\begin{equation}
+R=q[(1-q)\rzero+q\rone]+\Cov(a,b)(\rone-\rzero),
+\label{eq:identity}
+\end{equation}
+so relative to independent lifecycles,
+\begin{equation}
+R_{\mathrm{top}}-R_{\mathrm{ind}}=\Cov(a,b)(\rone-\rzero).
+\label{eq:excess}
+\end{equation}
+This follows by expanding the two $b=1$ cells. The first factor is an
+architectural failure dependence; the second is a measured endpoint-and-fixture
+response. In this paper the equation is used as a fixture-level accounting
+identity: the experimental contribution is the measured response factor,
+whereas the covariance is supplied by declared topology models rather than
+estimated deployment fault frequencies.
+When $\rone\approx\rzero$, channel typing does not change behavior and
+capability enforcement remains necessary. The identity concerns response in
+the tool-visible state; hidden-tool behavior is a different estimand.
+
+The response is specific to the action schema and fixture. It was .875 for
+DeepSeek semantic placement and .396 for Qwen on the same task, .313 for Qwen
+credential gating, and .167 for a frozen-relay exact request. Tool hiding
+changes the available action schema, so its response cannot be inserted into
+Equation~\eqref{eq:identity}. We estimate the factor anew for each endpoint
+and tool-visible fixture.
+
+\subsection{Credential-gated measurement}
+
+For 48 new Qwen directives, a gateway derived $a$ from authenticated inherited
+lineage and a scoped elevation grant; a separate grant controlled $b$. We
+called the model once per $a$ state, archived each action, and replayed it
+through every $b$ state. Exact protected requests increased from 33/48 to
+48/48, so $\rone-\rzero=.3125$ (paired 95\% CI [.1866,.4625]). All 30 benign
+controls succeeded, and 20/20 forged, stripped, or self-attested lineage
+checks failed. These checks validate the reference implementation, not a
+production key store.
+
+\begin{table}[t]
+  \centering
+  \footnotesize
+  \caption{Qwen risk weighting at declared $q=.05$. Only $\rzero$ and
+  $\rone$ are model measurements; covariance and risk follow from the declared
+  fault topology.}
+  \label{tab:measured}
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{lrrr}
+    \toprule
+    Topology & $\E[a]{=}\E[b]$ & $\Cov(a,b)$ & Risk \\
+    \midrule
+    Independent lifecycles & .050 & 0 & .035156 \\
+    Nominal split, common root & .050 & .023141 & .042388 \\
+    Shared persistent state & .050 & .047500 & .050000 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The common-root model has one shared component of probability $q/2$ plus two
+independent leaves chosen so each marginal remains $q$; the shared-state model
+sets $a=b$. Their excesses over independence are .007232 and .014844,
+exactly $.023141\times.3125$ and $.047500\times.3125$. Agreement audits the
+gateway record and weighting code, not the algebra. The value $q=.05$ is a
+sensitivity parameter, not an estimated compromise frequency.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figures/aamas-fig4-v03-ppt.png}
+  \caption{Measured Qwen response and topology-weighted excess risk. The three points use a declared $q=.05$ fault model; only the response rates are measured model outputs.}
+  \Description{A plot of excess risk in percentage points against covariance between elevation and write authority, alongside measured Qwen response rates and the declared-topology caveat.}
+  \label{fig:covariance-risk}
+\end{figure}
+
+\subsection{Relay policy changes the response factor}
+\label{sec:e4-gateway}
+
+\begin{table}[t]
+  \centering
+  \footnotesize
+  \caption{Exact protected requests over frozen DeepSeek relay outputs
+  (n=48 per arm). The provider is evaluated at both elevation states.}
+  \label{tab:e4-gateway}
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{lrr}
+    \toprule
+    Relay policy and source & $a=0$ & $a=1$ \\
+    \midrule
+    Benign, marked & 0/48 & 6/48 \\
+    Adaptive, marked & 1/48 & 32/48 \\
+    Benign, unmarked & 0/48 & 37/48 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+We next passed 144 frozen DeepSeek relay outputs through the same gateway.
+For benign marked, adaptive marked, and benign unmarked relays, exact requests
+at $(a=0,a=1)$ were respectively (0/48,6/48), (1/48,32/48), and
+(0/48,37/48). The prespecified adaptive-minus-benign interaction was .5208
+($p=4.17\times10^{-7}$). Adaptive and unmarked exact endpoints were not
+distinguished ($p=.302$), so the evidence supports increased elevation
+sensitivity, not superior payload fidelity. A prospective Qwen evaluation
+reproduced the broad response (27/48 to 44/48, $p=2.21\times10^{-4}$) and a
+smaller, marginal exact response (22/48 to 30/48, $p=.0386$); a same-bank
+repeat gave 25/48 to 43/48 and 21/48 to 30/48. These runs bound one temporal
+repeat, not provider-wide variance.
+
+The result is a measured decomposition, not three executed provider arms:
+agent calls estimate $\rzero,\rone$; the declared topology weights reconstruct
+risk. Separate token names do not guarantee $\Cov(a,b)=0$ when credentials
+share an issuer, storage root, principal, or recovery path.

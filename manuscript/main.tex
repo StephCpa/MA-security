@@ -1,0 +1,105 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AAMAS 2027 main-track submission, GAAI area.
+% Anonymous working draft derived from the evidence-frozen USENIX manuscript.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TeX Live 2017 does not preload the LaTeX3 command layer used by the 2027
+% class. Loading it explicitly is a local toolchain compatibility measure; the
+% official class and all layout parameters remain unchanged.
+\RequirePackage{expl3}
+\documentclass[sigconf,anonymous]{aamas}
+
+\usepackage{balance}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+
+\makeatletter
+\gdef\@copyrightpermission{
+  \begin{minipage}{0.2\columnwidth}
+   \href{https://creativecommons.org/licenses/by/4.0/}{\includegraphics[width=0.90\textwidth]{by}}
+  \end{minipage}\hfill
+  \begin{minipage}{0.8\columnwidth}
+   \href{https://creativecommons.org/licenses/by/4.0/}{This work is licensed under a Creative Commons Attribution International 4.0 License.}
+  \end{minipage}
+  \vspace{5pt}
+}
+\makeatother
+
+\setcopyright{ifaamas}
+\acmConference[AAMAS 2027]{Proc.\@ of the 26th International Conference
+on Autonomous Agents and Multiagent Systems (AAMAS 2027)}{3--7 May 2027}{Hanoi, Vietnam}{M.~Baldoni, F.~Fang, W.~Yeoh, N.~Yorke-Smith (eds.)}
+\copyrightyear{2027}
+\acmYear{2027}
+\acmDOI{}
+\acmISBN{}
+\acmSubmissionID{TBD}
+\submissionType{Research Paper Track}
+
+\title[Provenance after Generative-Agent Relay]{Provenance after Generative-Agent Relay: Transformation, Propagation, and Coupled Authorization}
+
+\author{Anonymous Author(s)}
+\affiliation{\institution{Anonymous Institution}\country{Anonymous}}
+
+\begin{abstract}
+Generative agents often rewrite external content before passing it to another
+agent. The rewritten message may lose its provenance marker while retaining
+some action-related content. We measure transformation, onward delegation, and
+capability-mediated state change as separate outcomes. In a paired 48-directive
+study, an explicit untrusted-content marker reduced protected-write requests
+from 40 to 1. The marker disappeared from every regenerated message, yet
+marked-derived texts induced fewer requests than unmarked-derived texts
+(22 versus 44); a second model reproduced this contrast on identical texts.
+The contrast is primarily sender-mediated: marked inputs changed action
+content and pragmatic centrality in the generated text, so the study does not
+identify an independent effect of the missing literal marker. In a prospectively
+selected high-retention stratum, 17/121 messages induced two consecutive
+delegation calls; this is a conditional selected-stratum rate rather than a
+population estimate. Hiding a write tool redirected elevated requests to an
+advertised escalation route, and pinned A2A tests located lineage loss at
+message derivation rather than transport. Together, these results locate where
+agent cooperation changes the meaning of untrusted content and where
+authorization must be enforced.
+\end{abstract}
+
+\keywords{generative agents, multi-agent systems, prompt injection, provenance,
+agent protocols, capability security, evaluation}
+
+\ccsdesc[500]{Computing methodologies~Multi-agent systems}
+\ccsdesc[300]{Security and privacy~Authorization}
+
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\rzero}{r_0}
+\newcommand{\rone}{r_1}
+\newcommand{\SC}{S_C}
+\newcommand{\SP}{S_P}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newtheorem{proposition}{Proposition}
+
+\begin{document}
+\maketitle
+
+\input{sections/01_intro}
+\input{sections/02_threat}
+\input{sections/03_laundering}
+\input{sections/04_propagation}
+\input{sections/05_covariance}
+\input{sections/06_external}
+\input{sections/07_related}
+\input{sections/08_discussion}
+\input{sections/09_conclusion}
+
+\balance
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

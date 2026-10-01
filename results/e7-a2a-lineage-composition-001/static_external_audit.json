@@ -1,0 +1,34 @@
+{
+  "documents_integrity_protection": false,
+  "documents_message_or_artifact_metadata": true,
+  "documents_parent_step_id": true,
+  "documents_trust_label": false,
+  "documents_trust_lattice_join": false,
+  "documents_untrusted_label": false,
+  "helper_parameters": {
+    "new_data_message": [
+      "data",
+      "media_type",
+      "context_id",
+      "task_id",
+      "role"
+    ],
+    "new_text_artifact": [
+      "name",
+      "text",
+      "media_type",
+      "description",
+      "artifact_id"
+    ],
+    "new_text_message": [
+      "text",
+      "media_type",
+      "context_id",
+      "task_id",
+      "role"
+    ]
+  },
+  "helpers_accept_metadata_argument": false,
+  "suite": "static_external_audit",
+  "traceability_spec_commit": "6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3"
+}

@@ -1,0 +1,10 @@
+{
+  "checks_passed": 4350,
+  "receiver_sessions_replayed": 286,
+  "generation_responses_checked": 110,
+  "missing_generation_sessions": 0,
+  "model_calls_during_audit": 0,
+  "archived_generation_calls": 110,
+  "archived_receiver_calls": 1832,
+  "scope": "Replay through official runtime/predicates; scorer itself is not independently validated by this audit."
+}

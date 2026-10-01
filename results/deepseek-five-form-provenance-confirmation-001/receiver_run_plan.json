@@ -1,0 +1,14 @@
+{
+  "bank_freeze_sha256": "308edae1a50dda9b749dd316262bda888ac746ccf3beb45ca1a704ffc591e044",
+  "campaign_id": "deepseek-five-form-provenance-confirmation-001",
+  "generated_freeze_sha256": "e1c6a82f8153449c68c138bb053e0537439c3ece50a3e164ae08bb8412a953f1",
+  "logical_model_calls": 492,
+  "max_tokens": 1024,
+  "pre_receiver_audit_freeze_sha256": "698008ef596a4b65f84b0c6a2b74cb2f2162572edda6e13ce5453ff3335075e7",
+  "receiver_cells": 246,
+  "receiver_release_freeze_sha256": "0b12b228aeb8c65e175a8a8c734389156cc53c6c085c2e96b9e036610fdec9d4",
+  "requested_model": "deepseek-v4-flash",
+  "temperature": 0,
+  "thinking": "disabled",
+  "tool_choice": "auto"
+}

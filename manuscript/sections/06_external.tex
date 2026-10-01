@@ -1,0 +1,86 @@
+\section{Protocol Boundaries}
+\label{sec:external}
+
+\subsection{Distinct credentials can share one failure root}
+
+We instantiated the common-root topology in MCP Inspector 2.4.0 at pinned
+commit \texttt{edf54f5d}, using synthetic credentials and official scope
+gates. Two resource entries with distinct token identifiers and scopes were
+persisted in one \texttt{NodeOAuthStorage} file. Exposing an individual entry
+opened only its gate; exposing the whole file opened both. Splitting the same
+entries across files made a single-file exposure open only one gate. Yet
+revocation remained separate in the shared-file case: clearing D changed
+$(D,C)$ from $(1,1)$ to $(0,1)$, and clearing C then produced $(0,0)$.
+Token count and revocation granularity therefore do not reveal compromise
+covariance; deployments must enumerate shared storage, issuer sessions,
+principals, processes, hosts, refresh paths, and recovery mechanisms.
+
+This version-pinned study establishes an allowed common-root configuration in
+an official debugging and conformance tool, not a production-host fault rate,
+an MCP vulnerability, or the semantic $a$--$b$ bridge itself. Its role is to
+show that the declared topology corresponds to a concrete credential layout.
+
+\subsection{A2A lineage survives transport but not derivation}
+
+\begin{table}[t]
+  \centering
+  \footnotesize
+  \caption{Pinned A2A lineage checks. Transport preserves supplied labels;
+  standard object derivation paths do not automatically inherit them.}
+  \label{tab:a2a-lineage}
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{lcc}
+    \toprule
+    Stage & Command & Lineage \\
+    \midrule
+    Python encoding & 8/8 & 8/8 \\
+    JS live transport & 8/8 & 8/8 \\
+    Python derived object & 16/16 & 0/16 \\
+    Fixed official JS sample & 4/4 & 0/4 \\
+    Two-hop application path & 6/6 & 0/6 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Four deterministic studies separated encoding, transport, and derivation in
+pinned A2A SDKs and a fixed official sample. Supplied labels survived 8/8
+Python encodings and 8/8 JavaScript live JSON-RPC/REST transports. They
+survived 0/16 derived Python objects and 0/4 objects produced by the fixed
+official JavaScript sample; the first loss occurred when constructing a new
+working-status Message, not during transport.
+
+The loss changed a downstream authorization decision. Across six two-hop
+paths, the command survived 6/6 while its lineage survived 0/6.
+Missing-as-trusted admitted an untrusted write; missing-as-untrusted rejected
+a trusted write. The former violates integrity, while the latter sacrifices
+availability to preserve it. An explicit join that propagated the
+least-trusted parent label restored both decisions. Derivation-time label
+propagation and conservative multi-parent joins follow the lattice
+information-flow principle~\cite{denning1976lattice}. This is evidence about fixed samples under our
+declared application policies, not an A2A conformance failure; the official
+traceability extension links task steps but defines no security-label join
+~\cite{a2a-traceability-2026}.
+
+\subsection{Native AgentDojo external screen}
+
+To test transfer beyond the author-written stimuli, we ran the frozen
+five-form design in the official AgentDojo Slack runtime (version 0.1.35;
+benchmark version 1.2.2). The 55 user/goal pairs were evaluated with two
+separately run hosted models. Qwen 3.6 Flash produced security successes of
+7/55, 3/55, 3/55, 2/55, and 2/55 for R, C, P, $S_C$, and $S_P$,
+respectively. DeepSeek Flash produced 3/55, 3/55, 2/55, 2/55, and 2/55.
+All 286 sessions in each run completed; exposure was 55/55 after whitespace
+normalization. The archived responses passed 4,350 and 3,861 offline replay
+checks, respectively, with no model calls during audit.
+
+These are provider-stratified finite-bank counts, not pooled population
+estimates. Qwen also returned unknown terminal outcomes for 5, 4, 3, 2, and
+2 pairs in R, C, P, $S_C$, and $S_P$, respectively; DeepSeek returned none.
+For the Qwen C-to-P contrast, treating unknowns as missing gives a
+missingness interval of $[-0.0545,0.0727]$, while the corresponding interval
+for $S_C-S_P$ is $[-0.0364,0.0364]$. The fixture is floor-limited for the
+mechanism question: Qwen's raw-versus-carrier base rate permits a maximum
+counterfactual C-to-P difference of only $3/55=0.0545$, compared with the
+authored-bank effect of $0.8125$. The external runs therefore establish native
+execution and low official-goal base rates, but neither replicate nor falsify
+the provenance mechanism.

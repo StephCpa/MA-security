@@ -1,0 +1,280 @@
+{
+  "independent_lifecycle_grants": {
+    "fault_states": [
+      {
+        "a": 0,
+        "b": 0,
+        "component_faults": {
+          "C": 0,
+          "D": 0
+        },
+        "root_id": null,
+        "token_C": "grant-C",
+        "token_D": "grant-D",
+        "topology": "independent_lifecycle_grants"
+      },
+      {
+        "a": 0,
+        "b": 1,
+        "component_faults": {
+          "C": 1,
+          "D": 0
+        },
+        "root_id": null,
+        "token_C": "grant-C",
+        "token_D": "grant-D",
+        "topology": "independent_lifecycle_grants"
+      },
+      {
+        "a": 1,
+        "b": 0,
+        "component_faults": {
+          "C": 0,
+          "D": 1
+        },
+        "root_id": null,
+        "token_C": "grant-C",
+        "token_D": "grant-D",
+        "topology": "independent_lifecycle_grants"
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "component_faults": {
+          "C": 1,
+          "D": 1
+        },
+        "root_id": null,
+        "token_C": "grant-C",
+        "token_D": "grant-D",
+        "topology": "independent_lifecycle_grants"
+      }
+    ],
+    "revocation_replay": [
+      {
+        "capability_C": 1,
+        "capability_D": 1,
+        "revoked": []
+      },
+      {
+        "capability_C": 1,
+        "capability_D": 0,
+        "revoked": [
+          "grant-D"
+        ]
+      },
+      {
+        "capability_C": 0,
+        "capability_D": 1,
+        "revoked": [
+          "grant-C"
+        ]
+      },
+      {
+        "capability_C": 0,
+        "capability_D": 0,
+        "revoked": [
+          "grant-D",
+          "grant-C"
+        ]
+      }
+    ]
+  },
+  "nominal_partition_shared_root": {
+    "fault_states": [
+      {
+        "a": 0,
+        "b": 0,
+        "component_faults": {
+          "C_leaf": 0,
+          "D_leaf": 0,
+          "root": 0
+        },
+        "root_id": "issuer-root",
+        "token_C": "grant-C-nominal",
+        "token_D": "grant-D-nominal",
+        "topology": "nominal_partition_shared_root"
+      },
+      {
+        "a": 0,
+        "b": 1,
+        "component_faults": {
+          "C_leaf": 1,
+          "D_leaf": 0,
+          "root": 0
+        },
+        "root_id": "issuer-root",
+        "token_C": "grant-C-nominal",
+        "token_D": "grant-D-nominal",
+        "topology": "nominal_partition_shared_root"
+      },
+      {
+        "a": 1,
+        "b": 0,
+        "component_faults": {
+          "C_leaf": 0,
+          "D_leaf": 1,
+          "root": 0
+        },
+        "root_id": "issuer-root",
+        "token_C": "grant-C-nominal",
+        "token_D": "grant-D-nominal",
+        "topology": "nominal_partition_shared_root"
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "component_faults": {
+          "C_leaf": 1,
+          "D_leaf": 1,
+          "root": 0
+        },
+        "root_id": "issuer-root",
+        "token_C": "grant-C-nominal",
+        "token_D": "grant-D-nominal",
+        "topology": "nominal_partition_shared_root"
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "component_faults": {
+          "C_leaf": 0,
+          "D_leaf": 0,
+          "root": 1
+        },
+        "root_id": "issuer-root",
+        "token_C": "grant-C-nominal",
+        "token_D": "grant-D-nominal",
+        "topology": "nominal_partition_shared_root"
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "component_faults": {
+          "C_leaf": 1,
+          "D_leaf": 0,
+          "root": 1
+        },
+        "root_id": "issuer-root",
+        "token_C": "grant-C-nominal",
+        "token_D": "grant-D-nominal",
+        "topology": "nominal_partition_shared_root"
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "component_faults": {
+          "C_leaf": 0,
+          "D_leaf": 1,
+          "root": 1
+        },
+        "root_id": "issuer-root",
+        "token_C": "grant-C-nominal",
+        "token_D": "grant-D-nominal",
+        "topology": "nominal_partition_shared_root"
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "component_faults": {
+          "C_leaf": 1,
+          "D_leaf": 1,
+          "root": 1
+        },
+        "root_id": "issuer-root",
+        "token_C": "grant-C-nominal",
+        "token_D": "grant-D-nominal",
+        "topology": "nominal_partition_shared_root"
+      }
+    ],
+    "revocation_replay": [
+      {
+        "capability_C": 1,
+        "capability_D": 1,
+        "revoked": []
+      },
+      {
+        "capability_C": 1,
+        "capability_D": 0,
+        "revoked": [
+          "grant-D-nominal"
+        ]
+      },
+      {
+        "capability_C": 0,
+        "capability_D": 1,
+        "revoked": [
+          "grant-C-nominal"
+        ]
+      },
+      {
+        "capability_C": 0,
+        "capability_D": 0,
+        "revoked": [
+          "grant-D-nominal",
+          "grant-C-nominal"
+        ]
+      }
+    ]
+  },
+  "perfect_separation": {
+    "fault_states": [
+      {
+        "a": 0,
+        "b": 0,
+        "component_faults": {},
+        "root_id": null,
+        "token_C": null,
+        "token_D": null,
+        "topology": "perfect_separation"
+      }
+    ],
+    "revocation_replay": [
+      {
+        "capability_C": 0,
+        "capability_D": 0,
+        "revoked": []
+      }
+    ]
+  },
+  "shared_persistent_grant": {
+    "fault_states": [
+      {
+        "a": 0,
+        "b": 0,
+        "component_faults": {
+          "shared": 0
+        },
+        "root_id": "root-shared",
+        "token_C": "grant-both",
+        "token_D": "grant-both",
+        "topology": "shared_persistent_grant"
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "component_faults": {
+          "shared": 1
+        },
+        "root_id": "root-shared",
+        "token_C": "grant-both",
+        "token_D": "grant-both",
+        "topology": "shared_persistent_grant"
+      }
+    ],
+    "revocation_replay": [
+      {
+        "capability_C": 1,
+        "capability_D": 1,
+        "revoked": []
+      },
+      {
+        "capability_C": 0,
+        "capability_D": 0,
+        "revoked": [
+          "grant-both"
+        ]
+      }
+    ]
+  }
+}

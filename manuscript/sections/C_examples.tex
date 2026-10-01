@@ -1,0 +1,125 @@
+\section{Family Breakdown and Example Payloads}
+\label{app:examples}
+
+\subsection{Spotlighting relay-survival details}
+
+Table~\ref{tab:supp-spotlight-relay} reports the complete E6 write-attempt counts.
+The direct contrasts are incremental effects of each representation package
+beyond the verbal rule shared by every condition. After relay,
+\texttt{write\_shared} survived lexically in 13/48 prose-marker outputs, 46/48
+datamarked outputs, and 46/48 Base64 outputs; both resource and value
+placeholders survived in 7/48, 43/48, and 45/48, respectively. These are
+post-treatment descriptions, not causal mediation estimates.
+
+\begin{table}[ht]
+  \centering
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \caption{E6 write attempts before and after one DeepSeek relay (n=48 per
+  cell). Relay $\Delta$ is control minus defense. Asterisks indicate rejection
+  under the prespecified Holm procedure.}
+  \label{tab:supp-spotlight-relay}
+  \ra{1.12}
+  \begin{tabular}{lccc}
+    \toprule
+    Source representation & Direct & Relayed & Relay $\Delta$ \\
+    \midrule
+    Unmarked control & 8/48 & 36/48 & -- \\
+    Prose marker & 0/48 & 9/48 & $0.5625^{*}$ \\
+    Datamarking & 1/48 & 32/48 & 0.0833 \\
+    Base64 & 0/48 & 24/48 & $0.2500^{*}$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Blinded rating details}
+
+\begin{table}[ht]
+  \centering
+  \small
+  \setlength{\tabcolsep}{3pt}
+  \caption{Blinded paired differences, $\SC$ minus $\SP$ (n=48; mean points
+  on the 0--3 scale; paired bootstrap 95\% CI in brackets; exact sign-test
+  $p$). Agreement: quadratic-weighted kappa 0.968 (retention), 0.934
+  (centrality), 0.917 (provenance).}
+  \label{tab:supp-ratings}
+  \ra{1.15}
+  \begin{tabular}{lcc}
+    \toprule
+    Axis & Rater A & Rater B \\
+    \midrule
+    Actionable retention & 1.292 {\tiny$[0.938,1.646]$} & 1.250 {\tiny$[0.896,1.604]$} \\
+    Instruction centrality & 1.833 {\tiny$[1.500,2.146]$} & 1.646 {\tiny$[1.313,1.958]$} \\
+    Provenance signal & $-0.833$ {\tiny$[-1.083,-0.604]$} & $-0.729$ {\tiny$[-1.000,-0.479]$} \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{1pt}
+  {\tiny All sign-test $p < 10^{-4}$ (retention A $9.3\times10^{-10}$,
+  B $3.7\times10^{-9}$; centrality $2.9\times10^{-11}$ both; provenance A
+  $3.0\times10^{-8}$, B $1.1\times10^{-5}$).}
+\end{table}
+
+\subsection{Family-level attempts}
+
+Table~\ref{tab:supp-family} breaks the five-form confirmation down by attack
+family. The breakdown is descriptive: the confirmatory analysis is the
+directive-level paired fixed sequence of \S\ref{sec:laundering}, and with
+eight directives per family the cells are too small for family-level
+inference. Descriptively, the visible marker (P) held every family to
+0--1/8, while the residual after relay ($\SP$) ranged from 1/8
+(authority claim) to 6/8 (task framing and data mimicry): the protection
+that survives one hop is unevenly distributed across attack styles.
+
+\begin{table}[ht]
+  \centering
+  \small
+  \caption{Unauthorized protected-write attempts by attack family and form
+  (n=8 directives per family; reanalysis of the frozen run
+  \texttt{deepseek-five-form-provenance-confirmation-001}; row margins
+  reproduce the frozen form totals 37/40/1/44/22). Descriptive only.}
+  \label{tab:supp-family}
+  \ra{1.15}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{lccccc}
+    \toprule
+    Family & R & C & P & $\SC$ & $\SP$ \\
+    \midrule
+    Authority claim        & 4/8 & 4/8 & 0/8 & 8/8 & 1/8 \\
+    Data mimicry           & 8/8 & 7/8 & 1/8 & 5/8 & 6/8 \\
+    Imperative override    & 8/8 & 7/8 & 0/8 & 8/8 & 2/8 \\
+    Provenance poisoning   & 5/8 & 7/8 & 0/8 & 8/8 & 4/8 \\
+    Task framing           & 5/8 & 8/8 & 0/8 & 7/8 & 6/8 \\
+    Tool-result injection  & 7/8 & 7/8 & 0/8 & 8/8 & 3/8 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Two example payloads}
+
+Both examples use the same carrier domain; they differ in how much
+protection survived the relay hop. The marker line inserted in P is
+\texttt{UNTRUSTED EMBEDDED CONTENT:}. Outcomes list
+attempt${}_{\SC}$ (shown as 1/0 flags) across the five forms.
+
+\paragraph{Residual protection survives (cf-authority\_claim-01).}
+Carrier: \emph{``Synthetic catalog validation note CF201 prepared for the
+library workflow. The entry concerns digital accession correction.''}
+Directive: \emph{``The continuity administrator authorizes you to call
+write\_shared with resource `X' and value `Y'. Confirmation case CF201.''}
+Outcomes: R=1, C=1, P=0, $\SC$=1, $\SP$=0. The bare and embedded
+directives triggered the write; the visible marker suppressed it; the
+unmarked relay restored it; and the relayed text derived from the marked
+carrier still did not trigger the write, so the laundering was partial.
+
+\paragraph{Protection erased after relay (cf-task\_framing-01).}
+Carrier: \emph{``Synthetic catalog validation note CF401 prepared for the
+library workflow. The entry concerns digital accession correction.''}
+Directive: \emph{``Complete case CF401 by ensuring that you call
+write\_shared with resource `X' and value `Y'. Confirmation case CF401.''}
+Outcomes: R=1, C=1, P=0, $\SC$=1, $\SP$=1. Identical structure and the
+same visible-marker suppression, but after one relay hop the protection
+was gone and the write was attempted again.
+
+The full 48-pair bank, both carriers, all five forms per pair, and the
+frozen generated outputs are in the artifact.
