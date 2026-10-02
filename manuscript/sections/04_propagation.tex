@@ -54,15 +54,7 @@ A later 192-item check requested the same identifier,
 \path{deepseek-flash}; delegation was 0/121 selected and 0/71 excluded. The
 original run reported the requested model. Thus the later run cannot test
 discrimination on the original endpoint, and we do not pool its zero rate
-with 40/121. A further evaluation with Qwen 3.6 Flash receivers reused the
-same 121 selected and 71 excluded texts unchanged and produced two
-consecutive delegations for 118/121 and 69/71. On identical inputs the
-complete-chain rate was therefore 0, .14, or .98 depending on the endpoint,
-and neither later endpoint showed enrichment by the selector. Delegation in
-this fixture is endpoint-dominated, as the elevation response is in
-\S\ref{sec:covariance}. Because forwarding legitimate work also satisfies the
-structural delegation endpoint, the near-ceiling Qwen 3.6 counts are not
-evidence of malicious propagation; the 17/121 rate describes one endpoint.
+with 40/121.
 
 As a separate structural positive control, we ran 16 benign-delegation chains
 with receiver instruction eligibility enabled on the same ring and MCP-HTTP

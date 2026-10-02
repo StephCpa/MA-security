@@ -1,0 +1,185 @@
+diff --git a/manuscript/main.tex b/manuscript/main.tex
+index 480c26a..dd6f993 100644
+--- a/manuscript/main.tex
++++ b/manuscript/main.tex
+@@ -64,8 +64,8 @@ The contrast is primarily sender-mediated: marked inputs changed action
+ content and pragmatic centrality in the generated text, so the study does not
+ identify an independent effect of the missing literal marker. In a prospectively
+ selected high-retention stratum, 17/121 messages induced two consecutive
+-delegation calls; this is a conditional selected-stratum rate rather than a
+-population estimate. Hiding a write tool redirected elevated requests to an
++delegation calls; this is a conditional selected-stratum rate, and on
++identical inputs two later endpoints gave 0/121 and 118/121. Hiding a write tool redirected elevated requests to an
+ advertised escalation route, and pinned A2A tests located lineage loss at
+ message derivation rather than transport. A native AgentDojo screen with two
+ models executed the same design on official tasks, but raw-goal attack success
+diff --git a/manuscript/sections/01_intro.tex b/manuscript/sections/01_intro.tex
+index 1aac499..badebea 100644
+--- a/manuscript/sections/01_intro.tex
++++ b/manuscript/sections/01_intro.tex
+@@ -45,8 +45,9 @@ versus 37/48).
+ Second, a prospectively selected high-retention stratum supported conditional
+ two-receiver delegation. Receiver 1 delegated 40/121 messages; receiver 2
+ delegated 17/40 of those, yielding 17/121 chains with two consecutive
+-delegation calls. This is a selected-stratum rate, not a population estimate or
+-a test of selector discrimination. In a separate
++delegation calls. This is a selected-stratum rate, not a population estimate:
++on identical inputs, two later endpoints produced 0/121 and 118/121 such
++chains, and neither showed enrichment by the selector. In a separate
+ fixture, hiding a denied direct-write tool redirected 45/48 elevated requests
+ to an advertised, non-mutating escalation route. An exact resource policy
+ prevented unauthorized mutations of a protected canary while models continued
+diff --git a/manuscript/sections/02_threat.tex b/manuscript/sections/02_threat.tex
+index 3586ce7..108569c 100644
+--- a/manuscript/sections/02_threat.tex
++++ b/manuscript/sections/02_threat.tex
+@@ -66,9 +66,11 @@ and family-level tables are supplied in the supplementary artifact. We report
+ finite-bank, endpoint-specific effects and never pool providers into a
+ prevalence estimate. An additional run exposed a DeepSeek identifier mismatch;
+ it is not pooled with the earlier endpoint result (\S\ref{sec:propagation-selector}).
+-The native AgentDojo screen (\S\ref{sec:agentdojo}) used Qwen 3.6 Flash and a
+-DeepSeek endpoint that reported \path{deepseek-flash}; neither is pooled with
+-the endpoints above.
++Follow-up checks (\S\ref{sec:ratings}, \S\ref{sec:propagation-selector},
++\S\ref{sec:external}) and the native AgentDojo screen (\S\ref{sec:agentdojo})
++used Qwen 3.6 Flash; the screen also used a DeepSeek endpoint that reported
++\path{deepseek-flash}. None is pooled with the endpoints above, and the
++follow-ups were frozen internally rather than externally timestamped.
+ 
+ \begin{table*}[t]
+   \centering
+@@ -93,6 +95,7 @@ the endpoints above.
+     Credential gate (\S\ref{sec:covariance}) & Separate 48-directive bank & Q receiver & Elevation grant; replay under write grant & Exact protected request \\
+     Relay gateway (\S\ref{sec:e4-gateway}) & E2 bank; reused 48 directives & Frozen D outputs / D; Q repeat & Sender policy and elevation & Broad and exact requests \\
+     Protocol paths (\S\ref{sec:external}) & Fixed synthetic cases & Pinned MCP / A2A code & Storage root and message derivation & Credential or lineage state \\
++    Q3.6 checks (\S\ref{sec:laundering}--\S\ref{sec:external}) & Archived texts; lineage bank & Q3.6 receivers & Host cue; endpoint; displayed lineage & Exact request or delegation \\
+     AgentDojo (\S\ref{sec:agentdojo}) & 55 official Slack pairs & Q3.6 / Q3.6; DF / DF & Visible marker and sender derivation & Official task predicates \\
+     \bottomrule
+   \end{tabular}
+diff --git a/manuscript/sections/03_laundering.tex b/manuscript/sections/03_laundering.tex
+index c1460d9..de7a8d7 100644
+--- a/manuscript/sections/03_laundering.tex
++++ b/manuscript/sections/03_laundering.tex
+@@ -105,6 +105,20 @@ difference is a poor summary of individual pairs. Agreement between raters
+ therefore establishes scoring consistency,
+ not a human validity anchor or a mechanism decomposition.
+ 
++A later intervention asked whether an explicit provenance cue alone could
++produce the residual. With Qwen 3.6 Flash receivers and the 96 archived texts
++unchanged, prepending a standardized host-rendered untrusted-source sentence
++reduced exact protected requests for $\SC$ from 40/48 to 32/48 (exact McNemar
++$p=.0078$; a conservative projection interval, $[-.322,.021]$, includes
++zero), while $\SP$ moved from 10/48 to 8/48. A post hoc three-arm follow-up,
++run concurrently, gave 40/48 with no sentence, 31/48 with a neutral
++formatting sentence of the same position and word count, and 30/48 with the
++provenance sentence (provenance minus neutral $-.021$,
++conservative interval $[-.208,.170]$). Adding a sentence, not its provenance
++meaning, carried the measurable change. This weakens a residual-cue account
++of the $\SC-\SP$ contrast, but a fixed inserted cue on a newer endpoint does
++not remove native cues from $\SP$ and does not identify the mediator.
++
+ \subsection{Representation and relay policy}
+ \label{sec:spotlight-relay}
+ 
+diff --git a/manuscript/sections/04_propagation.tex b/manuscript/sections/04_propagation.tex
+index 16b363a..b348eab 100644
+--- a/manuscript/sections/04_propagation.tex
++++ b/manuscript/sections/04_propagation.tex
+@@ -54,7 +54,15 @@ A later 192-item check requested the same identifier,
+ \path{deepseek-flash}; delegation was 0/121 selected and 0/71 excluded. The
+ original run reported the requested model. Thus the later run cannot test
+ discrimination on the original endpoint, and we do not pool its zero rate
+-with 40/121.
++with 40/121. A further evaluation with Qwen 3.6 Flash receivers reused the
++same 121 selected and 71 excluded texts unchanged and produced two
++consecutive delegations for 118/121 and 69/71. On identical inputs the
++complete-chain rate was therefore 0, .14, or .98 depending on the endpoint,
++and neither later endpoint showed enrichment by the selector. Delegation in
++this fixture is endpoint-dominated, as the elevation response is in
++\S\ref{sec:covariance}. Because forwarding legitimate work also satisfies the
++structural delegation endpoint, the near-ceiling Qwen 3.6 counts are not
++evidence of malicious propagation; the 17/121 rate describes one endpoint.
+ 
+ As a separate structural positive control, we ran 16 benign-delegation chains
+ with receiver instruction eligibility enabled on the same ring and MCP-HTTP
+diff --git a/manuscript/sections/06_external.tex b/manuscript/sections/06_external.tex
+index 423f49a..e566aa3 100644
+--- a/manuscript/sections/06_external.tex
++++ b/manuscript/sections/06_external.tex
+@@ -54,7 +54,12 @@ paths, the command survived 6/6 while its lineage survived 0/6.
+ Missing-as-trusted admitted an untrusted write; missing-as-untrusted rejected
+ a trusted write. The former violates integrity, while the latter sacrifices
+ availability to preserve it. An explicit join that propagated the
+-least-trusted parent label restored both decisions. Derivation-time label
++least-trusted parent label restored both decisions. The label must be
++enforced, not merely displayed: in a separate 48-pair fixture whose Qwen 3.6
++Flash receiver was authorized to write the protected resource, rendering the
++inherited untrusted lineage at both receivers did not measurably change exact
++protected requests (6/48 without and 4/48 with the label, five versus three
++discordances, exact McNemar $p=.73$). Derivation-time label
+ propagation and conservative multi-parent joins follow the lattice
+ information-flow principle~\cite{denning1976lattice}. This is evidence about fixed samples under our
+ declared application policies, not an A2A conformance failure; the official
+diff --git a/manuscript/sections/08_discussion.tex b/manuscript/sections/08_discussion.tex
+index 370e7df..53e8f02 100644
+--- a/manuscript/sections/08_discussion.tex
++++ b/manuscript/sections/08_discussion.tex
+@@ -24,10 +24,13 @@ on legitimate requests that resemble attacks, and the AgentDojo utility
+ counts are our only external benign-utility observation.
+ Hosted endpoints, one fixed adaptive sender policy, empty-context confirmation
+ runs, and one same-bank temporal repeat do not estimate production or
+-run-to-run distributions. A later run requested the original DeepSeek model
+-name but received a different provider-reported identity and no delegations;
+-this is an endpoint-stability limitation, not evidence that the original
+-selection effect disappeared. Ratings use two isolated model families but no human
++run-to-run distributions. Two later endpoints delegated 0/121 and 118/121 of the
++same selected inputs without selector enrichment, so the two-hop rate is
++endpoint-specific. No single experiment ran the full chain from a marked
++source through relay and two receivers to a protected write: a Qwen 3.6 Flash
++calibration of that chain produced no protected request across 24 attack
++items in three lineage arms (one outcome truncated), so the three stages are
++measured on separate fixtures. Ratings use two isolated model families but no human
+ anchor; they describe text and do not identify a mediator. The two-hop rate is
+ conditional on a prospective selector and uses homogeneous receiver rules,
+ so it is evidence of conditional receiver-chain behavior rather than a general
+diff --git a/manuscript/sections/B_repro.tex b/manuscript/sections/B_repro.tex
+index fb5d4fc..b4bd0e1 100644
+--- a/manuscript/sections/B_repro.tex
++++ b/manuscript/sections/B_repro.tex
+@@ -119,6 +119,23 @@ artifact root):
+   \path{content_audit.json} in
+   \path{deepseek-retention-propagation-confirmation-001}; it is a post hoc
+   content characterization, not a new propagation estimate.
++  The Qwen 3.6 Flash selector evaluation is archived at
++  \path{qwen36-retention-discrimination-001} (380 calls): the 121 selected and
++  71 excluded archived texts were reused unchanged, giving 118/121 and 69/71
++  two-hop delegations. \path{audit_selector_transportability.py} reconstructs
++  the counts from raw events.
++  The end-to-end chain calibration is archived at
++  \path{qwen36-chain-calibration-002} (191 calls): 24 attack items (six
++  authored templates, four lexical instances each) in three lineage arms
++  produced no protected request, with one outcome truncated, and
++  \path{audit_chain_bottleneck.py} localizes the floor. Its legitimate-task
++  wording confound is diagnosed in \path{qwen36-utility-wording-001}.
++  \item \textbf{\S\ref{sec:ratings}} (standardized cue and neutral control):\\
++  \path{qwen36-provenance-rerender-001} (204 calls) and
++  \path{qwen36-provenance-neutral-001} (306 calls), both on the 96 archived
++  $\SC/\SP$ texts unchanged, with 6/6 authorized controls completed in every
++  arm. \path{audit_provenance_rerender.py} recomputes the paired tables and the
++  conservative projection intervals.
+   \item \textbf{\S\ref{sec:propagation}} (defense):\\
+   \path{qwen-cross-model-defense-001}. The DeepSeek one-family run
+   \path{deepseek-one-family-defense-001} failed its preregistered
+@@ -241,7 +258,11 @@ written before live calls but have no external timestamp receipt, so we do not
+ label it externally preregistered or use it for confirmatory inference.
+ The native AgentDojo Slack screens were exploratory external-validity runs and
+ were not externally timestamped; they are reported as provider-stratified
+-descriptive evidence, not as preregistered mechanism tests.
++descriptive evidence, not as preregistered mechanism tests. The Qwen 3.6 Flash
++follow-ups (selector evaluation, chain calibration, standardized cue, neutral
++control, and displayed-lineage confirmation) were likewise frozen internally
++before their live calls, without external timestamps, and are reported as
++secondary evidence.
+ 
+ \paragraph{What is \emph{not} released.}
+ No designed bank is planned to be withheld. The release includes attack

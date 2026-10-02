@@ -119,23 +119,6 @@ artifact root):
   \path{content_audit.json} in
   \path{deepseek-retention-propagation-confirmation-001}; it is a post hoc
   content characterization, not a new propagation estimate.
-  The Qwen 3.6 Flash selector evaluation is archived at
-  \path{qwen36-retention-discrimination-001} (380 calls): the 121 selected and
-  71 excluded archived texts were reused unchanged, giving 118/121 and 69/71
-  two-hop delegations. \path{audit_selector_transportability.py} reconstructs
-  the counts from raw events.
-  The end-to-end chain calibration is archived at
-  \path{qwen36-chain-calibration-002} (191 calls): 24 attack items (six
-  authored templates, four lexical instances each) in three lineage arms
-  produced no protected request, with one outcome truncated, and
-  \path{audit_chain_bottleneck.py} localizes the floor. Its legitimate-task
-  wording confound is diagnosed in \path{qwen36-utility-wording-001}.
-  \item \textbf{\S\ref{sec:ratings}} (standardized cue and neutral control):\\
-  \path{qwen36-provenance-rerender-001} (204 calls) and
-  \path{qwen36-provenance-neutral-001} (306 calls), both on the 96 archived
-  $\SC/\SP$ texts unchanged, with 6/6 authorized controls completed in every
-  arm. \path{audit_provenance_rerender.py} recomputes the paired tables and the
-  conservative projection intervals.
   \item \textbf{\S\ref{sec:propagation}} (defense):\\
   \path{qwen-cross-model-defense-001}. The DeepSeek one-family run
   \path{deepseek-one-family-defense-001} failed its preregistered
@@ -258,11 +241,7 @@ written before live calls but have no external timestamp receipt, so we do not
 label it externally preregistered or use it for confirmatory inference.
 The native AgentDojo Slack screens were exploratory external-validity runs and
 were not externally timestamped; they are reported as provider-stratified
-descriptive evidence, not as preregistered mechanism tests. The Qwen 3.6 Flash
-follow-ups (selector evaluation, chain calibration, standardized cue, neutral
-control, and displayed-lineage confirmation) were likewise frozen internally
-before their live calls, without external timestamps, and are reported as
-secondary evidence.
+descriptive evidence, not as preregistered mechanism tests.
 
 \paragraph{What is \emph{not} released.}
 No designed bank is planned to be withheld. The release includes attack

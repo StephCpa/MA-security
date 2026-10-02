@@ -40,3 +40,12 @@ Virtual environments, compiled Python files, temporary render directories,
 large vendor archives, API keys, and complete raw hosted-model transcripts are
 excluded. The human-rater pack is not represented as completed evidence; human
 ratings remain a separate pending validation step.
+
+## Branch status
+
+`claude/nifty-shannon-kfb94k` is a candidate revision, not a merge-ready
+version; `main` remains the traceable baseline. `docs/BRANCH_VERIFICATION_LEDGER.md`
+records which numbers are verified from repository files
+(`python analysis/verify_branch_numbers.py`), which are carried from the
+baseline, which are withdrawn pending local verification, and which items are
+plans rather than results.

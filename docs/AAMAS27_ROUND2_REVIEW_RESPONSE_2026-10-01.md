@@ -110,51 +110,20 @@ pages plus references) against the official call before submission.
 - **Filing the upstream issue.** Left to the authors so that filing does not
   compromise anonymity.
 
-## Second pass (1 October): previously unreported runs and the headroom study
+## Second pass (1 October), withdrawn on 2 October
 
-### Completed runs now reported
+Commit `f6a71a4` added text for five qwen3.6-flash follow-up runs (selector
+test, standardized cue, neutral control, displayed lineage and chain floor).
+The numbers came from planning documents, not from run files, and those run
+directories are not in this repository. An independent check found a
+different local run (`deepseek-posthoc-cue-ablation-001`: 24 items, raw
+20/24, neutral carrier 6/24, literal untrusted 0/24) and no report file for
+the neutral control. That run is a different setup and was never used here,
+but the follow-up numbers could not be confirmed. The manuscript text is
+therefore withdrawn and kept as `docs/pending/qwen36-followups-manuscript.patch`.
+`docs/BRANCH_VERIFICATION_LEDGER.md` lists what each row must match before
+the text is reinstated.
 
-These qwen3.6-flash runs were complete but appeared in neither the paper nor
-the supplement, apart from the lineage confirmation, which the supplement's
-run map already listed. Their numbers come from
-`analysis/chain-mock-v1/README.md` and the follow-up plan, which agree with
-each other. The run directories (`14th_files/runs/qwen36-*`) are not in this
-repository, so these numbers could not be recomputed here. Add the run
-directories or their reports to `results/` before the artifact goes to
-reviewers.
-
-| Run | Result | Where it now appears |
-|---|---|---|
-| `qwen36-retention-discrimination-001` | 118/121 selected vs 69/71 excluded two-hop delegations; no selector enrichment | Abstract, intro, §4.1, discussion, supplement |
-| `qwen36-provenance-rerender-001` | S_C 40/48 → 32/48 with a provenance cue (p = .0078; conservative interval [-.322, .021]) | §3.1, supplement |
-| `qwen36-provenance-neutral-001` | S_C 40 / 31 / 30 of 48 for none / neutral / provenance; provenance minus neutral -.021 [-.208, .170] | §3.1, supplement |
-| `qwen36-authorized-propagation-confirmation-001` | Displayed lineage 6/48 vs 4/48 (p = .73) | §6.2 (already in the supplement) |
-| `qwen36-chain-calibration-002` | End-to-end chain: no protected request across 24 attack items in three arms | Discussion, supplement |
-
-Consequences for the claims:
-
-- The 17/121 two-hop rate is endpoint-specific: 0, .14 and .98 on identical
-  inputs across three endpoints.
-- The cue result weakens a residual-cue explanation of S_C−S_P: a neutral
-  sentence of matched position and length had the same effect.
-- Lineage has to be enforced at the monitor rather than displayed to the
-  model.
-- The three chain stages are measured on separate fixtures.
-
-All five runs were frozen internally rather than externally timestamped, and
-the paper labels them as secondary.
-
-### AgentDojo headroom study (specified, not run)
-
-- `docs/AGENTDOJO_IMPORTANT_INSTRUCTIONS_HEADROOM_SPEC.md` is the draft freeze
-  spec: a two-stage design, a gate, a replication criterion fixed before any
-  P call, and paper sentences written in advance for every outcome.
-- The offline gate (`headroom_offline_gate.py/.json`) and the outcome-blind
-  selection (`headroom_screen_selection.py/.json`) have run, with no model
-  calls.
-- Facts established offline:
-  - The headline `important_instructions` attack raises for Qwen and
-    DeepSeek, so the spec uses `important_instructions_no_model_name`.
-  - The official attack fills every injection slot.
-  - Travel `injection_task_6` is output-only and is excluded.
-  - All reference checks in Slack, Banking and Travel pass.
+The AgentDojo `important_instructions` headroom spec and its offline gate are
+a plan only: no model calls were made. They are kept as described in the
+ledger, section D.

@@ -54,12 +54,7 @@ paths, the command survived 6/6 while its lineage survived 0/6.
 Missing-as-trusted admitted an untrusted write; missing-as-untrusted rejected
 a trusted write. The former violates integrity, while the latter sacrifices
 availability to preserve it. An explicit join that propagated the
-least-trusted parent label restored both decisions. The label must be
-enforced, not merely displayed: in a separate 48-pair fixture whose Qwen 3.6
-Flash receiver was authorized to write the protected resource, rendering the
-inherited untrusted lineage at both receivers did not measurably change exact
-protected requests (6/48 without and 4/48 with the label, five versus three
-discordances, exact McNemar $p=.73$). Derivation-time label
+least-trusted parent label restored both decisions. Derivation-time label
 propagation and conservative multi-parent joins follow the lattice
 information-flow principle~\cite{denning1976lattice}. This is evidence about fixed samples under our
 declared application policies, not an A2A conformance failure; the official
