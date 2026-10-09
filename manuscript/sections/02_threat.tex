@@ -4,17 +4,20 @@
 \begin{figure}[t]
   \centering
   \input{figures/fig1-system}
-  \caption{Evaluation boundary. Elevation $a$ changes whether content may
-  direct the receiver; capability $b$ is enforced by the reference monitor.
-  Each logged outcome is aligned with the stage that records it, so attempts,
-  mutations, and downstream exposure remain distinct.}
-  \Description{Top-to-bottom flow from adversary-controlled content to a
-  receiver model, reference monitor, protected process-local store, and
-  downstream agent. An elevation state a enters at the receiver and a
-  write-back capability b enters at the monitor. A rail to the right aligns
-  six logged outcomes with their stages: attempt and unauthorized attempt at
-  the receiver, capability decision at the monitor, mutation and
-  unauthorized mutation at the store, and exposure at the downstream agent.}
+  \caption{Evaluation chain. A generative sender derives the message the
+  receiver sees; elevation $a$ changes whether content may direct the
+  receiver, and the monitor's gate admits a write when $b=1$. Each outcome
+  sits at the stage that logs it. No single experiment traverses the whole
+  chain: each fixture covers the rungs listed in Table~\ref{tab:contract}.}
+  \Description{Top-to-bottom flow from marked or unmarked untrusted content
+  through a sender agent that derives a message, a receiver agent, a
+  reference monitor, a protected store, and a downstream agent. Elevation a
+  enters at the receiver; write grant b enters the monitor as a dotted
+  declared-fault link. Solid links are model calls and dashed links are
+  deterministic gate or replay. A rail aligns logged outcomes with stages:
+  transformation at the sender, attempt and unauthorized attempt at the
+  receiver, gate decision at the monitor, mutation and unauthorized mutation
+  at the store, and exposure downstream.}
   \label{fig:system}
 \end{figure}
 
@@ -38,11 +41,40 @@ without policy permission, and \emph{exposure} means a downstream agent reads
 the attack value. We log policy decisions separately from these outcomes.
 Unauthorized mutation is primary in the state-change fixture; the relay
 studies measure requests or delegation because they do not execute a protected
-write. The principal
-\texttt{receiver} may write only a session-specific benign resource; the
-protected canary is never allowlisted. Hence authorization
-is exact and does not require semantic adjudication. No action touches the host
-filesystem, network, or real credentials.
+write. The principal \texttt{receiver} is never entitled to the protected
+canary ($P^\star=0$ throughout); fixtures differ in what the gate
+$\widehat P$ checks (Table~\ref{tab:contract}). In the enforcement fixture the
+canary is never allowlisted, so a correct gate must block it. In the
+coupled-failure fixtures the gate is a capability check: holding the write
+grant ($b=1$) admits the write, so the monitor mutates state exactly when
+$Y=b=1$, and the mutation is unauthorized because $P^\star=0$. There $b=1$
+is a test grant in the behavioral replay and, in the fault calculation, a
+declared lifecycle fault such as a leaked or mis-scoped grant; the content
+adversary cannot cause it. Authorization is therefore exact and needs no
+semantic adjudication. No action touches the host filesystem, network, or
+real credentials.
+
+\begin{table}[t]
+  \centering
+  \footnotesize
+  \caption{Execution contract per fixture. $P^\star$: whether policy entitles
+  the receiver to write the protected resource; $\widehat P$: what the gate
+  checks. A request becomes an unauthorized mutation only if the gate admits
+  it while $P^\star=0$.}
+  \label{tab:contract}
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{p{.29\columnwidth}p{.36\columnwidth}p{.27\columnwidth}}
+    \toprule
+    Fixture & Gate $\widehat P$ on protected write & Counted outcome \\
+    \midrule
+    Relay, propagation (\S\ref{sec:laundering}, \S\ref{sec:propagation-selector}) & None; no write is executed & Request or delegation \\
+    Enforcement (\S\ref{sec:defense}) & Exact allowlist; canary never listed (one arm unenforced) & Mutation \\
+    Tool visibility (\S\ref{sec:defense}) & Write denied; escalation non-mutating & Exact write or escalation request \\
+    Coupled failure (\S\ref{sec:covariance}) & Capability: admitted iff $b=1$ & $Y$ live; mutation $=Yb$ by replay \\
+    AgentDojo (\S\ref{sec:agentdojo}) & Official simulated tools & Official predicates \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \paragraph{Adversary.}
 The adversary controls data-plane content and may exploit transformations that

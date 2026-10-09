@@ -1,53 +1,46 @@
-% Figure 4: excess expected mutation risk, Cov(a,b) * (r1 - r0), for every
-% tool-visible endpoint-and-fixture response measured in the paper. Only the
-% slopes are measurements; the covariances are declared topologies at q=.05.
+% Figure 4: declared-fault sensitivity. Points are measured elevation
+% responses r1 - r0 (tool visible). Intervals appear only where a run report
+% gives one for that difference: DeepSeek semantic placement has r0 = 0, so
+% the report's Clopper-Pearson interval for r1 applies
+% (deepseek-lifecycle-covariance-confirmation-001); E3 uses the paired
+% interval stated in Section 5.2. The top axis is the declared shared-state
+% excess, Cov(a,b) x (r1 - r0) with Cov = .0475 at q = .05: a computation,
+% not an observation.
 \definecolor{fig4qwen}{RGB}{68,114,196}
 \definecolor{fig4deepseek}{RGB}{204,102,0}
 \begin{tikzpicture}[font=\footnotesize]
   \begin{axis}[
-    scale only axis, width=46mm, height=36mm,
-    xmin=0, xmax=0.0475, ymin=0, ymax=4.4,
-    axis lines*=left, tick align=outside, clip=false,
+    name=main, scale only axis, width=38mm, height=26mm,
+    xmin=0, xmax=1, ymin=0.5, ymax=5.5,
+    axis x line*=bottom, axis y line*=left, tick align=outside,
     tick label style={font=\scriptsize}, label style={font=\scriptsize},
-    xtick={0,0.023141,0.0475},
-    xticklabels={0, .0231, .0475},
-    scaled x ticks=false,
-    ytick={0,1,2,3,4},
-    xlabel={$\Cov(a,b)$ (declared, $q=.05$)},
-    ylabel={Excess risk (pp)}, ylabel style={yshift=-3pt},
-    ymajorgrids, grid style={black!12},
+    xtick={0,.25,.5,.75,1}, xticklabels={0,.25,.50,.75,1},
+    xlabel={Measured response $r_1-r_0$},
+    ytick={1,2,3,4,5},
+    yticklabels={{Qwen, tool visible (E12)},{Qwen, relay outputs (E5)},
+      {\textbf{Qwen, credential gate (E3)}},{Qwen, semantic (App.~D)},
+      {DeepSeek, semantic (App.~D)}},
+    xmajorgrids, grid style={black!12},
   ]
-    % Declared topologies.
-    \draw[densely dashed, black!35] (axis cs:0.023141,0) --
-      (axis cs:0.023141,4.4);
-    \node[font=\tiny, black!60, anchor=south, align=center]
-      at (axis cs:0.023141,4.4) {common\\[-2pt]root};
-    \node[font=\tiny, black!60, anchor=south, align=center]
-      at (axis cs:0.0475,4.4) {shared\\[-2pt]state};
-    \node[font=\tiny, black!60, anchor=south, align=center]
-      at (axis cs:0,4.4) {indep.};
-    % Excess = Cov * (r1 - r0); endpoints at Cov = .0475.
-    \addplot[thick, fig4deepseek, mark=*, mark size=1.1pt]
-      coordinates {(0,0) (0.023141,2.0248) (0.0475,4.1563)};
-    \addplot[thick, fig4qwen, mark=*, mark size=1.1pt]
-      coordinates {(0,0) (0.023141,0.9160) (0.0475,1.8802)};
-    \addplot[very thick, black, mark=square*, mark size=1.3pt]
-      coordinates {(0,0) (0.023141,0.7232) (0.0475,1.4844)};
-    \addplot[thick, fig4qwen, densely dashed, mark=*, mark size=1.1pt,
-      mark options={solid}]
-      coordinates {(0,0) (0.023141,0.3857) (0.0475,0.7917)};
-    \addplot[thick, fig4qwen, densely dotted, mark=*, mark size=1.1pt,
-      mark options={solid}]
-      coordinates {(0,0) (0.023141,0.1446) (0.0475,0.2969)};
-    \node[font=\tiny, anchor=west, align=left] at (axis cs:0.0475,4.1563)
-      {.875 DeepSeek, semantic};
-    \node[font=\tiny, anchor=west, align=left] at (axis cs:0.0475,1.98)
-      {.396 Qwen, semantic};
-    \node[font=\tiny, anchor=west, align=left] at (axis cs:0.0475,1.40)
-      {\textbf{.313 Qwen, credential}};
-    \node[font=\tiny, anchor=west, align=left] at (axis cs:0.0475,0.7917)
-      {.167 Qwen, frozen relay};
-    \node[font=\tiny, anchor=west, align=left] at (axis cs:0.0475,0.2969)
-      {.063 Qwen, tool-visible E12};
+    \draw[fig4deepseek, thick] (axis cs:0.7475,5) -- (axis cs:0.9527,5);
+    \draw[black, thick] (axis cs:0.1866,3) -- (axis cs:0.4625,3);
+    \addplot[only marks, mark=*, mark size=1.6pt, fig4deepseek]
+      coordinates {(0.875,5)};
+    \addplot[only marks, mark=*, mark size=1.6pt, fig4qwen]
+      coordinates {(0.3958,4) (0.1667,2) (0.0625,1)};
+    \addplot[only marks, mark=square*, mark size=1.7pt, black]
+      coordinates {(0.3125,3)};
+  \end{axis}
+  \begin{axis}[
+    at={(main.south west)}, anchor=south west,
+    scale only axis, width=38mm, height=26mm,
+    xmin=0, xmax=4.75, ymin=0.5, ymax=5.5,
+    axis x line*=top, axis y line=none, tick align=outside,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize},
+    xtick={0,1,2,3,4},
+    xlabel={Shared-state excess (pp, declared $q=.05$)},
+    xlabel style={yshift=-2pt},
+  ]
+    \addplot[draw=none] coordinates {(0,1)};
   \end{axis}
 \end{tikzpicture}

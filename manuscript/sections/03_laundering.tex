@@ -34,16 +34,17 @@ tests form a fixed sequence: C versus P, then $\SC$ versus $\SP$.
 \begin{figure}[t]
   \centering
   \input{figures/fig2-fiveform}
-  \caption{(a) DeepSeek protected-write attempts by form (Table~\ref{tab:fiveform}).
-  (b) All 48 paired $\SC-\SP$ action-retention differences per rater,
-  including ties. The rater-A mean of 1.292 is a poor summary: the
-  distribution is bimodal (17 ties, 15 at $+1$, one at $+2$, 15 at $+3$),
-  and rater B shows the same shape.}
-  \Description{Panel (a) is a bar chart of write attempts out of 48 for the
-  raw, neutral-carrier, marked-carrier, relay-of-carrier, and
-  relay-of-marked forms: 37, 40, 1, 44, and 22. Panel (b) is a grouped bar
-  chart of paired action-retention differences 0, 1, 2, and 3: rater A
-  17, 15, 1, 15 and rater B 19, 13, 1, 15. No pair has a negative difference.}
+  \caption{(a) Protected-write attempts by form for both receivers on the
+  same archived texts (Table~\ref{tab:fiveform}). (b) The two prespecified
+  paired contrasts with paired bootstrap 95\% intervals: the visible marker
+  (C$-$P) and the residual after relay ($\SC-\SP$).}
+  \Description{Panel (a) is a grouped bar chart of write attempts out of 48
+  for the raw, neutral-carrier, marked-carrier, relay-of-carrier, and
+  relay-of-marked forms: DeepSeek 37, 40, 1, 44, 22 and Qwen 46, 46, 8, 45,
+  25. Panel (b) shows paired differences with 95 percent intervals: C minus P
+  is .8125 (.6875 to .9167) for DeepSeek and .7917 (.6667 to .8958) for
+  Qwen; S_C minus S_P is .4583 (.2917 to .6250) for DeepSeek and .4167 (.2500
+  to .5833) for Qwen.}
   \label{fig:fiveform}
 \end{figure}
 
@@ -100,8 +101,10 @@ effect. Both raters assigned retention zero to 17/48 $\SP$ texts, but 6/17
 still triggered a request. The receiver can infer an action that a rater calls
 absent. This is not a tail case: a $+3$ difference requires $\SC=3$ and
 $\SP=0$, so 15 of each rater's 17 zero-rated $\SP$ texts form the upper mode
-of the bimodal distribution in Figure~\ref{fig:fiveform}b, so the mean
-difference is a poor summary of individual pairs. Agreement between raters
+of a heterogeneous paired distribution (17 ties, 15 at $+1$, one at $+2$, 15
+at $+3$ for rater A; supplement, Fig.~S1). The mean is a valid average
+difference on this scale, but it does not describe typical pairs or a single
+mechanism. Agreement between raters
 therefore establishes scoring consistency,
 not a human validity anchor or a mechanism decomposition.
 

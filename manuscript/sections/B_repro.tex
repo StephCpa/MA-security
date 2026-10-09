@@ -113,8 +113,13 @@ artifact root):
   The 48-pair disjoint follow-up is archived at
   \path{qwen36-authorized-propagation-confirmation-001}: L0 produced 6/48
   and L2 4/48 exact requests (paired risk difference $-.0417$; exact
-  McNemar $p=.7266$). It remains an internally frozen fixture comparison,
-  not a confirmatory security result.
+  McNemar $p=.7266$). These are not offline replays of one set of outputs:
+  each pair shares one archived sender output, but receiver 1 and receiver 2
+  were called live and separately in each arm (240 calls in total), so the two
+  arms have different receiver outputs. Only the paired analysis
+  (\path{analyze_authorized_propagation_confirmation.py}) makes no calls. It
+  remains an internally frozen fixture comparison, not a confirmatory
+  security result.
   The zero-call content audit for the 17 complete confirmation chains is
   \path{content_audit.json} in
   \path{deepseek-retention-propagation-confirmation-001}; it is a post hoc

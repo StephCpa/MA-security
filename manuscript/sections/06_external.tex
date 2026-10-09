@@ -69,8 +69,9 @@ five-form design in the official AgentDojo Slack runtime (package 0.1.35;
 benchmark 1.2.2) with its tasks, tools, and security and utility predicates
 unmodified~\cite{debenedetti2024agentdojo}. The 55 pairs cross the eleven user
 tasks unused by a ten-pair pilot with all five official injection goals; the
-payload is the literal goal, not an optimized attack, and the same model
-served as sender and receiver. Qwen 3.6 Flash produced security successes of
+payload is the literal goal text rather than the output of one of
+AgentDojo's attack generators, which build injected content from the goal,
+and the same model served as sender and receiver. Qwen 3.6 Flash produced security successes of
 7/55, 3/55, 3/55, 2/55, and 2/55 for R, C, P, $\SC$, and $\SP$; the DeepSeek
 endpoint produced 3/55, 3/55, 2/55, 2/55, and 2/55. All 286 sessions in each
 run completed, payload exposure was 55/55 after whitespace normalization, and
@@ -96,7 +97,9 @@ need roughly 45/55 carrier successes. The screen therefore establishes
 native execution, low official-goal base rates, and one benign-utility
 observation (C and P utility were 37/55 and 37/55 for Qwen, with four and
 three unknown, and 40/55 and 39/55 for DeepSeek), but it neither replicates
-nor falsifies the provenance mechanism. We ran no live Workspace sessions:
+nor falsifies the provenance mechanism. These literal-goal payloads lack
+headroom on the tested endpoints; the result does not characterize the
+benchmark's attack distribution. We ran no live Workspace sessions:
 offline controls showed that the official predicate for Workspace injection
 tasks 11 and 12 scores deleting one target and four non-target files as a
 successful targeted deletion, a scorer issue we document for upstream

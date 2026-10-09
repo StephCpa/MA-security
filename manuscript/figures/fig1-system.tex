@@ -1,5 +1,7 @@
-% Figure 1: evaluation boundary with the logged outcome rail aligned to the
-% stage at which each outcome is recorded. Vector source; sized for one column.
+% Figure 1: evaluation chain from untrusted source through a generative
+% sender to a receiver, gate and store, with the logged outcome rail aligned
+% to the stage at which each outcome is recorded. Line style marks how each
+% link is evaluated. Vector source; sized for one column.
 \begin{tikzpicture}[
   font=\footnotesize,
   >={Stealth[length=1.5mm]},
@@ -12,57 +14,67 @@
   lab/.style={font=\scriptsize, inner sep=1pt, xshift=1pt},
   outtxt/.style={font=\scriptsize, anchor=west, inner sep=1pt},
   tie/.style={densely dotted, black!45},
+  model/.style={->},
+  replay/.style={->, dashed},
+  declared/.style={->, densely dotted, thick},
 ]
   % Stage column.
   \node[stage, fill=black!8] (src) at (2.65,0)
-    {Untrusted content\\[-2pt]{\scriptsize adversary-controlled}};
-  \node[stage] (rcv) at (2.65,-1.15)
-    {Receiver model\\[-2pt]{\scriptsize structured actions}};
-  \node[stage] (mon) at (2.65,-2.30)
-    {Reference monitor\\[-2pt]{\scriptsize policy $\times$ capability}};
-  \node[stage] (sto) at (2.65,-3.45)
+    {Untrusted content\\[-2pt]{\scriptsize marked or unmarked}};
+  \node[stage] (snd) at (2.65,-1.15)
+    {Sender agent\\[-2pt]{\scriptsize derived message}};
+  \node[stage] (rcv) at (2.65,-2.30)
+    {Receiver agent\\[-2pt]{\scriptsize structured actions}};
+  \node[stage] (mon) at (2.65,-3.45)
+    {Reference monitor\\[-2pt]{\scriptsize gate $\widehat P$ (Table~\ref{tab:contract})}};
+  \node[stage] (sto) at (2.65,-4.60)
     {Protected store\\[-2pt]{\scriptsize process-local}};
-  \node[stage, fill=blue!5] (dwn) at (2.65,-4.60)
+  \node[stage, fill=blue!5] (dwn) at (2.65,-5.75)
     {Downstream agent\\[-2pt]{\scriptsize reads the store}};
 
-  \draw[->] (src) -- node[lab, right] {data plane} (rcv);
-  \draw[->] (rcv) -- node[lab, right] {attempt} (mon);
-  \draw[->] (mon) -- node[lab, right] {allow} (sto);
-  \draw[->, dashed, black!55] (sto) -- node[lab, right] {possible read} (dwn);
+  \draw[model] (src) -- node[lab, right] {relay} (snd);
+  \draw[model] (snd) -- node[lab, right] {derived text} (rcv);
+  \draw[model] (rcv) -- node[lab, right] {attempt} (mon);
+  \draw[replay] (mon) -- node[lab, right] {allow} (sto);
+  \draw[->, dashed, black!45] (sto) -- node[lab, right] {possible read} (dwn);
 
   % Control states enter at the stage they govern.
-  \node[ctrl] (a) at (0.62,-1.15) {elevation\\[-2pt]$a$};
-  \node[ctrl] (b) at (0.62,-2.30) {write-back\\[-2pt]$b$};
-  \draw[->] (a) -- (rcv);
-  \draw[->] (b) -- (mon);
+  \node[ctrl] (a) at (0.62,-2.30) {elevation\\[-2pt]$a$};
+  \node[ctrl] (b) at (0.62,-3.45) {write grant\\[-2pt]$b$};
+  \draw[model] (a) -- (rcv);
+  \draw[declared] (b) -- (mon);
 
   % Outcome rail: each rung sits at the stage where it is logged.
   \def\railx{4.55}
   \node[font=\scriptsize\bfseries, anchor=west, inner sep=0pt]
     at (\railx-0.1,0) {Logged outcome rail};
-  \draw[line width=0.9pt, black!35] (\railx,-0.80) -- (\railx,-4.95);
-  \foreach \s/\y in {rcv/-1.15, mon/-2.30, sto/-3.45, dwn/-4.60}
+  \draw[line width=0.9pt, black!35] (\railx,-0.80) -- (\railx,-6.10);
+  \foreach \s/\y in {snd/-1.15, rcv/-2.30, mon/-3.45, sto/-4.60, dwn/-5.75}
     \draw[tie] (\s.east) -- (\railx,\y);
 
-  \node[rung] (r1) at (\railx+0.32,-0.98) {1};
-  \node[outtxt] at (r1.east) {attempt (structured action)};
-  \node[rung] (r2) at (\railx+0.32,-1.34) {2};
+  \node[rung] (rT) at (\railx+0.32,-1.15) {T};
+  \node[outtxt] at (rT.east) {marker, action in text};
+  \node[rung] (r1) at (\railx+0.32,-2.13) {1};
+  \node[outtxt] at (r1.east) {attempt or delegation};
+  \node[rung] (r2) at (\railx+0.32,-2.49) {2};
   \node[outtxt] at (r2.east) {unauthorized attempt};
-  \node[rung] (r3) at (\railx+0.32,-2.30) {3};
-  \node[outtxt] at (r3.east) {capability decision};
-  \node[rung] (r4) at (\railx+0.32,-3.27) {4};
+  \node[rung] (r3) at (\railx+0.32,-3.45) {3};
+  \node[outtxt] at (r3.east) {gate decision};
+  \node[rung] (r4) at (\railx+0.32,-4.42) {4};
   \node[outtxt] at (r4.east) {mutation};
-  \node[rung, fill=black, text=white] (r5) at (\railx+0.32,-3.63) {5};
+  \node[rung, fill=black, text=white] (r5) at (\railx+0.32,-4.78) {5};
   \node[outtxt] at (r5.east) {\textbf{unauthorized mutation}};
-  \node[rung] (r6) at (\railx+0.32,-4.60) {6};
+  \node[rung] (r6) at (\railx+0.32,-5.75) {6};
   \node[outtxt] at (r6.east) {exposure};
-  \foreach \r in {r1,r2,r3,r4,r5,r6}
+  \foreach \r in {rT,r1,r2,r3,r4,r5,r6}
     \draw[black!35] (\railx,0 |- \r.center) -- (\r.west);
 
-  % Estimand key.
+  % Key.
   \node[font=\scriptsize, anchor=north west, align=left, text width=82mm,
-    inner sep=0pt] at (-0.05,-5.12)
-    {Primary state-change outcome: $R=\Pr(\text{rung 5})$.
-     $r_0,r_1$: exact protected-request rates at $a=0,1$ with the write
-     tool visible; $b$ gates whether an allowed request mutates state.};
+    inner sep=0pt] at (-0.05,-6.27)
+    {\tikz[baseline=-0.6ex]\draw[model] (0,0) -- (0.5,0); model calls\quad
+     \tikz[baseline=-0.6ex]\draw[replay] (0,0) -- (0.5,0); deterministic gate or replay\quad
+     \tikz[baseline=-0.6ex]\draw[declared] (0,0) -- (0.5,0); declared fault weighting (\S\ref{sec:covariance})\\
+     Relay studies stop at rungs T--1. Rung 5 is primary only in the
+     state-change fixture.};
 \end{tikzpicture}

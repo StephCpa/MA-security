@@ -13,7 +13,9 @@ write capability. In the behavioral experiment $a=1$ is a valid grant; in the
 fault calculation it denotes unauthorized acquisition of that same state.
 Let $Y$ be an exact protected-write request generated while the tool is
 visible, with $\rzero=\Pr(Y=1\mid a=0)$ and
-$\rone=\Pr(Y=1\mid a=1)$. The monitor mutates state exactly when $Y=b=1$.
+$\rone=\Pr(Y=1\mid a=1)$. The gate here is a capability check, so the monitor
+mutates the protected resource exactly when $Y=b=1$; because the receiver is
+never entitled to it, that mutation is unauthorized (Table~\ref{tab:contract}).
 We generate and archive $Y$ at each $a$ state before replaying it under both
 $b$ states, so $Y$ cannot depend on $b$ conditional on $a$ in this fixture.
 For matched marginals $\E[a]=\E[b]=q$,
@@ -39,8 +41,8 @@ the tool-visible state; hidden-tool behavior is a different estimand.
 The response is not a property of the endpoint alone. Measured on different
 tool-visible fixtures, it was .875 for DeepSeek semantic placement, .396 for
 Qwen on the same task (supplement, App.~D), .313 for Qwen credential gating
-(\S\ref{sec:credential-gated}), .167 for Qwen exact requests over frozen relay
-outputs (\S\ref{sec:e4-gateway}), and .063 in the tool-visible arm of the
+(\S\ref{sec:credential-gated}), .167 for Qwen exact requests at $a=0$ versus
+$a=1$ on 48 fixed relay outputs (\S\ref{sec:e4-gateway}), and .063 in the tool-visible arm of the
 capability-hidden fixture (42/48 to 45/48, \S\ref{sec:defense}). The spread
 within Qwen is 6.3-fold (.396/.063), whereas the cross-endpoint contrast on a
 shared fixture is 2.2-fold (.875/.396); on frozen DeepSeek relay outputs,
@@ -48,8 +50,8 @@ relay policy and marking alone moved it from .125 to .771
 (Table~\ref{tab:e4-gateway}). Fixture variation therefore exceeds the endpoint
 variation we observe, and the design cannot attribute $\rone-\rzero$ to the
 model. Figure~\ref{fig:covariance-risk} shows the consequence: under one
-declared topology, excess risk scales with whichever fixture supplied the
-response. Tool hiding changes the available action schema, so the hidden-tool
+declared topology, the computed excess scales with whichever fixture supplied
+the response. Tool hiding changes the available action schema, so the hidden-tool
 route cannot be inserted into Equation~\eqref{eq:identity}. We estimate the
 factor anew for each endpoint and tool-visible fixture and never transport it
 across fixtures.
@@ -69,45 +71,45 @@ production key store.
 \begin{table}[t]
   \centering
   \footnotesize
-  \caption{Qwen risk weighting at declared $q=.05$. Only $\rzero$ and
-  $\rone$ are model measurements; covariance and risk follow from the declared
-  fault topology.}
+  \caption{Qwen credential-gate risk computed at declared $q=.05$. Only
+  $\rzero=33/48$ and $\rone=48/48$ are model measurements; covariance and
+  risk are computed from the declared fault topology.}
   \label{tab:measured}
   \setlength{\tabcolsep}{3pt}
   \begin{tabular}{lrrr}
     \toprule
-    Topology & $\E[a]{=}\E[b]$ & $\Cov(a,b)$ & Risk \\
+    Topology & $\E[a]{=}\E[b]$ & $\Cov(a,b)$ & Risk (\%) \\
     \midrule
-    Independent lifecycles & .050 & 0 & .035156 \\
-    Nominal split, common root & .050 & .023141 & .042388 \\
-    Shared persistent state & .050 & .047500 & .050000 \\
+    Independent lifecycles & .05 & 0 & 3.52 \\
+    Nominal split, common root & .05 & .0231 & 4.24 \\
+    Shared persistent state & .05 & .0475 & 5.00 \\
     \bottomrule
   \end{tabular}
 \end{table}
 
 The common-root model has one shared component of probability $q/2$ plus two
 independent leaves chosen so each marginal remains $q$; the shared-state model
-sets $a=b$. Their excesses over independence are .007232 and .014844,
-exactly $.023141\times.3125$ and $.047500\times.3125$. Agreement audits the
-gateway record and weighting code, not the algebra. The value $q=.05$ is a
+sets $a=b$. Their computed excesses over independence are 0.72 and 1.48
+percentage points, which equal $\Cov(a,b)\times.3125$ to six decimals
+(.023141 and .047500 before rounding). Agreement audits the gateway record and
+weighting code, not the algebra. The value $q=.05$ is a
 sensitivity parameter, not an estimated compromise frequency.
 
 \begin{figure}[t]
   \centering
   \input{figures/fig4-covariance}
-  \caption{Excess risk $\Cov(a,b)(\rone-\rzero)$ for the five tool-visible
-  responses compared in \S\ref{sec:covariance}. Only the slopes are model measurements;
-  covariances are declared topologies at $q=.05$, not estimated fault rates.
-  The bold line is the credential-gated fixture of Table~\ref{tab:measured};
-  the spread among Qwen lines is fixture variation on one endpoint.}
-  \Description{Five straight lines from the origin plot excess risk in
-  percentage points against the declared covariance between elevation and
-  write authority, at the independent, common-root, and shared-state
-  topologies. Slopes are the measured responses .875 (DeepSeek, semantic
-  placement), .396 (Qwen, semantic placement), .313 (Qwen, credential gate),
-  .167 (Qwen, frozen relay), and .063 (Qwen, tool-visible arm of the
-  capability-hidden fixture). At the shared-state covariance the excess
-  ranges from 0.30 to 4.16 percentage points.}
+  \caption{Declared-fault sensitivity. Points are measured responses
+  $\rone-\rzero$ with the write tool visible; bars are 95\% intervals where
+  the run report gives one for the difference (E3, \S\ref{sec:credential-gated};
+  DeepSeek, where $\rzero=0$). The top axis is a computation: the excess over
+  independent lifecycles under the declared shared-state topology,
+  $.0475(\rone-\rzero)$ at $q=.05$, not an observed failure rate.}
+  \Description{A dot plot of five measured elevation responses: DeepSeek
+  semantic placement .875 with interval .748 to .953; Qwen semantic
+  placement .396; Qwen credential gate .313 with interval .187 to .463; Qwen
+  relay outputs .167; Qwen tool-visible arm of the capability-hidden
+  fixture .063. A top axis converts each response to the declared
+  shared-state excess, from 0 to 4.75 percentage points.}
   \label{fig:covariance-risk}
 \end{figure}
 
@@ -138,8 +140,9 @@ at $(a=0,a=1)$ were respectively (0/48,6/48), (1/48,32/48), and
 (0/48,37/48). The prespecified adaptive-minus-benign interaction was .5208
 ($p=4.17\times10^{-7}$). Adaptive and unmarked exact endpoints were not
 distinguished ($p=.302$), so the evidence supports increased elevation
-sensitivity, not superior payload fidelity. A prospective Qwen evaluation
-reproduced the broad response (27/48 to 44/48, $p=2.21\times10^{-4}$) and a
+sensitivity, not superior payload fidelity. A prospective Qwen evaluation of
+48 of these frozen outputs at both elevation states (96 calls) reproduced the
+broad response (27/48 to 44/48, $p=2.21\times10^{-4}$) and a
 smaller, marginal exact response (22/48 to 30/48, $p=.0386$); a same-bank
 repeat gave 25/48 to 43/48 and 21/48 to 30/48. These runs bound one temporal
 repeat, not provider-wide variance.

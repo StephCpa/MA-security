@@ -27,7 +27,10 @@ sender prompt and 84 from a task-condensation prompt. They produced 2/37 and
 source subgroups. The
 remaining 71 source directives were not run through this chain. We measure
 delegation at the second receiver, not semantic preservation of its emitted
-payload or a protected write. The rate is conditional on the selected group.
+payload or a protected write. Two consecutive \texttt{delegate} calls are a
+structural endpoint: a receiver that forwards any processable task would also
+produce them, so the result shows onward transmission, not that the attack
+action was adopted downstream. The rate is conditional on the selected group.
 An offline audit of the archived receiver-2 inputs makes this limitation more
 precise. Among the 17 complete chains, every receiver-2 input retained an
 action verb and mean directive-token recall was .989; all 14 chains whose
@@ -41,7 +44,8 @@ estimate and not a semantic-equivalence test.
   \caption{Outcome-blind selection and two-receiver delegation in the
   disjoint confirmation bank. The frozen selector admitted 121 of 192 source
   directives; receiver 1 delegated 40, and receiver 2 delegated 17 of those.
-  The 71 excluded directives were not run.}
+  Arrow labels are conditional rates. The endpoint is a \texttt{delegate}
+  call, not a protected write; the 71 excluded directives were not run.}
   \Description{A flow diagram from 192 bank items through 121 selected, 40
   first-receiver delegations, and 17 second-receiver delegations, with the
   conditional rates .331 and .425 and the complete selected-stratum rate
@@ -85,11 +89,13 @@ instruction elevation enabled, the same 45/48 payloads that requested an
 exact direct write when the tool was visible requested an exact non-mutating
 escalation when it was hidden. All 48 paired outcomes agreed (two-sided exact
 95\% upper bound .074 for the discordance probability).
-At $a=0$, migration fell from 42/48 to 36/48 ($p=.03125$). Thus tool hiding
-changed the route, not the elevated objective, in this explicit-escalation
-fixture. Attempt-suppression metrics that observe only one action schema can
-misclassify such migration as safety; no protected state changed here because
-the escalation route was non-mutating.
+At $a=0$, migration fell from 42/48 to 36/48 ($p=.03125$). Tool hiding thus
+redirected elevated requests to an advertised, side-effect-free route rather
+than removing them. That redirection may be the intended secure fallback, and
+no protected state changed. What the result shows is narrower: metrics that
+observe only the direct-write schema undercount action-related requests.
+Whether an escalation route is safe depends on whether it can cross a
+permission boundary, which this non-mutating fixture does not test.
 
 \subsection{Endpoint heterogeneity}
 

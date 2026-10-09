@@ -47,14 +47,36 @@ def five_form():
                              ('Qwen 3.7','qwen-five-form-provenance-confirmation-001',[46,46,8,45,25])]:
         src=f'results/{run}/report.json';c=load(src)['analysis']['contrasts'];rate={}
         for v in c.values():rate[v['left_form']]=v['left_rate'];rate[v['right_form']]=v['right_rate']
-        check(f'Table 2 / Fig. 2a {model} attempts',src,[round(rate[f]*48) for f in ['R','C','P','S_C','S_P']],stated)
+        check(f'Table 3 / Fig. 2a {model} attempts',src,[round(rate[f]*48) for f in ['R','C','P','S_C','S_P']],stated)
+
+def figure_values():
+    for model,run,cp,res in [('DeepSeek','deepseek-five-form-provenance-confirmation-001',(.8125,.6875,.9167),(.4583,.2917,.6250)),
+                             ('Qwen 3.7','qwen-five-form-provenance-confirmation-001',(.7917,.6667,.8958),(.4167,.2500,.5833))]:
+        src=f'results/{run}/report.json';c=load(src)['analysis']['contrasts']
+        for key,stated in [('visible_marker',cp),('residual_marker_influence',res)]:
+            v=c[key];derived=(round(v['paired_risk_difference'],4),*[round(x,4) for x in v['paired_payload_bootstrap_95']])
+            check(f'Fig. 2b {model} {key} (RD, 95% CI)',src,derived,stated)
+    src='results/deepseek-lifecycle-covariance-confirmation-001/report.json'
+    e=load(src)['analysis']['elevated_state_write_susceptibility']
+    check('Fig. 4 DeepSeek interval (r0 = 0, so CP for r1)',src,[round(x,4) for x in e['clopper_pearson_95']],[.7475,.9527])
+    q,r0,r1=.05,33/48,1.0
+    for cov,stated in [(0,3.52),(.023141,4.24),(.0475,5.00)]:
+        check(f'Table 6 risk at Cov {cov} (%)','derived from E3 r0 = 33/48, r1 = 48/48 (baseline text)',
+              round(100*(q*((1-q)*r0+q*r1)+cov*(r1-r0)),2),stated)
+    unverifiable('Fig. 4 E3 interval [.1866, .4625]','carried from §5.2 of the baseline manuscript','no E3 result directory')
+    unverifiable('§5.3 / §5.1 E5 is an a=0 versus a=1 contrast on 48 fixed relay outputs',
+                 'inferred from 96 calls on 48 texts (supplement run map); which relay policy supplied the texts is not recorded here',
+                 'no E5 result directory')
+    unverifiable('Supplement B.3 lineage confirmation: 240 live calls, separate receiver calls per arm',
+                 'runner code analysis/authorized_propagation_calibration.py (per-arm R1/R2 calls; cap 240 for weak_confirm) and the follow-up plan',
+                 'run directory qwen36-authorized-propagation-confirmation-001 not in repository')
 
 def ratings():
     src='results/deepseek-five-form-provenance-confirmation-001/rating-returned/five_form_confirmation_rating_result.json'
     s=load(src)['summary']
     for rater,stated in [('A',[17,15,1,15]),('B',[19,13,1,15])]:
         d=s['paired_SC_minus_SP'][rater]['actionable_semantic_retention']['difference_support']
-        check(f'Fig. 2b rater {rater} retention differences 0..3',src,[d.get(str(k),0) for k in range(4)],stated)
+        check(f'Fig. S1 rater {rater} retention differences 0..3',src,[d.get(str(k),0) for k in range(4)],stated)
         check(f'§3.1 rater {rater} zero-rated S_P texts',src,s['form'][rater]['S_P']['actionable_semantic_retention']['distribution_0_to_3'][0],17)
         check(f'§3.1 rater {rater} +3 mode (S_C=3, S_P=0)',src,d.get('3',0),15)
 
@@ -97,7 +119,7 @@ def workspace():
               t[task]['variants']['partly_wrong_files']['score'],True)
 
 def main():
-    for f in (agentdojo,five_form,ratings,responses,propagation_and_lineage,workspace):f()
+    for f in (agentdojo,five_form,figure_values,ratings,responses,propagation_and_lineage,workspace):f()
     failed=0
     for ok,where,src,derived,stated in CHECKS:
         failed+=not ok

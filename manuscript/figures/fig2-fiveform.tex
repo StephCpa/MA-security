@@ -1,66 +1,57 @@
-% Figure 2: DeepSeek five-form behavior (Table 2) and the full paired
-% distribution of S_C - S_P action-retention scores for both isolated raters.
-% Counts are read from the frozen confirmation report and rating return.
-\definecolor{fig2raw}{RGB}{140,144,153}
-\definecolor{fig2unmarked}{RGB}{68,114,196}
-\definecolor{fig2marked}{RGB}{191,139,46}
+% Figure 2: five-form attempts for both receivers on identical archived texts,
+% and the two prespecified paired contrasts with their paired bootstrap 95%
+% intervals. All values are read from the two frozen confirmation reports:
+% results/{deepseek,qwen}-five-form-provenance-confirmation-001/report.json
+% (form rates; contrasts visible_marker and residual_marker_influence).
+\definecolor{fig2ds}{RGB}{204,102,0}
+\definecolor{fig2qw}{RGB}{68,114,196}
 \begin{tikzpicture}[font=\footnotesize]
   \pgfplotsset{
     fig2/.style={
-      scale only axis, height=30mm, ybar, ymin=0,
+      scale only axis, height=30mm,
       axis lines*=left, tick align=outside,
       tick label style={font=\scriptsize},
       label style={font=\scriptsize},
       title style={font=\footnotesize, yshift=7pt},
       ymajorgrids, grid style={black!12},
-      nodes near coords, nodes near coords style={font=\tiny, black},
-      enlarge x limits=0.14,
+      legend style={font=\tiny, draw=none, fill=none, at={(0.5,1.01)},
+        anchor=south, legend columns=-1, /tikz/every even column/.append
+        style={column sep=4pt}},
     },
   }
   \begin{axis}[
-    fig2, name=left, width=30mm, bar width=3.8mm, bar shift=0pt,
-    ymax=55, ytick={0,12,24,36,48},
+    fig2, name=left, width=36mm, ybar, bar width=2.4mm, ymin=0,
+    ymax=50, ytick={0,12,24,36,48},
     ylabel={Write attempts (of 48)}, ylabel style={yshift=-3pt},
     symbolic x coords={R,C,P,SC,SP}, xtick={R,C,P,SC,SP},
-    xticklabels={R,C,P,$S_C$,$S_P$},
-    title={(a) Receiver attempts},
-    legend style={font=\tiny, draw=none, fill=none, at={(0.5,1.01)},
-      anchor=south, legend columns=-1, /tikz/every even column/.append
-      style={column sep=4pt}},
+    xticklabels={R,C,P,$S_C$,$S_P$}, enlarge x limits=0.13,
+    title={(a) Attempts by form},
     legend image code/.code={\draw[#1] (0cm,-0.08cm) rectangle (0.2cm,0.1cm);},
-    clip=false,
   ]
-    \addplot[fill=fig2raw, draw=fig2raw!70!black] coordinates {(R,37)};
-    \addplot[fill=fig2unmarked, draw=fig2unmarked!70!black]
-      coordinates {(C,40) (SC,44)};
-    \addplot[fill=fig2marked, draw=fig2marked!70!black]
-      coordinates {(P,1) (SP,22)};
-    \legend{raw, unmarked, marked}
-    % Separators sit midway between adjacent categories.
-    \draw[densely dashed, black!40] ($(axis cs:R,0)!0.5!(axis cs:C,0)$) --
-      ($(axis cs:R,52)!0.5!(axis cs:C,52)$);
-    \draw[densely dashed, black!40] ($(axis cs:P,0)!0.5!(axis cs:SC,0)$) --
-      ($(axis cs:P,52)!0.5!(axis cs:SC,52)$);
-    \node[font=\tiny, black!65, anchor=base] at
-      ($(axis cs:C,50)!0.5!(axis cs:P,50)$) {source};
-    \node[font=\tiny, black!65, anchor=base] at
-      ($(axis cs:SC,50)!0.5!(axis cs:SP,50)$) {relay};
+    \addplot[fill=fig2ds, draw=fig2ds!70!black]
+      coordinates {(R,37) (C,40) (P,1) (SC,44) (SP,22)};
+    \addplot[fill=fig2qw, draw=fig2qw!70!black]
+      coordinates {(R,46) (C,46) (P,8) (SC,45) (SP,25)};
+    \legend{DeepSeek, Qwen}
   \end{axis}
   \begin{axis}[
-    fig2, at={(left.east)}, anchor=west, xshift=13mm,
-    width=24mm, bar width=2.6mm, enlarge x limits=0.2,
-    ymax=22, ytick={0,5,10,15,20},
-    ylabel={Pairs (of 48)}, ylabel style={yshift=-3pt},
-    xtick={0,1,2,3},
-    xlabel={$S_C-S_P$ retention score}, xlabel style={yshift=2pt},
-    title={(b) Paired retention shift},
-    legend style={font=\tiny, draw=none, fill=none, at={(0.5,1.01)},
-      anchor=south, legend columns=-1, /tikz/every even column/.append
-      style={column sep=4pt}},
-    legend image code/.code={\draw[#1] (0cm,-0.08cm) rectangle (0.2cm,0.1cm);},
+    fig2, at={(left.east)}, anchor=west, xshift=12mm, width=22mm,
+    ymin=0, ymax=1, ytick={0,.25,.5,.75,1},
+    yticklabels={0,.25,.50,.75,1},
+    ylabel={Paired difference}, ylabel style={yshift=-3pt},
+    xmin=0.4, xmax=2.6, xtick={1,2},
+    xticklabels={C$-$P, $S_C-S_P$},
+    title={(b) Marker contrasts},
+    legend image code/.code={\draw[#1, mark size=1.4pt] plot coordinates {(0.1cm,0)};},
   ]
-    \addplot[fill=black!70, draw=black] coordinates {(0,17) (1,15) (2,1) (3,15)};
-    \addplot[fill=black!20, draw=black!60] coordinates {(0,19) (1,13) (2,1) (3,15)};
-    \legend{rater A, rater B}
+    \addplot[only marks, mark=*, mark size=1.5pt, fig2ds]
+      coordinates {(0.88,0.8125) (1.88,0.4583)};
+    \addplot[only marks, mark=square*, mark size=1.4pt, fig2qw]
+      coordinates {(1.12,0.7917) (2.12,0.4167)};
+    % Paired bootstrap 95% intervals from the reports.
+    \draw[fig2ds, thick] (axis cs:0.88,0.6875) -- (axis cs:0.88,0.9167);
+    \draw[fig2ds, thick] (axis cs:1.88,0.2917) -- (axis cs:1.88,0.6250);
+    \draw[fig2qw, thick] (axis cs:1.12,0.6667) -- (axis cs:1.12,0.8958);
+    \draw[fig2qw, thick] (axis cs:2.12,0.2500) -- (axis cs:2.12,0.5833);
   \end{axis}
 \end{tikzpicture}

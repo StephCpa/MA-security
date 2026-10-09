@@ -13,7 +13,7 @@ python analysis/verify_branch_numbers.py
 
 The script uses repository files only. It recomputes each number this branch
 adds or changes and prints the source file, the derived value and the stated
-value. Current result: **46/46 checks pass.** Values no repository file can
+value. Current result: **54/54 checks pass.** Values no repository file can
 support are listed separately and are never counted as passing.
 
 ## Commits
@@ -22,7 +22,8 @@ support are listed separately and are never counted as passing.
 |---|---|---|
 | `f07a40a` | Round-2 review revision: §5.1 response spread, §6.3 AgentDojo details, abstract/limitations scope, intro framing, vector figures, build fixes, errata and docs | Every new number is verified from repository files (section A), except three values carried from the baseline (section B) |
 | `f6a71a4` | Text for four Qwen 3.6 follow-up runs; AgentDojo headroom spec and offline gate | **Manuscript part withdrawn** in the next commit (section C). The spec and offline gate remain as a plan only (section D) |
-| (this commit) | Withdrawal, this ledger, the verification script | No new results |
+| `1b94853` | Withdrawal, this ledger, the verification script | No new results |
+| (round 3) | Round-3 review revision: execution contract, lineage-run description, figure redesigns, claim narrowing (`docs/AAMAS27_ROUND3_REVIEW_RESPONSE_2026-10-09.md`) | New values verified by the script; inferred values listed in section B |
 
 ## A. Verified from repository files (`f07a40a`)
 
@@ -56,7 +57,10 @@ in the repository.
 |---|---|---|
 | .3125 (E3, 33/48 → 48/48) | §5.2 | `qwen-e3-credential-gated-001/report.json` |
 | .1667 (E5, 22/48 → 30/48) | §5.3 | `qwen-e5-relay-gateway-001/report.json` |
-| .125 / .646 / .771 (E4 by relay policy) | Table 6 | `deepseek-e4-e2-e3-composition-001/report.json` |
+| .125 / .646 / .771 (E4 by relay policy) | Table 7 | `deepseek-e4-e2-e3-composition-001/report.json` |
+| E3 interval [.1866, .4625] (Fig. 4) | §5.2 | `qwen-e3-credential-gated-001/report.json` |
+| E5 is an a=0 vs a=1 contrast on 48 fixed relay outputs | §5.1, §5.3 (inferred from 96 calls on 48 texts) | `qwen-e5-relay-gateway-001/manifest.json` (which relay policy) |
+| Lineage confirmation used 240 live calls, separate per arm | Supplement B.3 (runner code; run not in repo) | `export_lineage_pairs.py` on `qwen36-authorized-propagation-confirmation-001` |
 
 ## C. Withdrawn from the manuscript pending local verification
 

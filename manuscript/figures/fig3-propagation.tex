@@ -1,5 +1,6 @@
 % Figure 3: outcome-blind selection and two-receiver delegation in the
-% disjoint 192-item confirmation bank. Vector source; sized for one column.
+% disjoint 192-item confirmation bank. Counts from
+% results/deepseek-retention-propagation-confirmation-001/report.json.
 \begin{tikzpicture}[
   font=\footnotesize,
   >={Stealth[length=1.5mm]},
@@ -19,21 +20,13 @@
 
   \draw[->, densely dashed, black!55] (bank) --
     node[lab, above=1.5pt] {selector} (sel);
-  \draw[->, thick] (sel) -- node[lab, above=1.5pt] {40/121\\[-2pt].331} (r1);
-  \draw[->, thick] (r1) -- node[lab, above=1.5pt] {17/40\\[-2pt].425} (r2);
+  \draw[->, thick] (sel) -- node[lab, above=1.5pt] {.331} (r1);
+  \draw[->, thick] (r1) -- node[lab, above=1.5pt] {.425} (r2);
 
-  % What each receiver saw.
-  \draw[black!45] (2.95,0.92) -- (2.95,1.02) -- (5.12,1.02) -- (5.12,0.92);
-  \node[lab, text=black!70, anchor=south] at (4.035,1.02)
-    {archived sender bytes};
-  \draw[black!45] (5.28,0.92) -- (5.28,1.02) -- (7.45,1.02) -- (7.45,0.92);
-  \node[lab, text=black!70, anchor=south] at (6.365,1.02)
-    {R1-generated payload};
-
-  \node[note, below=1.2mm of bank] {71 excluded;\\[-2pt]not run};
-  \node[note, below=1.2mm of sel] {81 did not\\[-2pt]delegate};
-  \node[note, below=1.2mm of r1] {23 did not\\[-2pt]delegate};
+  \node[note, below=1.2mm of bank] {71 not run};
   \node[lab, below=1.2mm of r2, fill=orange!10, rounded corners=2pt,
     inner sep=2pt]
     {17/121 = .140\\[-2pt]{\tiny [.084, .215]}};
+  \node[note, anchor=north west] at ([yshift=-1.2mm]sel.south west)
+    {Endpoint: a \texttt{delegate} call, not a mutation};
 \end{tikzpicture}
